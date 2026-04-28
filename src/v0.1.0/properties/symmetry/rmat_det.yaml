@@ -1,17 +1,17 @@
 $$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/p_det"
-title: "P Det"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/rmat_det"
+title: "Symmetry operation rotation determinant"
 $comment: "Generated from data-generators JSON-LD fields without external definition URLs."
 x-optimade-type: "integer"
 x-optimade-definition:
   kind: "property"
   version: "0.1.0"
   format: "1.2"
-  name: "p_det"
-  label: "p_det_symmetry"
+  name: "rmat_det"
+  label: "rmat_det_symmetry"
 type:
   - "integer"
   - "null"
 description: |-
-  The determinant of the linear transformation matrix P.
+  The determinant of the linear matrix part of a symmetry operation or same-setting affine normalizer operation.
 x-optimade-unit: "inapplicable"

@@ -23,29 +23,43 @@ properties:
       sortable: true
       query-support: "all mandatory"
       response-level: "always"
-  P:
-    $$inherit: "/properties/symmetry/p_matrix"
+  pmat:
+    $$inherit: "/properties/symmetry/pmat"
     x-optimade-implementation:
       support: "yes"
       sortable: false
       query-support: "none"
       response-level: "yes"
-  p:
-    $$inherit: "/properties/symmetry/p"
+  pvec:
+    $$inherit: "/properties/symmetry/pvec"
     x-optimade-implementation:
       support: "yes"
       sortable: false
       query-support: "none"
       response-level: "yes"
-  P_det:
-    $$inherit: "/properties/symmetry/p_det"
+  rmat:
+    $$inherit: "/properties/symmetry/rmat"
     x-optimade-implementation:
       support: "yes"
       sortable: false
       query-support: "none"
       response-level: "yes"
-  P_is_orthogonal:
-    $$inherit: "/properties/symmetry/p_is_orthogonal"
+  tvec:
+    $$inherit: "/properties/symmetry/tvec"
+    x-optimade-implementation:
+      support: "yes"
+      sortable: false
+      query-support: "none"
+      response-level: "yes"
+  rmat_det:
+    $$inherit: "/properties/symmetry/rmat_det"
+    x-optimade-implementation:
+      support: "yes"
+      sortable: false
+      query-support: "none"
+      response-level: "yes"
+  rmat_is_orthogonal:
+    $$inherit: "/properties/symmetry/rmat_is_orthogonal"
     x-optimade-implementation:
       support: "yes"
       sortable: false

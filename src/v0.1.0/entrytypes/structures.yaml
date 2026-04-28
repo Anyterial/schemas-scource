@@ -1,5 +1,5 @@
 $$schema: "https://schemas.optimade.org/meta/v1.2/optimade/entrytype_definition"
-$id: "https://example.org/schemas/v0.1/entrytypes/structures"
+$id: "https://schemas.anyterial.org/v0.1.0/entrytypes/structures"
 type: object
 title: "Example definition provider structure endpoint additions"
 x-optimade-definition:

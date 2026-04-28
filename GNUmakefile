@@ -15,7 +15,7 @@ all: schemas
 # Path to the process_schemas program
 PROCESS_SCHEMAS=dependencies/submodules/optimade-property-tools/bin/process_schemas
 # The base of the URI for the generated property definitions
-BASEID=https://example.org/schemas/v0.1/
+BASEID=https://schemas.anyterial.org/v0.1.0/
 # The versioned directory being processed
 BASEDIR=src/v0.1.0
 # The versions of the meta-schemas to use

@@ -1,5 +1,5 @@
 $$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://example.org/schemas/v0.1/properties/smell/_exmpl_smell"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/smell/_exmpl_smell"
 title: "Material smell"
 $comment: "This is an example of a database provider-specific property definition."
 x-optimade-type: "string"

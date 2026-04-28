@@ -1,0 +1,17 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/hm_extended_unicode"
+title: "Hermann-Mauguin Extended Unicode"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "string"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.2"
+  name: "hm_extended_unicode"
+  label: "hm_extended_unicode_symmetry"
+type:
+  - "string"
+  - "null"
+description: |-
+  The `hm_extended_unicode` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"

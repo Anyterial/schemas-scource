@@ -1,0 +1,17 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/n_unique_candidates"
+title: "N Unique Candidates"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "integer"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.2"
+  name: "n_unique_candidates"
+  label: "n_unique_candidates_symmetry"
+type:
+  - "integer"
+  - "null"
+description: |-
+  The `n_unique_candidates` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"

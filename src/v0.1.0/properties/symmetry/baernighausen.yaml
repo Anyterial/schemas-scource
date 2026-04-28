@@ -1,0 +1,18 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/baernighausen"
+title: "Baernighausen"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "dictionary"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.2"
+  name: "baernighausen"
+  label: "baernighausen_symmetry"
+type:
+  - "object"
+  - "null"
+description: |-
+  The `baernighausen` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"
+properties: {}

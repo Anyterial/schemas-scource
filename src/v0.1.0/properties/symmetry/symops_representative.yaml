@@ -1,0 +1,22 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/symops_representative"
+title: "Symops Representative"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "list"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.2"
+  name: "symops_representative"
+  label: "symops_representative_symmetry"
+type:
+  - "array"
+  - "null"
+description: |-
+  The `symops_representative` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"
+items:
+  x-optimade-type: "string"
+  x-optimade-unit: "inapplicable"
+  type:
+    - "string"

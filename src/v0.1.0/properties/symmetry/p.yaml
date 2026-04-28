@@ -1,0 +1,22 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/symmetry/p"
+title: "Origin shift p"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "list"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.2"
+  name: "p"
+  label: "p_symmetry"
+type:
+  - "array"
+  - "null"
+description: |-
+  The translation or origin-shift part p of a crystallographic affine transformation, represented as three exact rational values serialized as JSON numbers or strings.
+x-optimade-unit: "inapplicable"
+items:
+  x-optimade-type: "string"
+  x-optimade-unit: "inapplicable"
+  type:
+    - "string"

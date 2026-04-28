@@ -1,5 +1,5 @@
 $$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://example.org/schemas/v0.1/properties/structures/_exmpl_cell_volume"
+$id: "https://schemas.anyterial.org/v0.1.0/properties/structures/_exmpl_cell_volume"
 title: "Cell volume"
 $comment: "This is an example of a definition-provider property definition."
 x-optimade-type: "float"

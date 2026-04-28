@@ -1,0 +1,17 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/frobenius_schur_indicator"
+title: "Frobenius Schur Indicator"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "integer"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.3"
+  name: "frobenius_schur_indicator"
+  label: "frobenius_schur_indicator_symmetry"
+type:
+  - "integer"
+  - "null"
+description: |-
+  The `frobenius_schur_indicator` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"

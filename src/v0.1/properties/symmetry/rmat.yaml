@@ -1,0 +1,22 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/rmat"
+title: "Symmetry operation rotation matrix"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "list"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.3"
+  name: "rmat"
+  label: "rmat_symmetry"
+type:
+  - "array"
+  - "null"
+description: |-
+  The linear part of a symmetry operation or same-setting affine normalizer operation, represented as a 3 by 3 matrix of exact integer or rational values serialized as JSON numbers or strings.
+x-optimade-unit: "inapplicable"
+items:
+  x-optimade-type: "string"
+  x-optimade-unit: "inapplicable"
+  type:
+    - "string"

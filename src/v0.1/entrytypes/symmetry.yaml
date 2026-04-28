@@ -1,0 +1,1355 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/entrytype_definition"
+$id: "https://schemas.anyterial.se/v0.1/entrytypes/symmetry"
+type: object
+title: "Anyterial symmetry data-generator fields"
+x-optimade-definition:
+  kind: "entrytype"
+  format: "1.3"
+  version: "0.1.0"
+  name: "symmetry"
+  label: "symmetry_entrytype_anyterial"
+properties:
+  id:
+    $$inherit: "/defs/v1.2/properties/core/id"
+    x-optimade-requirements:
+      support: "must"
+      sortable: true
+      query-support: "all mandatory"
+      response-level: "always"
+  type:
+    $$inherit: "/defs/v1.2/properties/core/type"
+    x-optimade-requirements:
+      support: "must"
+      sortable: true
+      query-support: "all mandatory"
+      response-level: "always"
+  immutable_id:
+    $$inherit: "/defs/v1.2/properties/core/immutable_id"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "all mandatory"
+      response-level: "may"
+  last_modified:
+    $$inherit: "/defs/v1.2/properties/core/last_modified"
+    x-optimade-requirements:
+      support: "should"
+      sortable: false
+      query-support: "all mandatory"
+      response-level: "must"
+  pmat:
+    $$inherit: "/properties/symmetry/pmat"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  pvec:
+    $$inherit: "/properties/symmetry/pvec"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  rmat:
+    $$inherit: "/properties/symmetry/rmat"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  tvec:
+    $$inherit: "/properties/symmetry/tvec"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  rmat_det:
+    $$inherit: "/properties/symmetry/rmat_det"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  rmat_is_orthogonal:
+    $$inherit: "/properties/symmetry/rmat_is_orthogonal"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  affine_images:
+    $$inherit: "/properties/symmetry/affine_images"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  affine_normalizer:
+    $$inherit: "/properties/symmetry/affine_normalizer"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  affine_normalizer_cosets:
+    $$inherit: "/properties/symmetry/affine_normalizer_cosets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  algebraic:
+    $$inherit: "/properties/symmetry/algebraic"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  ascii:
+    $$inherit: "/properties/symmetry/ascii"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu:
+    $$inherit: "/properties/symmetry/asu"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_ascii:
+    $$inherit: "/properties/symmetry/asu_ascii"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_latex:
+    $$inherit: "/properties/symmetry/asu_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_shape_only_ascii:
+    $$inherit: "/properties/symmetry/asu_shape_only_ascii"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_shape_only_latex:
+    $$inherit: "/properties/symmetry/asu_shape_only_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_shape_only_unicode:
+    $$inherit: "/properties/symmetry/asu_shape_only_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  asu_unicode:
+    $$inherit: "/properties/symmetry/asu_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  axis:
+    $$inherit: "/properties/symmetry/axis"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  backward_lift_criteria:
+    $$inherit: "/properties/symmetry/backward_lift_criteria"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  baernighausen:
+    $$inherit: "/properties/symmetry/baernighausen"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  base_symbol:
+    $$inherit: "/properties/symmetry/base_symbol"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  basis_linear:
+    $$inherit: "/properties/symmetry/basis_linear"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  basis_quadratic:
+    $$inherit: "/properties/symmetry/basis_quadratic"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  basis_rotation:
+    $$inherit: "/properties/symmetry/basis_rotation"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  basis_vectors:
+    $$inherit: "/properties/symmetry/basis_vectors"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  bounds:
+    $$inherit: "/properties/symmetry/bounds"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  candidate_set:
+    $$inherit: "/properties/symmetry/candidate_set"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  candidate_sets:
+    $$inherit: "/properties/symmetry/candidate_sets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  cctbx_fft_grid_factors:
+    $$inherit: "/properties/symmetry/cctbx_fft_grid_factors"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  centering_translations:
+    $$inherit: "/properties/symmetry/centering_translations"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  centering_translations_xyz:
+    $$inherit: "/properties/symmetry/centering_translations_xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  character_table_complex:
+    $$inherit: "/properties/symmetry/character_table_complex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  character_table_real:
+    $$inherit: "/properties/symmetry/character_table_real"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  characters:
+    $$inherit: "/properties/symmetry/characters"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  coeffs:
+    $$inherit: "/properties/symmetry/coeffs"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  compatible_systems:
+    $$inherit: "/properties/symmetry/compatible_systems"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  condition:
+    $$inherit: "/properties/symmetry/condition"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  conjugacy_classes:
+    $$inherit: "/properties/symmetry/conjugacy_classes"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  const:
+    $$inherit: "/properties/symmetry/const"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  continuous_euclidean_normalizer:
+    $$inherit: "/properties/symmetry/continuous_euclidean_normalizer"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  continuous_normalizer:
+    $$inherit: "/properties/symmetry/continuous_normalizer"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  coordinate_system:
+    $$inherit: "/properties/symmetry/coordinate_system"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  criteria:
+    $$inherit: "/properties/symmetry/criteria"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  cuts:
+    $$inherit: "/properties/symmetry/cuts"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  det_abs:
+    $$inherit: "/properties/symmetry/det_abs"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  dimension:
+    $$inherit: "/properties/symmetry/dimension"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  entries:
+    $$inherit: "/properties/symmetry/entries"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  euclidean:
+    $$inherit: "/properties/symmetry/euclidean"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  euclidean_normalizer:
+    $$inherit: "/properties/symmetry/euclidean_normalizer"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  first_orbit:
+    $$inherit: "/properties/symmetry/first_orbit"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  first_orbit_ita:
+    $$inherit: "/properties/symmetry/first_orbit_ita"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  frobenius_schur_indicator:
+    $$inherit: "/properties/symmetry/frobenius_schur_indicator"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_aliases:
+    $$inherit: "/properties/symmetry/hall_aliases"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_aliases_html:
+    $$inherit: "/properties/symmetry/hall_aliases_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_aliases_latex:
+    $$inherit: "/properties/symmetry/hall_aliases_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_aliases_unicode:
+    $$inherit: "/properties/symmetry/hall_aliases_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_entry:
+    $$inherit: "/properties/symmetry/hall_entry"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_html:
+    $$inherit: "/properties/symmetry/hall_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_latex:
+    $$inherit: "/properties/symmetry/hall_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hall_unicode:
+    $$inherit: "/properties/symmetry/hall_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  harker_planes:
+    $$inherit: "/properties/symmetry/harker_planes"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hasfreedom:
+    $$inherit: "/properties/symmetry/hasfreedom"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_cctbx_universal:
+    $$inherit: "/properties/symmetry/hm_cctbx_universal"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_aliases:
+    $$inherit: "/properties/symmetry/hm_extended_aliases"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_aliases_html:
+    $$inherit: "/properties/symmetry/hm_extended_aliases_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_aliases_latex:
+    $$inherit: "/properties/symmetry/hm_extended_aliases_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_aliases_unicode:
+    $$inherit: "/properties/symmetry/hm_extended_aliases_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_html:
+    $$inherit: "/properties/symmetry/hm_extended_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_latex:
+    $$inherit: "/properties/symmetry/hm_extended_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_old:
+    $$inherit: "/properties/symmetry/hm_extended_old"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_extended_unicode:
+    $$inherit: "/properties/symmetry/hm_extended_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_aliases:
+    $$inherit: "/properties/symmetry/hm_full_aliases"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_aliases_html:
+    $$inherit: "/properties/symmetry/hm_full_aliases_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_aliases_latex:
+    $$inherit: "/properties/symmetry/hm_full_aliases_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_aliases_unicode:
+    $$inherit: "/properties/symmetry/hm_full_aliases_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_html:
+    $$inherit: "/properties/symmetry/hm_full_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_latex:
+    $$inherit: "/properties/symmetry/hm_full_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_old:
+    $$inherit: "/properties/symmetry/hm_full_old"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_std:
+    $$inherit: "/properties/symmetry/hm_full_std"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_std_html:
+    $$inherit: "/properties/symmetry/hm_full_std_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_std_latex:
+    $$inherit: "/properties/symmetry/hm_full_std_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_std_unicode:
+    $$inherit: "/properties/symmetry/hm_full_std_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_full_unicode:
+    $$inherit: "/properties/symmetry/hm_full_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_aliases:
+    $$inherit: "/properties/symmetry/hm_short_aliases"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_aliases_html:
+    $$inherit: "/properties/symmetry/hm_short_aliases_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_aliases_latex:
+    $$inherit: "/properties/symmetry/hm_short_aliases_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_aliases_unicode:
+    $$inherit: "/properties/symmetry/hm_short_aliases_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_html:
+    $$inherit: "/properties/symmetry/hm_short_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_latex:
+    $$inherit: "/properties/symmetry/hm_short_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_old:
+    $$inherit: "/properties/symmetry/hm_short_old"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_std:
+    $$inherit: "/properties/symmetry/hm_short_std"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_std_html:
+    $$inherit: "/properties/symmetry/hm_short_std_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_std_latex:
+    $$inherit: "/properties/symmetry/hm_short_std_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_std_unicode:
+    $$inherit: "/properties/symmetry/hm_short_std_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_short_unicode:
+    $$inherit: "/properties/symmetry/hm_short_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  hm_symbol:
+    $$inherit: "/properties/symmetry/hm_symbol"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  im:
+    $$inherit: "/properties/symmetry/im"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  inclusive:
+    $$inherit: "/properties/symmetry/inclusive"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  index:
+    $$inherit: "/properties/symmetry/index"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_centric:
+    $$inherit: "/properties/symmetry/is_centric"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_centrosymmetric:
+    $$inherit: "/properties/symmetry/is_centrosymmetric"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_chiral:
+    $$inherit: "/properties/symmetry/is_chiral"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_enantiomorphic:
+    $$inherit: "/properties/symmetry/is_enantiomorphic"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_proper:
+    $$inherit: "/properties/symmetry/is_proper"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  is_reference_setting:
+    $$inherit: "/properties/symmetry/is_reference_setting"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  isomorphic_subgroups:
+    $$inherit: "/properties/symmetry/isomorphic_subgroups"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  it_number_enantiomorphic:
+    $$inherit: "/properties/symmetry/it_number_enantiomorphic"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  items:
+    $$inherit: "/properties/symmetry/items"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  k_subtype:
+    $$inherit: "/properties/symmetry/k_subtype"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  kind:
+    $$inherit: "/properties/symmetry/kind"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  label:
+    $$inherit: "/properties/symmetry/label"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  label_latex:
+    $$inherit: "/properties/symmetry/label_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  label_unicode:
+    $$inherit: "/properties/symmetry/label_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  latex:
+    $$inherit: "/properties/symmetry/latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  lhs:
+    $$inherit: "/properties/symmetry/lhs"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  matrix:
+    $$inherit: "/properties/symmetry/matrix"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  max_abs_linear_entry:
+    $$inherit: "/properties/symmetry/max_abs_linear_entry"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  members:
+    $$inherit: "/properties/symmetry/members"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  modulus:
+    $$inherit: "/properties/symmetry/modulus"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  multiplicity:
+    $$inherit: "/properties/symmetry/multiplicity"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_centering_translations:
+    $$inherit: "/properties/symmetry/n_centering_translations"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_conjugacy_classes:
+    $$inherit: "/properties/symmetry/n_conjugacy_classes"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_coset_representatives:
+    $$inherit: "/properties/symmetry/n_coset_representatives"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_cosets:
+    $$inherit: "/properties/symmetry/n_cosets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_linear_parts:
+    $$inherit: "/properties/symmetry/n_linear_parts"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_orthogonal_cosets:
+    $$inherit: "/properties/symmetry/n_orthogonal_cosets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_pointgroup_symops:
+    $$inherit: "/properties/symmetry/n_pointgroup_symops"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_raw_candidates:
+    $$inherit: "/properties/symmetry/n_raw_candidates"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_symops:
+    $$inherit: "/properties/symmetry/n_symops"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  n_unique_candidates:
+    $$inherit: "/properties/symmetry/n_unique_candidates"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  normal:
+    $$inherit: "/properties/symmetry/normal"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  normalizer_kind:
+    $$inherit: "/properties/symmetry/normalizer_kind"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  op:
+    $$inherit: "/properties/symmetry/op"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  op_axis:
+    $$inherit: "/properties/symmetry/op_axis"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  op_type:
+    $$inherit: "/properties/symmetry/op_type"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  operation_kind:
+    $$inherit: "/properties/symmetry/operation_kind"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orbit_affine:
+    $$inherit: "/properties/symmetry/orbit_affine"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orbit_mod_centering_affine:
+    $$inherit: "/properties/symmetry/orbit_mod_centering_affine"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orbit_mod_centering_xyz:
+    $$inherit: "/properties/symmetry/orbit_mod_centering_xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orbit_xyz:
+    $$inherit: "/properties/symmetry/orbit_xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  order:
+    $$inherit: "/properties/symmetry/order"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  origin_shift:
+    $$inherit: "/properties/symmetry/origin_shift"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orthogonal_affine_normalizer:
+    $$inherit: "/properties/symmetry/orthogonal_affine_normalizer"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  orthogonal_affine_normalizer_cosets:
+    $$inherit: "/properties/symmetry/orthogonal_affine_normalizer_cosets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  point:
+    $$inherit: "/properties/symmetry/point"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  pointgroups:
+    $$inherit: "/properties/symmetry/pointgroups"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  re:
+    $$inherit: "/properties/symmetry/re"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  relation_details:
+    $$inherit: "/properties/symmetry/relation_details"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  representation:
+    $$inherit: "/properties/symmetry/representation"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  representative:
+    $$inherit: "/properties/symmetry/representative"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  rhs:
+    $$inherit: "/properties/symmetry/rhs"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  roles:
+    $$inherit: "/properties/symmetry/roles"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  rot_type:
+    $$inherit: "/properties/symmetry/rot_type"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  schoenflies_html:
+    $$inherit: "/properties/symmetry/schoenflies_html"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  schoenflies_latex:
+    $$inherit: "/properties/symmetry/schoenflies_latex"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  schoenflies_unicode:
+    $$inherit: "/properties/symmetry/schoenflies_unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  screw_glide:
+    $$inherit: "/properties/symmetry/screw_glide"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  seminvariant:
+    $$inherit: "/properties/symmetry/seminvariant"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  sense:
+    $$inherit: "/properties/symmetry/sense"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  setting:
+    $$inherit: "/properties/symmetry/setting"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  setting_it_nc:
+    $$inherit: "/properties/symmetry/setting_it_nc"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  setting_it_nc_aliases:
+    $$inherit: "/properties/symmetry/setting_it_nc_aliases"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  setting_plaintext:
+    $$inherit: "/properties/symmetry/setting_plaintext"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  shape_only_cuts:
+    $$inherit: "/properties/symmetry/shape_only_cuts"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  sitesym:
+    $$inherit: "/properties/symmetry/sitesym"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  size:
+    $$inherit: "/properties/symmetry/size"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  space_group:
+    $$inherit: "/properties/symmetry/space_group"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  spacegroups:
+    $$inherit: "/properties/symmetry/spacegroups"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  spglib_hall:
+    $$inherit: "/properties/symmetry/spglib_hall"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  spglib_hall_numbers:
+    $$inherit: "/properties/symmetry/spglib_hall_numbers"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  structure_seminvariants:
+    $$inherit: "/properties/symmetry/structure_seminvariants"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  subgroup_type:
+    $$inherit: "/properties/symmetry/subgroup_type"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  symops:
+    $$inherit: "/properties/symmetry/symops"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  symops_generators:
+    $$inherit: "/properties/symmetry/symops_generators"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  symops_generators_xyz:
+    $$inherit: "/properties/symmetry/symops_generators_xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  symops_representative:
+    $$inherit: "/properties/symmetry/symops_representative"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  symops_representative_xyz:
+    $$inherit: "/properties/symmetry/symops_representative_xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  target:
+    $$inherit: "/properties/symmetry/target"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  to_hall:
+    $$inherit: "/properties/symmetry/to_hall"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  to_hall_symbol:
+    $$inherit: "/properties/symmetry/to_hall_symbol"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  type:
+    $$inherit: "/properties/symmetry/type"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  unicode:
+    $$inherit: "/properties/symmetry/unicode"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  vector:
+    $$inherit: "/properties/symmetry/vector"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  wyckoff:
+    $$inherit: "/properties/symmetry/wyckoff"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  wyckoff_sets:
+    $$inherit: "/properties/symmetry/wyckoff_sets"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  wyckoff_splitting:
+    $$inherit: "/properties/symmetry/wyckoff_splitting"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"
+  xyz:
+    $$inherit: "/properties/symmetry/xyz"
+    x-optimade-requirements:
+      support: "may"
+      sortable: false
+      query-support: "none"
+      response-level: "may"

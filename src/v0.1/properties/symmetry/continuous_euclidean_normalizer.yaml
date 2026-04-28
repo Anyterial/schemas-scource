@@ -1,0 +1,18 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/continuous_euclidean_normalizer"
+title: "Continuous Euclidean Normalizer"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "dictionary"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.3"
+  name: "continuous_euclidean_normalizer"
+  label: "continuous_euclidean_normalizer_symmetry"
+type:
+  - "object"
+  - "null"
+description: |-
+  The `continuous_euclidean_normalizer` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"
+properties: {}

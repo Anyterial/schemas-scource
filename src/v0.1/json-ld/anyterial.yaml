@@ -1,0 +1,11 @@
+'@context':
+
+  id: "@id"
+  type: "@type"
+
+  data: "@graph"
+  attributes: "@nest"
+
+  symmetry:
+    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/symmetry"
+    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/symmetry.json"

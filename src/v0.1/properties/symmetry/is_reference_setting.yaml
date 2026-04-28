@@ -1,0 +1,17 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/is_reference_setting"
+title: "Is Reference Setting"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "boolean"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.3"
+  name: "is_reference_setting"
+  label: "is_reference_setting_symmetry"
+type:
+  - "boolean"
+  - "null"
+description: |-
+  The `is_reference_setting` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
+x-optimade-unit: "inapplicable"

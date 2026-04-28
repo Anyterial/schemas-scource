@@ -1,0 +1,17 @@
+$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
+$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/hall_latex"
+title: "Hall symbol LaTeX rendering"
+$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
+x-optimade-type: "string"
+x-optimade-definition:
+  kind: "property"
+  version: "0.1.0"
+  format: "1.3"
+  name: "hall_latex"
+  label: "hall_latex_symmetry"
+type:
+  - "string"
+  - "null"
+description: |-
+  A LaTeX rendering of the Hall symbol.
+x-optimade-unit: "inapplicable"

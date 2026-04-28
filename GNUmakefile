@@ -15,11 +15,11 @@ all: schemas
 # Path to the process_schemas program
 PROCESS_SCHEMAS=dependencies/submodules/optimade-property-tools/bin/process_schemas
 # The base of the URI for the generated property definitions
-BASEID=https://schemas.anyterial.org/v0.1.0/
+BASEID=https://schemas.anyterial.se/v0.1/
 # The versioned directory being processed
-BASEDIR=src/v0.1.0
+BASEDIR=src/v0.1
 # The versions of the meta-schemas to use
-META_SCHEMA_VER=v1.2
+META_SCHEMAS_VER=v1.3 v1.2
 
 #################################
 # Advanced configuation options #
@@ -28,7 +28,7 @@ META_SCHEMA_VER=v1.2
 # Path to the OPTIMADE schemas repo
 OPTIMADE_SCHEMAS_DIR=dependencies/submodules/schemas
 # Path to the meta-schemas to use
-META_SCHEMA_PATH=$(OPTIMADE_SCHEMAS_DIR)/meta/$(META_SCHEMA_VER)
+META_SCHEMA_PATHS := $(foreach ver,$(META_SCHEMAS_VER),$(OPTIMADE_SCHEMAS_DIR)/meta/$(ver))
 # Add the OPTIMADE schemas repo as a path relative to which resolve $$inherit
 RESOLVE_PATHS_ARGS=--resolve-path $(OPTIMADE_SCHEMAS_DIR)
 
@@ -56,7 +56,7 @@ endif
 EXT_SCHEMAS := $(filter-out dependencies/submodules/optimade-property-tools/external/json-schema/LICENSE, $(wildcard dependencies/submodules/optimade-property-tools/external/json-schema/*))
 EXT_SCHEMAS_ARGS := $(foreach schema,$(EXT_SCHEMAS),--schema $(schema))
 
-META_SCHEMAS_JSON := $(wildcard $(META_SCHEMA_PATH)/optimade/*.json)
+META_SCHEMAS_JSON := $(foreach path,$(META_SCHEMA_PATHS),$(wildcard $(path)/optimade/*.json))
 META_SCHEMAS_ARGS := $(foreach schema,$(META_SCHEMAS_JSON),--schema $(schema))
 
 INDEXES := $(wildcard src/*)

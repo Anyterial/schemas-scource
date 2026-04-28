@@ -1,17 +1,22 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/setting"
-title: "Setting"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "string"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/setting
+title: Setting
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "setting"
-  label: "setting_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: setting
+  label: setting_symmetry
 type:
-  - "string"
-  - "null"
+- string
+- 'null'
 description: |-
-  The `setting` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
-x-optimade-unit: "inapplicable"
+  Setting suffix or setting annotation extracted from the cctbx universal Hermann-Mauguin symbol.
+
+  This value is a compact textual description of the coordinate setting portion of the cctbx symbol, for example an origin choice or axis-setting annotation. It is primarily an auxiliary generator field and SHOULD NOT be used as a substitute for the International Tables `setting_it_nc` identifier.
+x-optimade-unit: inapplicable
+examples:
+- (c,a,b)
+- (b,c,a)

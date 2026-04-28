@@ -1,17 +1,28 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_old"
-title: "Hermann-Mauguin Short Old"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "integer"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_old
+title: Hermann-Mauguin Short Old
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "hm_short_old"
-  label: "hm_short_old_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_short_old
+  label: hm_short_old_symmetry
 type:
-  - "integer"
-  - "null"
+- string
+- 'null'
 description: |-
-  The `hm_short_old` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
-x-optimade-unit: "inapplicable"
+  The older short Hermann-Mauguin symbol retained as an alias for symbols superseded by newer `e`-glide notation.
+
+  Hermann-Mauguin symbols describe crystallographic space groups using lattice-centering symbols and symmetry-element symbols. The setting-specific fields describe the concrete Hall/International Tables setting of the current record. The `*_std` fields describe the IT-standard setting for the space-group type and can therefore be identical across multiple settings with the same IT number.
+
+  **Requirements/Conventions**:
+
+  - The plain string form uses spaces between symbol parts where this is needed for unambiguous parsing.
+  - The extended symbol MAY contain multiple lines; line breaks and spacing encode the alignment used in International Tables extended symbols.
+  - Older-symbol fields are present only where an older International Tables form is retained for comparison or aliasing.
+x-optimade-unit: inapplicable
+examples:
+- A b m 2
+- C 2 m b

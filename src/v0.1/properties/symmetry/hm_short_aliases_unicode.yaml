@@ -1,17 +1,28 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_aliases_unicode"
-title: "Hermann-Mauguin Short Aliases Unicode"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "integer"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_aliases_unicode
+title: Hermann-Mauguin Short Aliases Unicode
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "hm_short_aliases_unicode"
-  label: "hm_short_aliases_unicode_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_short_aliases_unicode
+  label: hm_short_aliases_unicode_symmetry
 type:
-  - "integer"
-  - "null"
-description: |-
-  The `hm_short_aliases_unicode` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
-x-optimade-unit: "inapplicable"
+- array
+- 'null'
+description: Unicode renderings corresponding element-by-element to `hm_short_aliases`.
+x-optimade-unit: inapplicable
+examples:
+- - Ccca
+  - Cccb
+- - Abaa
+  - Acaa
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

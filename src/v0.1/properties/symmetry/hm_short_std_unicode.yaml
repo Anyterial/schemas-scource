@@ -1,17 +1,19 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_std_unicode"
-title: "Hermann-Mauguin Short Std Unicode"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "string"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/hm_short_std_unicode
+title: Hermann-Mauguin Short Std Unicode
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "hm_short_std_unicode"
-  label: "hm_short_std_unicode_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_short_std_unicode
+  label: hm_short_std_unicode_symmetry
 type:
-  - "string"
-  - "null"
-description: |-
-  The `hm_short_std_unicode` field used in the Anyterial crystallographic symmetry data-generator JSON datasets.
-x-optimade-unit: "inapplicable"
+- string
+- 'null'
+description: Unicode rendering of `hm_short_std`. This is a plain-text display approximation of the corresponding Hermann-Mauguin symbol and is not intended to replace the ASCII symbol for machine comparison.
+x-optimade-unit: inapplicable
+examples:
+- P1
+- P1̅

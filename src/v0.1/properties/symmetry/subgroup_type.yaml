@@ -1,17 +1,19 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/subgroup_type"
-title: "Maximal subgroup type"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "string"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/subgroup_type
+title: Maximal subgroup type
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "subgroup_type"
-  label: "subgroup_type_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: subgroup_type
+  label: subgroup_type_symmetry
 type:
-  - "string"
-  - "null"
-description: |-
-  The International Tables maximal subgroup class: t for translationengleiche or k for klassengleiche.
-x-optimade-unit: "inapplicable"
+- string
+- 'null'
+description: 'International Tables maximal subgroup class: `t` for translationengleiche or `k` for klassengleiche.'
+x-optimade-unit: inapplicable
+examples:
+- k
+- t

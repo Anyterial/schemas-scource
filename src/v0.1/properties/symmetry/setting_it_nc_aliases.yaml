@@ -1,17 +1,26 @@
-$$schema: "https://schemas.optimade.org/meta/v1.2/optimade/property_definition"
-$id: "https://schemas.anyterial.se/v0.1/properties/symmetry/setting_it_nc_aliases"
-title: "Setting It Nc Aliases"
-$comment: "Generated from data-generators JSON-LD fields without external definition URLs."
-x-optimade-type: "integer"
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/symmetry/setting_it_nc_aliases
+title: International Tables setting-code aliases
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
 x-optimade-definition:
-  kind: "property"
-  version: "0.1.0"
-  format: "1.3"
-  name: "setting_it_nc_aliases"
-  label: "setting_it_nc_aliases_symmetry"
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: setting_it_nc_aliases
+  label: setting_it_nc_aliases_symmetry
 type:
-  - "integer"
-  - "null"
-description: |-
-  Alternative International Tables setting identifiers that resolve to the same Hall setting.
-x-optimade-unit: "inapplicable"
+- array
+- 'null'
+description: Alternative International Tables `n:c` setting identifiers that refer to the same Hall setting or are otherwise treated as aliases of `setting_it_nc` by the generator. This field is used only when the source tables expose more than one conventional label for the same generated setting.
+x-optimade-unit: inapplicable
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable
+examples:
+- - 68:1ba-c
+- - 68:1-cba

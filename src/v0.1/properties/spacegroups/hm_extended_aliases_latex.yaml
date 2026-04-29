@@ -1,0 +1,26 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hm_extended_aliases_latex
+title: Hermann-Mauguin Extended Aliases Latex
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_extended_aliases_latex
+  label: hm_extended_aliases_latex_spacegroups
+type:
+- array
+- 'null'
+description: LaTeX renderings corresponding element-by-element to `hm_extended_aliases`.
+x-optimade-unit: inapplicable
+examples:
+- - \begin{matrix}\mathit{A} & \mathit{b} & \mathit{m} & 2 \\  & \mathit{c} & \mathit{c} & 2_{1}\end{matrix}
+- - \begin{matrix}\mathit{B} & \mathit{m} & \mathit{a} & 2 \\  & \mathit{c} & \mathit{c} & 2_{1}\end{matrix}
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

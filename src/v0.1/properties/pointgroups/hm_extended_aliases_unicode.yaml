@@ -1,0 +1,30 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/hm_extended_aliases_unicode
+title: Hermann-Mauguin Extended Aliases Unicode
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_extended_aliases_unicode
+  label: hm_extended_aliases_unicode_pointgroups
+type:
+- array
+- 'null'
+description: Unicode renderings corresponding element-by-element to `hm_extended_aliases`.
+x-optimade-unit: inapplicable
+examples:
+- - |-
+    Abm2
+     cc2₁
+- - |-
+    Bma2
+     cc2₁
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

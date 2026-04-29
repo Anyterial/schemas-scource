@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/asu_shape_only_latex
+title: Asu Shape Only Latex
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: asu_shape_only_latex
+  label: asu_shape_only_latex_spacegroups
+type:
+- string
+- 'null'
+description: LaTeX rendering of the geometric shape part of the asymmetric-unit restrictions, without conditional refinements.
+x-optimade-unit: inapplicable
+examples:
+- x \ge 0; x \le 1; y \ge 0; y \le 1; z \ge 0; z \le 1
+- x \ge 0; x \le \frac{1}{2}; y \ge 0; y \le 1; z \ge 0; z \le 1

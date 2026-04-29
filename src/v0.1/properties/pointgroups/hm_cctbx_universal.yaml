@@ -1,0 +1,22 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/hm_cctbx_universal
+title: Hermann-Mauguin Cctbx Universal
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_cctbx_universal
+  label: hm_cctbx_universal_pointgroups
+type:
+- string
+- 'null'
+description: |-
+  Universal Hermann-Mauguin symbol returned by cctbx for this setting.
+
+  This field records the cctbx-internal universal symbol used during generation. It is useful for diagnostics and for tracing generator behavior, but it is not the International Tables preferred symbol. Prefer `hm_short`, `hm_full`, and `hm_extended` for table-facing symbol data.
+x-optimade-unit: inapplicable
+examples:
+- P 1
+- P -1

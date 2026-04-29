@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/order
+title: Order
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: integer
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: order
+  label: order_pointgroups
+type:
+- integer
+- 'null'
+description: Order of the point group, i.e. the number of operations in the finite point group.
+x-optimade-unit: inapplicable
+examples:
+- 1
+- 2

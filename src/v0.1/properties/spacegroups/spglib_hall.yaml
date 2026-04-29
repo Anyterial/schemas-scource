@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/spglib_hall
+title: Spglib Hall
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: spglib_hall
+  label: spglib_hall_spacegroups
+type:
+- string
+- 'null'
+description: Hall setting selected by spglib for the space-group type or setting, represented as a normalized Hall key.
+x-optimade-unit: inapplicable
+examples:
+- P 1
+- -P 1

@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/to_hall_symbol
+title: To Hall Symbol
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: to_hall_symbol
+  label: to_hall_symbol_pointgroups
+type:
+- string
+- 'null'
+description: Display Hall symbol corresponding to `to_hall`.
+x-optimade-unit: inapplicable
+examples:
+- p 1
+- -p 1

@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/n_coset_representatives
+title: N Coset Representatives
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: integer
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: n_coset_representatives
+  label: n_coset_representatives_pointgroups
+type:
+- integer
+- 'null'
+description: Number of nontrivial coset representatives retained after deduplication modulo the space group.
+x-optimade-unit: inapplicable
+examples:
+- 47
+- 23

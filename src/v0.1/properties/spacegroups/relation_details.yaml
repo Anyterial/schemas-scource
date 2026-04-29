@@ -1,0 +1,36 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/relation_details
+title: Relation Details
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: relation_details
+  label: relation_details_spacegroups
+type:
+- object
+- 'null'
+description: |-
+  Detailed metadata for generated subgroup relations.
+
+  For maximal non-isomorphic subgroup tables, this map contains one record per generated relation. Each record identifies the subgroup, the subgroup index, and the International Tables subgroup class information.
+
+  **Requirements/Conventions**:
+
+  - `index` is the subgroup index.
+  - `subgroup_type` distinguishes translationengleiche (`t`) and klassengleiche (`k`) maximal subgroups.
+  - `k_subtype` further classifies klassengleiche subgroups when applicable.
+x-optimade-unit: inapplicable
+properties: {}
+examples:
+- '5':
+  - it_number: 1
+    index: 2
+    subgroup_type: t
+    k_subtype: null
+  - it_number: 3
+    index: 2
+    subgroup_type: k
+    k_subtype: loss_of_centering_translation

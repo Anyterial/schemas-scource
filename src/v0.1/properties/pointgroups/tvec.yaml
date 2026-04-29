@@ -1,0 +1,30 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/tvec
+title: Symmetry operation translation vector
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: tvec
+  label: tvec_pointgroups
+type:
+- array
+- 'null'
+description: Translation vector of a same-setting symmetry operation or affine normalizer operation, represented in fractional coordinates.
+x-optimade-unit: inapplicable
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One exact vector component.
+  x-optimade-unit: inapplicable
+examples:
+- - '0'
+  - '0'
+  - '0'
+- - 1/2
+  - 1/2
+  - '0'

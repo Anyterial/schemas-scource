@@ -1,0 +1,34 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hall_aliases
+title: Hall Aliases
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hall_aliases
+  label: hall_aliases_spacegroups
+type:
+- array
+- 'null'
+description: |-
+  Alternate ASCII Hall symbols or Hall-setting keys associated with the same generated setting.
+
+  Aliases capture duplicate or equivalent Hall-table forms that identify the same setting in the generated tables.
+
+  **Requirements/Conventions**:
+
+  - The preferred display symbol is stored in `hall`.
+  - Alias values SHOULD NOT be assumed to be unique across all settings without also considering the setting key.
+x-optimade-unit: inapplicable
+examples:
+- - A -2yac
+- - C -2ybc
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

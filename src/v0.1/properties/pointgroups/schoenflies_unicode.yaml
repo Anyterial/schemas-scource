@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/schoenflies_unicode
+title: Schoenflies Unicode
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: schoenflies_unicode
+  label: schoenflies_unicode_pointgroups
+type:
+- string
+- 'null'
+description: UNICODE rendering of the Schoenflies point-group symbol associated with the space group or point group. The ASCII/CIF-style Schoenflies symbol is provided by `schoenflies` when present.
+x-optimade-unit: inapplicable
+examples:
+- C₁¹
+- Cᵢ¹

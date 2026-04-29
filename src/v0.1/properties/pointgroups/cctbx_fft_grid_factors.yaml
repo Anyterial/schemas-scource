@@ -1,0 +1,78 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/cctbx_fft_grid_factors
+title: Cctbx Fft Grid Factors
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: cctbx_fft_grid_factors
+  label: cctbx_fft_grid_factors_pointgroups
+type:
+- object
+- 'null'
+description: FFT grid-factor recommendations derived from cctbx for the space group, its structure seminvariants, and its Euclidean normalizer.
+x-optimade-unit: inapplicable
+properties:
+  space_group:
+    x-optimade-type: list
+    type:
+    - array
+    - 'null'
+    description: FFT grid factors arising from the space-group translations.
+    items:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: One grid factor.
+      x-optimade-unit: inapplicable
+    x-optimade-unit: inapplicable
+  seminvariant:
+    x-optimade-type: list
+    type:
+    - array
+    - 'null'
+    description: FFT grid factors arising from structure seminvariants.
+    items:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: One grid factor.
+      x-optimade-unit: inapplicable
+    x-optimade-unit: inapplicable
+  euclidean:
+    x-optimade-type: list
+    type:
+    - array
+    - 'null'
+    description: FFT grid factors arising from Euclidean-normalizer considerations.
+    items:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: One grid factor.
+      x-optimade-unit: inapplicable
+    x-optimade-unit: inapplicable
+examples:
+- space_group:
+  - 1
+  - 1
+  seminvariant:
+  - 1
+  - 1
+  euclidean:
+  - 1
+  - 1
+- space_group:
+  - 1
+  - 1
+  seminvariant:
+  - 2
+  - 2
+  euclidean:
+  - 2
+  - 2

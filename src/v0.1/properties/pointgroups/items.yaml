@@ -1,0 +1,94 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/items
+title: Items
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: items
+  label: items_pointgroups
+type:
+- array
+- 'null'
+description: |-
+  List of records in a compact generated table.
+
+  This property is used for tables whose natural top-level representation is an ordered list rather than a map. In symbol tables it contains one record per generated Hall or International Tables setting. In transform tables it contains one record per transform candidate or transform entry.
+
+  **Requirements/Conventions**:
+
+  - The interpretation of each item is determined by the dataset and by the fields present in the item.
+  - Ordering is deterministic and produced by the corresponding generator.
+x-optimade-unit: inapplicable
+items:
+  x-optimade-type: dictionary
+  type:
+  - object
+  - 'null'
+  description: One item in the containing list-valued dataset.
+  properties: {}
+  x-optimade-unit: inapplicable
+examples:
+- - setting_it_nc: '1'
+    hall: P 1
+    it_number: 1
+    hm_short: P 1
+    hm_full: P 1
+    hm_extended: P 1
+  - setting_it_nc: '2'
+    hall: -P 1
+    it_number: 2
+    hm_short: P -1
+    hm_full: P -1
+    hm_extended: P -1
+  - setting_it_nc: 3:a
+    hall: P 2x
+    it_number: 3
+    hm_short: P 2
+    hm_full: P 2 1 1
+    hm_extended: P 2 1 1
+- - index: 1
+    wyckoff_splitting:
+      a:
+      - - a
+        - x,y,z
+    pmat:
+    - - '1'
+      - '0'
+    - - '0'
+      - '1'
+    pvec:
+    - '0'
+    - '0'
+  - index: 2
+    wyckoff_splitting:
+      a:
+      - - a
+        - x,y,z
+      - - a
+        - x,y,z
+    pmat:
+    - - '1'
+      - '0'
+    - - '0'
+      - '1'
+    pvec:
+    - '0'
+    - '0'
+  - index: 3
+    wyckoff_splitting:
+      a:
+      - - a
+        - x,y,z
+      - - a
+        - x,y,z
+    pmat:
+    - - '1'
+      - '0'
+    - - '0'
+      - '1'
+    pvec:
+    - '0'
+    - '0'

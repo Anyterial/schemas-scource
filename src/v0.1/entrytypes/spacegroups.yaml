@@ -1,0 +1,963 @@
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/entrytype_definition
+$id: https://schemas.anyterial.se/v0.1/entrytypes/spacegroups
+type: object
+title: Anyterial space group symmetry fields
+x-optimade-definition:
+  kind: entrytype
+  format: '1.3'
+  version: 0.1.0
+  name: spacegroups
+  label: spacegroups_entrytype_anyterial
+properties:
+  id:
+    $$inherit: /defs/v1.2/properties/core/id
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  type:
+    $$inherit: /defs/v1.2/properties/core/type
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  immutable_id:
+    $$inherit: /defs/v1.2/properties/core/immutable_id
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: all mandatory
+      response-level: may
+  last_modified:
+    $$inherit: /defs/v1.2/properties/core/last_modified
+    x-optimade-requirements:
+      support: should
+      sortable: false
+      query-support: all mandatory
+      response-level: must
+  affine_images:
+    $$inherit: /properties/spacegroups/affine_images
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_normalizer:
+    $$inherit: /properties/spacegroups/affine_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_normalizer_cosets:
+    $$inherit: /properties/spacegroups/affine_normalizer_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu:
+    $$inherit: /properties/spacegroups/asu
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_ascii:
+    $$inherit: /properties/spacegroups/asu_ascii
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_latex:
+    $$inherit: /properties/spacegroups/asu_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_shape_only_ascii:
+    $$inherit: /properties/spacegroups/asu_shape_only_ascii
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_shape_only_latex:
+    $$inherit: /properties/spacegroups/asu_shape_only_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_shape_only_unicode:
+    $$inherit: /properties/spacegroups/asu_shape_only_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_unicode:
+    $$inherit: /properties/spacegroups/asu_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  backward_lift_criteria:
+    $$inherit: /properties/spacegroups/backward_lift_criteria
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  baernighausen:
+    $$inherit: /properties/spacegroups/baernighausen
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  bravais_type:
+    $$inherit: /properties/spacegroups/bravais_type
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  cctbx_fft_grid_factors:
+    $$inherit: /properties/spacegroups/cctbx_fft_grid_factors
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  centering_translations:
+    $$inherit: /properties/spacegroups/centering_translations
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  centering_translations_xyz:
+    $$inherit: /properties/spacegroups/centering_translations_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  centring_type:
+    $$inherit: /properties/spacegroups/centring_type
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  character_table_complex:
+    $$inherit: /properties/spacegroups/character_table_complex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  character_table_real:
+    $$inherit: /properties/spacegroups/character_table_real
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  conjugacy_classes:
+    $$inherit: /properties/spacegroups/conjugacy_classes
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  continuous_euclidean_normalizer:
+    $$inherit: /properties/spacegroups/continuous_euclidean_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  continuous_normalizer:
+    $$inherit: /properties/spacegroups/continuous_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  crystal_system:
+    $$inherit: /properties/spacegroups/crystal_system
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  entries:
+    $$inherit: /properties/spacegroups/entries
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  euclidean_normalizer:
+    $$inherit: /properties/spacegroups/euclidean_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall:
+    $$inherit: /properties/spacegroups/hall
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_aliases:
+    $$inherit: /properties/spacegroups/hall_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_aliases_html:
+    $$inherit: /properties/spacegroups/hall_aliases_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_aliases_latex:
+    $$inherit: /properties/spacegroups/hall_aliases_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_aliases_unicode:
+    $$inherit: /properties/spacegroups/hall_aliases_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_entry:
+    $$inherit: /properties/spacegroups/hall_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_html:
+    $$inherit: /properties/spacegroups/hall_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_latex:
+    $$inherit: /properties/spacegroups/hall_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_unicode:
+    $$inherit: /properties/spacegroups/hall_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  harker_planes:
+    $$inherit: /properties/spacegroups/harker_planes
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_cctbx_universal:
+    $$inherit: /properties/spacegroups/hm_cctbx_universal
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended:
+    $$inherit: /properties/spacegroups/hm_extended
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_aliases:
+    $$inherit: /properties/spacegroups/hm_extended_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_aliases_html:
+    $$inherit: /properties/spacegroups/hm_extended_aliases_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_aliases_latex:
+    $$inherit: /properties/spacegroups/hm_extended_aliases_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_aliases_unicode:
+    $$inherit: /properties/spacegroups/hm_extended_aliases_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_html:
+    $$inherit: /properties/spacegroups/hm_extended_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_latex:
+    $$inherit: /properties/spacegroups/hm_extended_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_old:
+    $$inherit: /properties/spacegroups/hm_extended_old
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_unicode:
+    $$inherit: /properties/spacegroups/hm_extended_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full:
+    $$inherit: /properties/spacegroups/hm_full
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_aliases:
+    $$inherit: /properties/spacegroups/hm_full_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_aliases_html:
+    $$inherit: /properties/spacegroups/hm_full_aliases_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_aliases_latex:
+    $$inherit: /properties/spacegroups/hm_full_aliases_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_aliases_unicode:
+    $$inherit: /properties/spacegroups/hm_full_aliases_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_html:
+    $$inherit: /properties/spacegroups/hm_full_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_latex:
+    $$inherit: /properties/spacegroups/hm_full_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_old:
+    $$inherit: /properties/spacegroups/hm_full_old
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_std:
+    $$inherit: /properties/spacegroups/hm_full_std
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_std_html:
+    $$inherit: /properties/spacegroups/hm_full_std_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_std_latex:
+    $$inherit: /properties/spacegroups/hm_full_std_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_std_unicode:
+    $$inherit: /properties/spacegroups/hm_full_std_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_unicode:
+    $$inherit: /properties/spacegroups/hm_full_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short:
+    $$inherit: /properties/spacegroups/hm_short
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_aliases:
+    $$inherit: /properties/spacegroups/hm_short_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_aliases_html:
+    $$inherit: /properties/spacegroups/hm_short_aliases_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_aliases_latex:
+    $$inherit: /properties/spacegroups/hm_short_aliases_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_aliases_unicode:
+    $$inherit: /properties/spacegroups/hm_short_aliases_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_html:
+    $$inherit: /properties/spacegroups/hm_short_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_latex:
+    $$inherit: /properties/spacegroups/hm_short_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_old:
+    $$inherit: /properties/spacegroups/hm_short_old
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_std:
+    $$inherit: /properties/spacegroups/hm_short_std
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_std_html:
+    $$inherit: /properties/spacegroups/hm_short_std_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_std_latex:
+    $$inherit: /properties/spacegroups/hm_short_std_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_std_unicode:
+    $$inherit: /properties/spacegroups/hm_short_std_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_unicode:
+    $$inherit: /properties/spacegroups/hm_short_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_symbol:
+    $$inherit: /properties/spacegroups/hm_symbol
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  index:
+    $$inherit: /properties/spacegroups/index
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  is_centric:
+    $$inherit: /properties/spacegroups/is_centric
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  is_centrosymmetric:
+    $$inherit: /properties/spacegroups/is_centrosymmetric
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  is_chiral:
+    $$inherit: /properties/spacegroups/is_chiral
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  is_enantiomorphic:
+    $$inherit: /properties/spacegroups/is_enantiomorphic
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  is_reference_setting:
+    $$inherit: /properties/spacegroups/is_reference_setting
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  isomorphic_subgroups:
+    $$inherit: /properties/spacegroups/isomorphic_subgroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  it_coordinate_system_code:
+    $$inherit: /properties/spacegroups/it_coordinate_system_code
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  it_number:
+    $$inherit: /properties/spacegroups/it_number
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  it_number_enantiomorphic:
+    $$inherit: /properties/spacegroups/it_number_enantiomorphic
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  items:
+    $$inherit: /properties/spacegroups/items
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  k_subtype:
+    $$inherit: /properties/spacegroups/k_subtype
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  laue_class:
+    $$inherit: /properties/spacegroups/laue_class
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_centering_translations:
+    $$inherit: /properties/spacegroups/n_centering_translations
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_conjugacy_classes:
+    $$inherit: /properties/spacegroups/n_conjugacy_classes
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_coset_representatives:
+    $$inherit: /properties/spacegroups/n_coset_representatives
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_cosets:
+    $$inherit: /properties/spacegroups/n_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_linear_parts:
+    $$inherit: /properties/spacegroups/n_linear_parts
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_orthogonal_cosets:
+    $$inherit: /properties/spacegroups/n_orthogonal_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_pointgroup_symops:
+    $$inherit: /properties/spacegroups/n_pointgroup_symops
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_raw_candidates:
+    $$inherit: /properties/spacegroups/n_raw_candidates
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_symops:
+    $$inherit: /properties/spacegroups/n_symops
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_unique_candidates:
+    $$inherit: /properties/spacegroups/n_unique_candidates
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  order:
+    $$inherit: /properties/spacegroups/order
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  orthogonal_affine_normalizer:
+    $$inherit: /properties/spacegroups/orthogonal_affine_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  orthogonal_affine_normalizer_cosets:
+    $$inherit: /properties/spacegroups/orthogonal_affine_normalizer_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  pmat:
+    $$inherit: /properties/spacegroups/pmat
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  point_group:
+    $$inherit: /properties/spacegroups/point_group
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  pointgroups:
+    $$inherit: /properties/spacegroups/pointgroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  pvec:
+    $$inherit: /properties/spacegroups/pvec
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  relation_details:
+    $$inherit: /properties/spacegroups/relation_details
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  rmat:
+    $$inherit: /properties/spacegroups/rmat
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  rmat_det:
+    $$inherit: /properties/spacegroups/rmat_det
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  rmat_is_orthogonal:
+    $$inherit: /properties/spacegroups/rmat_is_orthogonal
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies:
+    $$inherit: /properties/spacegroups/schoenflies
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies_html:
+    $$inherit: /properties/spacegroups/schoenflies_html
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies_latex:
+    $$inherit: /properties/spacegroups/schoenflies_latex
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies_unicode:
+    $$inherit: /properties/spacegroups/schoenflies_unicode
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  setting:
+    $$inherit: /properties/spacegroups/setting
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  setting_it_nc:
+    $$inherit: /properties/spacegroups/setting_it_nc
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  setting_it_nc_aliases:
+    $$inherit: /properties/spacegroups/setting_it_nc_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  setting_plaintext:
+    $$inherit: /properties/spacegroups/setting_plaintext
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  spacegroups:
+    $$inherit: /properties/spacegroups/spacegroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  spglib_hall:
+    $$inherit: /properties/spacegroups/spglib_hall
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  spglib_hall_numbers:
+    $$inherit: /properties/spacegroups/spglib_hall_numbers
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  structure_seminvariants:
+    $$inherit: /properties/spacegroups/structure_seminvariants
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  subgroup_type:
+    $$inherit: /properties/spacegroups/subgroup_type
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops:
+    $$inherit: /properties/spacegroups/symops
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_generators:
+    $$inherit: /properties/spacegroups/symops_generators
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_generators_xyz:
+    $$inherit: /properties/spacegroups/symops_generators_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_representative:
+    $$inherit: /properties/spacegroups/symops_representative
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_representative_xyz:
+    $$inherit: /properties/spacegroups/symops_representative_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_xyz:
+    $$inherit: /properties/spacegroups/symops_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  target:
+    $$inherit: /properties/spacegroups/target
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  to_hall:
+    $$inherit: /properties/spacegroups/to_hall
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  to_hall_symbol:
+    $$inherit: /properties/spacegroups/to_hall_symbol
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  tvec:
+    $$inherit: /properties/spacegroups/tvec
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  wyckoff:
+    $$inherit: /properties/spacegroups/wyckoff
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  wyckoff_sets:
+    $$inherit: /properties/spacegroups/wyckoff_sets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  wyckoff_splitting:
+    $$inherit: /properties/spacegroups/wyckoff_splitting
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may

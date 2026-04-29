@@ -6,6 +6,10 @@
   data: "@graph"
   attributes: "@nest"
 
-  symmetry:
-    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/symmetry"
-    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/symmetry.json"
+  spacegroup:
+    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroup"
+    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroup.json"
+
+  pointgroup:
+    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroup"
+    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroup.json"

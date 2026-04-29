@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hm_extended_html
+title: Hermann-Mauguin Extended Html
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_extended_html
+  label: hm_extended_html_spacegroups
+type:
+- string
+- 'null'
+description: HTML rendering of `hm_extended`. This is an HTML fragment intended to display the corresponding Hermann-Mauguin symbol with typographic features such as italics, subscripts, overlines, and multiline alignment.
+x-optimade-unit: inapplicable
+examples:
+- <i>P</i> 1
+- '<i>P</i> <span style="text-decoration: overline;">1</span>'

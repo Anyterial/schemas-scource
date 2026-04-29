@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/it_number_enantiomorphic
+title: It Number Enantiomorphic
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: integer
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: it_number_enantiomorphic
+  label: it_number_enantiomorphic_pointgroups
+type:
+- integer
+- 'null'
+description: International Tables number of the enantiomorphic partner space group, when one exists. The value is null for space groups without a distinct enantiomorphic partner.
+x-optimade-unit: inapplicable
+examples:
+- 78
+- 76

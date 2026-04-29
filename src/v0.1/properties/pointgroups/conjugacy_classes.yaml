@@ -1,0 +1,139 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/pointgroups/conjugacy_classes
+title: Conjugacy Classes
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: conjugacy_classes
+  label: conjugacy_classes_pointgroups
+type:
+- array
+- 'null'
+description: Conjugacy classes of a crystallographic point group. Each class lists its member operation indices, a representative operation, a conventional class label, and operation-type metadata used by the character tables.
+x-optimade-unit: inapplicable
+items:
+  x-optimade-type: dictionary
+  type:
+  - object
+  - 'null'
+  description: One conjugacy class of a crystallographic point group.
+  properties:
+    label:
+      x-optimade-type: dictionary
+      type:
+      - object
+      - 'null'
+      description: Rendered class label.
+      properties:
+        ascii:
+          x-optimade-type: string
+          type:
+          - string
+          - 'null'
+          description: Plain-text rendering intended for logs, command-line output, or compact display.
+          x-optimade-unit: inapplicable
+        unicode:
+          x-optimade-type: string
+          type:
+          - string
+          - 'null'
+          description: Unicode rendering of the same label.
+          x-optimade-unit: inapplicable
+        latex:
+          x-optimade-type: string
+          type:
+          - string
+          - 'null'
+          description: LaTeX rendering of the same label.
+          x-optimade-unit: inapplicable
+      x-optimade-unit: inapplicable
+    size:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: Number of point-group operations in the class.
+      x-optimade-unit: inapplicable
+    members:
+      x-optimade-type: list
+      type:
+      - array
+      - 'null'
+      description: Indices of operations belonging to this class.
+      items:
+        x-optimade-type: integer
+        type:
+        - integer
+        - 'null'
+        description: Operation index.
+        x-optimade-unit: inapplicable
+      x-optimade-unit: inapplicable
+    representative:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: Index of a representative operation for the class.
+      x-optimade-unit: inapplicable
+    op_type:
+      x-optimade-type: integer
+      type:
+      - integer
+      - 'null'
+      description: Numeric operation type code of the representative.
+      x-optimade-unit: inapplicable
+    op_axis:
+      x-optimade-type: list
+      type:
+      - array
+      - 'null'
+      description: Three integer components.
+      items:
+        x-optimade-type: integer
+        type:
+        - integer
+        - 'null'
+        description: One integer component.
+        x-optimade-unit: inapplicable
+      x-optimade-unit: inapplicable
+  x-optimade-unit: inapplicable
+examples:
+- - label:
+      ascii: E
+      unicode: E
+      latex: E
+    size: 1
+    members:
+    - 0
+    representative: 0
+    op_type: 1
+    op_axis:
+    - 0
+    - 0
+- - label:
+      ascii: E
+      unicode: E
+      latex: E
+    size: 1
+    members:
+    - 0
+    representative: 0
+    op_type: 1
+    op_axis:
+    - 0
+    - 0
+  - label:
+      ascii: i
+      unicode: i
+      latex: i
+    size: 1
+    members:
+    - 1
+    representative: 1
+    op_type: -1
+    op_axis:
+    - 0
+    - 0

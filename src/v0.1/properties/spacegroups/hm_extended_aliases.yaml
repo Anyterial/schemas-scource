@@ -1,0 +1,30 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hm_extended_aliases
+title: Hermann-Mauguin Extended Aliases
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_extended_aliases
+  label: hm_extended_aliases_spacegroups
+type:
+- array
+- 'null'
+description: Alternate ASCII forms of `hm_extended` that are accepted for the same generated setting. The preferred symbol is stored in `hm_extended`.
+x-optimade-unit: inapplicable
+examples:
+- - |-
+    A b m 2
+     c c 21
+- - |-
+    B m a 2
+     c c 21
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

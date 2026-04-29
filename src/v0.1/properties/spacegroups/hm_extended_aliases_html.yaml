@@ -1,0 +1,26 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hm_extended_aliases_html
+title: Hermann-Mauguin Extended Aliases Html
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_extended_aliases_html
+  label: hm_extended_aliases_html_spacegroups
+type:
+- array
+- 'null'
+description: HTML renderings corresponding element-by-element to `hm_extended_aliases`.
+x-optimade-unit: inapplicable
+examples:
+- - <table style="border-collapse:collapse;border-spacing:0;"><tr><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>A</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>b</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>m</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;">2</td></tr><tr><td style="padding:0 0.25em 0 0;vertical-align:top;"></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>c</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>c</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;">2<sub>1</sub></td></tr></table>
+- - <table style="border-collapse:collapse;border-spacing:0;"><tr><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>B</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>m</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>a</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;">2</td></tr><tr><td style="padding:0 0.25em 0 0;vertical-align:top;"></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>c</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;"><i>c</i></td><td style="padding:0 0.25em 0 0;vertical-align:top;">2<sub>1</sub></td></tr></table>
+items:
+  x-optimade-type: string
+  type:
+  - string
+  - 'null'
+  description: One alternate symbol string.
+  x-optimade-unit: inapplicable

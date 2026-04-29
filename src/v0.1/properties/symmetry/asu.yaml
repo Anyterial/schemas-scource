@@ -30,101 +30,8 @@ properties:
     - array
     - 'null'
     description: Complete serialized asymmetric-unit cut tree.
-    items: &id001
-      x-optimade-type: dictionary
-      type:
-      - object
-      - 'null'
-      description: One serialized asymmetric-unit cut or logical cut expression.
-      properties:
-        kind:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: Kind of cut expression, such as a half-space cut or logical combination.
-          x-optimade-unit: inapplicable
-        ascii:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: ASCII rendering of the cut expression.
-          x-optimade-unit: inapplicable
-        xyz:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: Coordinate expression for the cut in x,y,z notation.
-          x-optimade-unit: inapplicable
-        inclusive:
-          x-optimade-type: boolean
-          type:
-          - boolean
-          - 'null'
-          description: Whether the cut boundary is included in this part of the asymmetric unit.
-          x-optimade-unit: inapplicable
-        base_symbol:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: Base symbolic inequality or coordinate label used for the cut.
-          x-optimade-unit: inapplicable
-        normal:
-          x-optimade-type: list
-          type:
-          - array
-          - 'null'
-          description: Normal vector of a half-space cut, with exact components.
-          items:
-            x-optimade-type: string
-            type:
-            - string
-            - 'null'
-            description: One exact normal-vector component.
-            x-optimade-unit: inapplicable
-          x-optimade-unit: inapplicable
-        const:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: Right-hand-side constant of a half-space cut, represented exactly.
-          x-optimade-unit: inapplicable
-        op:
-          x-optimade-type: string
-          type:
-          - string
-          - 'null'
-          description: Logical operator used when the cut expression combines two subexpressions.
-          x-optimade-unit: inapplicable
-        lhs:
-          x-optimade-type: dictionary
-          type:
-          - object
-          - 'null'
-          description: Left-hand operand for a logical cut expression.
-          x-optimade-unit: inapplicable
-          properties: {}
-        rhs:
-          x-optimade-type: dictionary
-          type:
-          - object
-          - 'null'
-          description: Right-hand operand for a logical cut expression.
-          x-optimade-unit: inapplicable
-          properties: {}
-        condition:
-          x-optimade-type: dictionary
-          type:
-          - object
-          - 'null'
-          description: Optional conditional cut expression that refines when this cut applies.
-          x-optimade-unit: inapplicable
-          properties: {}
-      x-optimade-unit: inapplicable
+    items:
+      $$inherit: /properties/symmetry/asu_cut
     x-optimade-unit: inapplicable
   shape_only_cuts:
     x-optimade-type: list
@@ -132,7 +39,8 @@ properties:
     - array
     - 'null'
     description: Geometric cut tree with conditional refinements omitted.
-    items: *id001
+    items:
+      $$inherit: /properties/symmetry/asu_cut
     x-optimade-unit: inapplicable
 examples:
 - cuts:

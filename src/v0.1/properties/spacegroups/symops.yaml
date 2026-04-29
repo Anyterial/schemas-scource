@@ -9,13 +9,26 @@ x-optimade-definition:
   format: '1.3'
   name: symops
   label: symops_spacegroups
+x-optimade-unit: inapplicable  
 type:
 - array
 - 'null'
-description: Full list of symmetry operations for the space-group setting. In `symmetry_basics`, operation matrices are represented indirectly by `symops_xyz`; the objects in this list contain operation metadata such as rotation type, axis, screw/glide part, and origin shift.
-x-optimade-unit: inapplicable
+description: |-
+
+  Full list of symmetry operations for the spacegroup.
+
+  **Requirements/Conventions**:
+
+  - Each list member MUST be a dictionary with the following keys:
+
+    - **rot_type**: REQUIRED. String. The crystallographic rotation type or operation type label.
+    - **sense**: REQUIRED. Integer. Rotation sense/sign convention used by the generator.
+    - **axis**: REQUIRED; List of integers. Three integer components defining the transformation axis.
+    - **screw_glide**: OPTIONAL; List of 3 Fractions (String). Screw-axis or glide-plane component as Fractions, if present.
+    - **origin_shift**: REQUIRED; List of 3 Fractions (String). Origin shift associated with the operation as Fractions.
 items:
   x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
   type:
   - object
   - 'null'
@@ -23,20 +36,21 @@ items:
   properties:
     rot_type:
       x-optimade-type: string
+      x-optimade-unit: inapplicable
       type:
       - string
       - 'null'
       description: Crystallographic rotation type or operation type label.
-      x-optimade-unit: inapplicable
     sense:
       x-optimade-type: integer
+      x-optimade-unit: inapplicable
       type:
       - integer
       - 'null'
       description: Rotation sense/sign convention used by the generator.
-      x-optimade-unit: inapplicable
     axis:
       x-optimade-type: list
+      x-optimade-unit: inapplicable
       type:
       - array
       - 'null'
@@ -48,83 +62,59 @@ items:
         - 'null'
         description: One integer component.
         x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
     screw_glide:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Screw-axis or glide-plane component, if present.
-      x-optimade-unit: inapplicable
-    origin_shift:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Origin shift associated with the operation, represented exactly.
-      x-optimade-unit: inapplicable
-    matrix:
       x-optimade-type: list
+      x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
       type:
       - array
       - 'null'
-      description: Three rows of a 3 by 3 numeric matrix.
+      description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as a list of fraction strings.
       items:
-        x-optimade-type: list
-        type:
-        - array
-        - 'null'
-        description: One matrix row.
-        items:
-          x-optimade-type: float
-          type:
-          - number
-          - 'null'
-          description: One matrix entry.
-          x-optimade-unit: inapplicable
-        x-optimade-unit: inapplicable
+        $$inherit: "/properties/core/fraction"
+        $$keep:
+        - x-optimade-type
+        - x-optimade-unit
+        - type
+        description: One exact fractional component.
+    origin_shift:
+      x-optimade-type: list
       x-optimade-unit: inapplicable
-    xyz:
-      x-optimade-type: string
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
       type:
-      - string
+      - array
       - 'null'
-      description: Operation in x,y,z coordinate notation.
-      x-optimade-unit: inapplicable
-    type:
-      x-optimade-type: integer
-      type:
-      - integer
-      - 'null'
-      description: Numeric operation type code used internally for point-group operations.
-      x-optimade-unit: inapplicable
-    is_proper:
-      x-optimade-type: boolean
-      type:
-      - boolean
-      - 'null'
-      description: Whether the operation is proper, i.e., has determinant +1.
-      x-optimade-unit: inapplicable
-  x-optimade-unit: inapplicable
+      description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as a list of fraction strings.
+      items:
+        $$inherit: "/properties/core/fraction"
+        $$keep:
+        - x-optimade-type
+        - x-optimade-unit
+        - type
+        description: One exact fractional component.
 examples:
 - - rot_type: '1'
     sense: 0
     axis:
     - 0
     - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]
 - - rot_type: '-1'
     sense: 0
     axis:
     - 0
     - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]
   - rot_type: '1'
     sense: 0
     axis:
     - 0
     - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]

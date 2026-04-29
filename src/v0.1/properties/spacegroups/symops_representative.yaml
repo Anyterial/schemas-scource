@@ -50,19 +50,39 @@ items:
         x-optimade-unit: inapplicable
       x-optimade-unit: inapplicable
     screw_glide:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Screw-axis or glide-plane component, if present.
+      x-optimade-type: list
       x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
+      type:
+      - array
+      - 'null'
+      description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as a list of fraction strings.
+      items:
+        $$inherit: "/properties/core/fraction"
+        $$keep:
+        - x-optimade-type
+        - x-optimade-unit
+        - type
+        description: One exact fractional component.
     origin_shift:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Origin shift associated with the operation, represented exactly.
+      x-optimade-type: list
       x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
+      type:
+      - array
+      - 'null'
+      description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as a list of fraction strings.
+      items:
+        $$inherit: "/properties/core/fraction"
+        $$keep:
+        - x-optimade-type
+        - x-optimade-unit
+        - type
+        description: One exact fractional component.
     matrix:
       x-optimade-type: list
       type:
@@ -112,19 +132,19 @@ examples:
     axis:
     - 0
     - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]
 - - rot_type: '2'
     sense: 0
     axis:
     - 0
     - 1
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]
   - rot_type: '1'
     sense: 0
     axis:
     - 0
     - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
+    screw_glide: [ "0", "0", "0" ]
+    origin_shift: [ "0", "0", "0" ]

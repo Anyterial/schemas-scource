@@ -15,12 +15,12 @@ type:
 description: Translation vector of a same-setting symmetry operation or affine normalizer operation, represented in fractional coordinates.
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
-  type:
-  - string
-  - 'null'
+  $$inherit: "/properties/core/fraction"
+  $$keep:
+  - x-optimade-type
+  - x-optimade-unit
+  - type
   description: One exact vector component.
-  x-optimade-unit: inapplicable
 examples:
 - - '0'
   - '0'

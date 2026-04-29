@@ -15,10 +15,21 @@ type:
 description: Centering translations of the conventional cell, represented as exact fractional vectors. The zero translation `(0,0,0)` is listed first.
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
+  x-optimade-type: list
   x-optimade-unit: inapplicable
   type:
-  - string
+  - array
+  description: One centering translation vector written as three exact fractional components.
+  x-optimade-dimensions:
+    names: ["dim_lattice"]
+    sizes: [3]
+  items:
+    $$inherit: "/properties/core/fraction"
+    $$keep:
+    - x-optimade-type
+    - x-optimade-unit
+    - type
+    description: One exact fractional component.
 examples:
 - - - '0'
     - '0'

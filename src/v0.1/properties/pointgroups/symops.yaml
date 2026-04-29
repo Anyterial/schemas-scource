@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/pointgroups/symops
 title: Symops
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -10,9 +9,22 @@ x-optimade-definition:
   name: symops
   label: symops_pointgroups
 type:
-- array
-- 'null'
-description: Full list of symmetry operations for the space-group setting. In `symmetry_basics`, operation matrices are represented indirectly by `symops_xyz`; the objects in this list contain operation metadata such as rotation type, axis, screw/glide part, and origin shift.
+- "array"
+- "null"
+description: |-
+  Full list of symmetry operations for the point group.
+
+  **Requirements/Conventions**:
+
+  - Each list member MUST be a dictionary with the following keys:
+  
+    - **matrix**: REQUIRED; Symmetry operation, three rows describing a 3 by 3 integer matrix.
+    - **xyz**: REQUIRED; Operation in x,y,z coordinate notation.
+    - **type**: REQUIRED; Numeric operation type code used internally for point-group operations.
+    - **is_proper**: REQUIRED; Boolean descrbing whether the operation is proper, i.e., has determinant +1.
+    - **axis**: REQUIRED; Transformation axis as a list of three integer components.
+    - **sense**: REQUIRED. Rotation sense/sign convention used by the generator.
+    
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: dictionary
@@ -21,13 +33,6 @@ items:
   - 'null'
   description: One symmetry operation or operation-class representative.
   properties:
-    rot_type:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Crystallographic rotation type or operation type label.
-      x-optimade-unit: inapplicable
     sense:
       x-optimade-type: integer
       type:
@@ -48,20 +53,6 @@ items:
         - 'null'
         description: One integer component.
         x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
-    screw_glide:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Screw-axis or glide-plane component, if present.
-      x-optimade-unit: inapplicable
-    origin_shift:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Origin shift associated with the operation, represented exactly.
       x-optimade-unit: inapplicable
     matrix:
       x-optimade-type: list
@@ -107,24 +98,9 @@ items:
       x-optimade-unit: inapplicable
   x-optimade-unit: inapplicable
 examples:
-- - rot_type: '1'
+- - matrix: [ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]
+    xyz: "x,y,z"
+    type: 1
+    is_proper: true
+    axis: [ 0, 0, 0 ]
     sense: 0
-    axis:
-    - 0
-    - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
-- - rot_type: '-1'
-    sense: 0
-    axis:
-    - 0
-    - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0
-  - rot_type: '1'
-    sense: 0
-    axis:
-    - 0
-    - 0
-    screw_glide: 0,0,0
-    origin_shift: 0,0,0

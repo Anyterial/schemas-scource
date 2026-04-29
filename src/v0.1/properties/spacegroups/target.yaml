@@ -15,10 +15,12 @@ type:
 description: Target vector or target value in a generated linear criterion, usually represented as exact rational components serialized as strings.
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
-  x-optimade-unit: inapplicable
-  type:
-  - string
+  $$inherit: "/properties/core/fraction"
+  $$keep:
+  - x-optimade-type
+  - x-optimade-unit
+  - type
+  description: One exact target component.
 examples:
 - - '0'
 - - 1/2

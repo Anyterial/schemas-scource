@@ -54,6 +54,9 @@ properties:
   rmat:
     x-optimade-type: list
     x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice", "dim_lattice"]
+      sizes: [3, 3]
     type:
     - array
     - 'null'
@@ -61,12 +64,15 @@ properties:
     items:
       x-optimade-type: list
       x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
       type:
       - array
       description: One row of the 3 by 3 integer matrix.
       items:
         x-optimade-type: integer
-        x-optimade-unit: inapplicable
+        x-optimade-unit: dimensionless
         type:
         - integer
         description: One integer matrix entry.
@@ -94,6 +100,9 @@ properties:
   axis:
     x-optimade-type: list
     x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
     - array
     - 'null'
@@ -112,19 +121,39 @@ properties:
     - 'null'
     description: Rotation sense/sign convention returned by the generator; `0` is used when no handed rotation sense is applicable.
   screw_glide:
-    x-optimade-type: string
+    x-optimade-type: list
     x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
-    - string
+    - array
     - 'null'
-    description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as comma-separated fractional components.
+    description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as a list of fraction strings.
+    items:
+      $$inherit: "/properties/core/fraction"
+      $$keep:
+      - x-optimade-type
+      - x-optimade-unit
+      - type
+      description: One exact fractional component.
   origin_shift:
-    x-optimade-type: string
+    x-optimade-type: list
     x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
-    - string
+    - array
     - 'null'
-    description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as comma-separated fractional components.
+    description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as a list of fraction strings.
+    items:
+      $$inherit: "/properties/core/fraction"
+      $$keep:
+      - x-optimade-type
+      - x-optimade-unit
+      - type
+      description: One exact fractional component.
 examples:
 - rmat:
   - [1, 0, 0]

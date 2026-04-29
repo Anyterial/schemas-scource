@@ -52,12 +52,12 @@ items:
       - 'null'
       description: Three fractional-coordinate components written as exact rational/algebraic strings.
       items:
-        x-optimade-type: string
-        type:
-        - string
-        - 'null'
+        $$inherit: "/properties/core/fraction"
+        $$keep:
+        - x-optimade-type
+        - x-optimade-unit
+        - type
         description: One exact coordinate component.
-        x-optimade-unit: inapplicable
       x-optimade-unit: inapplicable
     rmat: *id001
     tvec: *id002

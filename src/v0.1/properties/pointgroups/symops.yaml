@@ -1,6 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/pointgroups/symops
-title: Symops
+title: Symmetry operations
+$comment: Anyterial symmetry property definition using the common reusable symop object definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -8,99 +9,37 @@ x-optimade-definition:
   format: '1.3'
   name: symops
   label: symops_pointgroups
+x-optimade-unit: inapplicable
 type:
-- "array"
-- "null"
+- array
+- 'null'
 description: |-
-  Full list of symmetry operations for the point group.
+  Full list of symmetry operations for a point group.
+  Each list member is a `symop` object as defined by the shared Anyterial symmetry-operation definition.
 
   **Requirements/Conventions**:
 
-  - Each list member MUST be a dictionary with the following keys:
-  
-    - **matrix**: REQUIRED; Symmetry operation, three rows describing a 3 by 3 integer matrix.
-    - **xyz**: REQUIRED; Operation in x,y,z coordinate notation.
-    - **type**: REQUIRED; Numeric operation type code used internally for point-group operations.
-    - **is_proper**: REQUIRED; Boolean descrbing whether the operation is proper, i.e., has determinant +1.
-    - **axis**: REQUIRED; Transformation axis as a list of three integer components.
-    - **sense**: REQUIRED. Rotation sense/sign convention used by the generator.
-    
-x-optimade-unit: inapplicable
+  - It MUST be a list of dictionaries.
+  - Each dictionary MUST follow the schema inherited from `/properties/symmetry/symop`.
+  - For point-group operations, the `rmat` matrix is the complete operation and the `xyz` expression represents only the linear part.
 items:
-  x-optimade-type: dictionary
-  type:
-  - object
-  - 'null'
-  description: One symmetry operation or operation-class representative.
-  properties:
-    sense:
-      x-optimade-type: integer
-      type:
-      - integer
-      - 'null'
-      description: Rotation sense/sign convention used by the generator.
-      x-optimade-unit: inapplicable
-    axis:
-      x-optimade-type: list
-      type:
-      - array
-      - 'null'
-      description: Three integer components.
-      items:
-        x-optimade-type: integer
-        type:
-        - integer
-        - 'null'
-        description: One integer component.
-        x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
-    matrix:
-      x-optimade-type: list
-      type:
-      - array
-      - 'null'
-      description: Three rows of a 3 by 3 numeric matrix.
-      items:
-        x-optimade-type: list
-        type:
-        - array
-        - 'null'
-        description: One matrix row.
-        items:
-          x-optimade-type: float
-          type:
-          - number
-          - 'null'
-          description: One matrix entry.
-          x-optimade-unit: inapplicable
-        x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
-    xyz:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Operation in x,y,z coordinate notation.
-      x-optimade-unit: inapplicable
-    type:
-      x-optimade-type: integer
-      type:
-      - integer
-      - 'null'
-      description: Numeric operation type code used internally for point-group operations.
-      x-optimade-unit: inapplicable
-    is_proper:
-      x-optimade-type: boolean
-      type:
-      - boolean
-      - 'null'
-      description: Whether the operation is proper, i.e., has determinant +1.
-      x-optimade-unit: inapplicable
-  x-optimade-unit: inapplicable
+  $$inherit: "/properties/symmetry/symop"
 examples:
-- - matrix: [ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]
-    xyz: "x,y,z"
-    type: 1
+- - rmat:
+    - [1, 0, 0]
+    - [0, 1, 0]
+    - [0, 0, 1]
+    xyz: x,y,z
+    rot_type: '1'
     is_proper: true
-    axis: [ 0, 0, 0 ]
+    axis: [0, 0, 0]
+    sense: 0
+  - rmat:
+    - [-1, 0, 0]
+    - [0, 1, 0]
+    - [0, 0, 1]
+    xyz: -x,y,z
+    rot_type: m
+    is_proper: false
+    axis: [1, 0, 0]
     sense: 0

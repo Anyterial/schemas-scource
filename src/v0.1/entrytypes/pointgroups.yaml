@@ -114,29 +114,15 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  schoenflies_html:
-    $$inherit: /properties/pointgroups/schoenflies_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  schoenflies_latex:
-    $$inherit: /properties/pointgroups/schoenflies_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  schoenflies_unicode:
-    $$inherit: /properties/pointgroups/schoenflies_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   symops:
     $$inherit: /properties/pointgroups/symops
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies_markup:
+    $$inherit: /properties/pointgroups/schoenflies_markup
     x-optimade-requirements:
       support: may
       sortable: false

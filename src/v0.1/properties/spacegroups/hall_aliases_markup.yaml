@@ -1,0 +1,24 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hall_aliases_markup
+title: Hall alias markups
+$comment: Anyterial symmetry property definition using the common string markup object for each list item.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hall_aliases_markup
+  label: hall_aliases_markup_spacegroups
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Display-oriented renderings corresponding element-by-element to the alternate Hall symbols in `hall_aliases`.
+  The plain string values are stored in the corresponding unsuffixed alias list; this list only provides alternate markup forms for display.
+items:
+  $$inherit: "/properties/core/string_markups"
+examples:
+- - html: <i>P</i> 1
+    latex: \mathrm{P} 1
+    unicode: P 1

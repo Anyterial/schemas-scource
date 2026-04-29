@@ -1,0 +1,14 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/v0.1/properties/spacegroups/hm_full_markup
+title: Full Hermann-Mauguin symbol markups
+$comment: Anyterial symmetry property definition inheriting the common string markup object.
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: hm_full_markup
+  label: hm_full_markup_spacegroups
+$$inherit: "/properties/core/string_markups"
+description: |-
+  Display-oriented renderings of the setting-specific full Hermann-Mauguin symbol in `hm_full`.
+  The plain string value is stored in the corresponding unsuffixed property; this object only provides alternate markup forms for display.

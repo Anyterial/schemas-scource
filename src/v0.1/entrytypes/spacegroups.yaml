@@ -65,43 +65,15 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  asu_ascii:
-    $$inherit: /properties/spacegroups/asu_ascii
+  asu_str:
+    $$inherit: /properties/spacegroups/asu_str
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
-  asu_latex:
-    $$inherit: /properties/spacegroups/asu_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  asu_shape_only_ascii:
-    $$inherit: /properties/spacegroups/asu_shape_only_ascii
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  asu_shape_only_latex:
-    $$inherit: /properties/spacegroups/asu_shape_only_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  asu_shape_only_unicode:
-    $$inherit: /properties/spacegroups/asu_shape_only_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  asu_unicode:
-    $$inherit: /properties/spacegroups/asu_unicode
+  asu_shape_only_str:
+    $$inherit: /properties/spacegroups/asu_shape_only_str
     x-optimade-requirements:
       support: may
       sortable: false
@@ -205,50 +177,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  hall_aliases_html:
-    $$inherit: /properties/spacegroups/hall_aliases_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_aliases_latex:
-    $$inherit: /properties/spacegroups/hall_aliases_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_aliases_unicode:
-    $$inherit: /properties/spacegroups/hall_aliases_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   hall_entry:
     $$inherit: /properties/spacegroups/hall_entry
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_html:
-    $$inherit: /properties/spacegroups/hall_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_latex:
-    $$inherit: /properties/spacegroups/hall_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_unicode:
-    $$inherit: /properties/spacegroups/hall_unicode
     x-optimade-requirements:
       support: may
       sortable: false
@@ -282,50 +212,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  hm_extended_aliases_html:
-    $$inherit: /properties/spacegroups/hm_extended_aliases_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_extended_aliases_latex:
-    $$inherit: /properties/spacegroups/hm_extended_aliases_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_extended_aliases_unicode:
-    $$inherit: /properties/spacegroups/hm_extended_aliases_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_extended_html:
-    $$inherit: /properties/spacegroups/hm_extended_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_extended_latex:
-    $$inherit: /properties/spacegroups/hm_extended_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   hm_extended_old:
     $$inherit: /properties/spacegroups/hm_extended_old
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_extended_unicode:
-    $$inherit: /properties/spacegroups/hm_extended_unicode
     x-optimade-requirements:
       support: may
       sortable: false
@@ -345,41 +233,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  hm_full_aliases_html:
-    $$inherit: /properties/spacegroups/hm_full_aliases_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_aliases_latex:
-    $$inherit: /properties/spacegroups/hm_full_aliases_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_aliases_unicode:
-    $$inherit: /properties/spacegroups/hm_full_aliases_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_html:
-    $$inherit: /properties/spacegroups/hm_full_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_latex:
-    $$inherit: /properties/spacegroups/hm_full_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   hm_full_old:
     $$inherit: /properties/spacegroups/hm_full_old
     x-optimade-requirements:
@@ -389,34 +242,6 @@ properties:
       response-level: may
   hm_full_std:
     $$inherit: /properties/spacegroups/hm_full_std
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_std_html:
-    $$inherit: /properties/spacegroups/hm_full_std_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_std_latex:
-    $$inherit: /properties/spacegroups/hm_full_std_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_std_unicode:
-    $$inherit: /properties/spacegroups/hm_full_std_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_full_unicode:
-    $$inherit: /properties/spacegroups/hm_full_unicode
     x-optimade-requirements:
       support: may
       sortable: false
@@ -436,41 +261,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  hm_short_aliases_html:
-    $$inherit: /properties/spacegroups/hm_short_aliases_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_aliases_latex:
-    $$inherit: /properties/spacegroups/hm_short_aliases_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_aliases_unicode:
-    $$inherit: /properties/spacegroups/hm_short_aliases_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_html:
-    $$inherit: /properties/spacegroups/hm_short_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_latex:
-    $$inherit: /properties/spacegroups/hm_short_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   hm_short_old:
     $$inherit: /properties/spacegroups/hm_short_old
     x-optimade-requirements:
@@ -480,34 +270,6 @@ properties:
       response-level: may
   hm_short_std:
     $$inherit: /properties/spacegroups/hm_short_std
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_std_html:
-    $$inherit: /properties/spacegroups/hm_short_std_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_std_latex:
-    $$inherit: /properties/spacegroups/hm_short_std_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_std_unicode:
-    $$inherit: /properties/spacegroups/hm_short_std_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hm_short_unicode:
-    $$inherit: /properties/spacegroups/hm_short_unicode
     x-optimade-requirements:
       support: may
       sortable: false
@@ -730,27 +492,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  schoenflies_html:
-    $$inherit: /properties/spacegroups/schoenflies_html
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  schoenflies_latex:
-    $$inherit: /properties/spacegroups/schoenflies_latex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  schoenflies_unicode:
-    $$inherit: /properties/spacegroups/schoenflies_unicode
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   setting:
     $$inherit: /properties/spacegroups/setting
     x-optimade-requirements:
@@ -900,6 +641,97 @@ properties:
       response-level: may
   wyckoff_splitting:
     $$inherit: /properties/spacegroups/wyckoff_splitting
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_markup:
+    $$inherit: /properties/spacegroups/asu_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  asu_shape_only_markup:
+    $$inherit: /properties/spacegroups/asu_shape_only_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_markup:
+    $$inherit: /properties/spacegroups/hall_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_aliases_markup:
+    $$inherit: /properties/spacegroups/hall_aliases_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_markup:
+    $$inherit: /properties/spacegroups/hm_short_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_std_markup:
+    $$inherit: /properties/spacegroups/hm_short_std_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_markup:
+    $$inherit: /properties/spacegroups/hm_full_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_std_markup:
+    $$inherit: /properties/spacegroups/hm_full_std_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_markup:
+    $$inherit: /properties/spacegroups/hm_extended_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_short_aliases_markup:
+    $$inherit: /properties/spacegroups/hm_short_aliases_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_full_aliases_markup:
+    $$inherit: /properties/spacegroups/hm_full_aliases_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_extended_aliases_markup:
+    $$inherit: /properties/spacegroups/hm_extended_aliases_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  schoenflies_markup:
+    $$inherit: /properties/spacegroups/schoenflies_markup
     x-optimade-requirements:
       support: may
       sortable: false

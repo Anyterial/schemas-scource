@@ -28,20 +28,8 @@ items:
       - 'null'
       description: Irreducible-representation label.
       x-optimade-unit: inapplicable
-    label_latex:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: LaTeX rendering of the irreducible-representation label.
-      x-optimade-unit: inapplicable
-    label_unicode:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Unicode rendering of the irreducible-representation label.
-      x-optimade-unit: inapplicable
+    label_markup:
+      $$inherit: "/properties/core/string_markups"
     dimension:
       x-optimade-type: integer
       type:
@@ -119,21 +107,24 @@ examples:
     characters:
     - 1
     frobenius_schur_indicator: 1
-    label_latex: A
-    label_unicode: A
+    label_markup:
+      latex: A
+      unicode: A
 - - label: Ag
     dimension: 1
     characters:
     - 1
     - 1
     frobenius_schur_indicator: 1
-    label_latex: A_{g}
-    label_unicode: Ag
+    label_markup:
+      latex: A_{g}
+      unicode: Ag
   - label: Au
     dimension: 1
     characters:
     - 1
     - -1
     frobenius_schur_indicator: 1
-    label_latex: A_{u}
-    label_unicode: Au
+    label_markup:
+      latex: A_{u}
+      unicode: Au

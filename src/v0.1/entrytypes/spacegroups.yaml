@@ -156,27 +156,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  character_table_complex:
-    $$inherit: /properties/spacegroups/character_table_complex
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  character_table_real:
-    $$inherit: /properties/spacegroups/character_table_real
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  conjugacy_classes:
-    $$inherit: /properties/spacegroups/conjugacy_classes
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   continuous_euclidean_normalizer:
     $$inherit: /properties/spacegroups/continuous_euclidean_normalizer
     x-optimade-requirements:
@@ -534,13 +513,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  hm_symbol:
-    $$inherit: /properties/spacegroups/hm_symbol
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   index:
     $$inherit: /properties/spacegroups/index
     x-optimade-requirements:
@@ -550,13 +522,6 @@ properties:
       response-level: may
   is_centric:
     $$inherit: /properties/spacegroups/is_centric
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  is_centrosymmetric:
-    $$inherit: /properties/spacegroups/is_centrosymmetric
     x-optimade-requirements:
       support: may
       sortable: false
@@ -639,13 +604,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  n_conjugacy_classes:
-    $$inherit: /properties/spacegroups/n_conjugacy_classes
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   n_coset_representatives:
     $$inherit: /properties/spacegroups/n_coset_representatives
     x-optimade-requirements:
@@ -702,13 +660,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  order:
-    $$inherit: /properties/spacegroups/order
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   orthogonal_affine_normalizer:
     $$inherit: /properties/spacegroups/orthogonal_affine_normalizer
     x-optimade-requirements:
@@ -732,13 +683,6 @@ properties:
       response-level: may
   point_group:
     $$inherit: /properties/spacegroups/point_group
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  pointgroups:
-    $$inherit: /properties/spacegroups/pointgroups
     x-optimade-requirements:
       support: may
       sortable: false

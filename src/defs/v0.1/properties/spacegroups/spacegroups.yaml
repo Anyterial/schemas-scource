@@ -20,7 +20,7 @@ description: |-
 
   **Requirements/Conventions**:
 
-  - Items MUST be ordered in the same setting order as `symbols.json.gz`, with additional cctbx-only Hall settings kept in their IT-number block.
+  - Items MUST be ordered in the same setting order as `spacegroup_symbols.json.gz`, with additional cctbx-only Hall settings kept in their IT-number block.
   - A single IT number can occur in several items.
   - The `setting_it_nc` property gives the corresponding International Tables `n:c` setting code when applicable.
 items:

@@ -51,6 +51,13 @@ properties:
       sortable: false
       query-support: none
       response-level: may
+  affine_normalizer_coset_data:
+    $$inherit: /defs/v0.1/properties/spacegroups/affine_normalizer_coset_data
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
   affine_normalizer_cosets:
     $$inherit: /defs/v0.1/properties/spacegroups/affine_normalizer_cosets
     x-optimade-requirements:
@@ -172,6 +179,13 @@ properties:
       response-level: may
   hall_aliases:
     $$inherit: /defs/v0.1/properties/spacegroups/hall_aliases
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_symbol_to_affine_normalizer_coset_data:
+    $$inherit: /defs/v0.1/properties/spacegroups/hall_symbol_to_affine_normalizer_coset_data
     x-optimade-requirements:
       support: may
       sortable: false
@@ -515,6 +529,13 @@ properties:
       response-level: may
   setting_plaintext:
     $$inherit: /defs/v0.1/properties/spacegroups/setting_plaintext
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  spacegroup_symbols:
+    $$inherit: /defs/v0.1/properties/spacegroups/spacegroup_symbols
     x-optimade-requirements:
       support: may
       sortable: false

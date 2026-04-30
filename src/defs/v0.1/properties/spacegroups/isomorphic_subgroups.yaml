@@ -1,0 +1,35 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/isomorphic_subgroups
+title: Isomorphic subgroup transforms
+$comment: Anyterial transform collection property using the common basis-transform definition for transform items.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: isomorphic_subgroups
+  label: isomorphic_subgroups_spacegroups
+x-optimade-unit: inapplicable
+type:
+- object
+- 'null'
+description: |-
+  Isomorphic subgroup transforms of bounded index. These transforms map a space group to a subgroup of the same space-group type, usually corresponding to an enlarged unit cell.
+  The outer dictionary is keyed by the parent table convention, for example Hall entries or IT numbers.
+  Transform records use `pmat` and `pvec` as defined by `/properties/symmetry/basis_transform`.
+
+  **Requirements/Conventions**:
+
+  - Dynamic outer keys identify parent settings or space groups according to the containing dataset.
+  - Values are either dictionaries containing an `items` list of transform records or direct maps to lists of transform records.
+  - Each transform record SHOULD follow `/properties/symmetry/basis_transform` for its matrix and vector fields.
+properties: {}
+examples:
+- c_2y:
+    items:
+    - index: 2
+      pmat:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '2']
+      pvec: ['0', '0', '0']

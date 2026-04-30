@@ -1,0 +1,37 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/spacegroups
+title: Space groups
+$comment: Anyterial top-level ordered space-group setting table.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: spacegroups
+  label: spacegroups_spacegroups
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Ordered table of crystallographic space-group setting records.
+  Each item describes one concrete Hall/International Tables setting of a space group, including symbols, classifications, symmetry operations, asymmetric-unit information, Wyckoff positions, and related auxiliary data.
+  The companion `index_hall_entry_to_spacegroups` property maps normalized Hall entries to indices in this list.
+
+  **Requirements/Conventions**:
+
+  - Items MUST be ordered in the same setting order as `symbols.json.gz`, with additional cctbx-only Hall settings kept in their IT-number block.
+  - A single IT number can occur in several items.
+  - The `setting_it_nc` property gives the corresponding International Tables `n:c` setting code when applicable.
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  - 'null'
+  description: One space-group setting record.
+  properties: {}
+examples:
+- - setting_it_nc: 5:b1
+    it_number: 5
+    hall_entry: c_2y

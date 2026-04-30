@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/n_cosets
+title: N Cosets
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: integer
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: n_cosets
+  label: n_cosets_spacegroups
+type:
+- integer
+- 'null'
+description: Number of affine normalizer coset representatives stored for the setting.
+x-optimade-unit: inapplicable
+examples:
+- 63
+- 31

@@ -1,0 +1,27 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/affine_images
+title: Affine images
+$comment: Anyterial property definition for same-space-group affine images.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: affine_images
+  label: affine_images_spacegroups
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Same-space-group affine images for a standard setting.
+  The list combines Euclidean normalizer operations and isomorphic subgroup transforms to enumerate alternative affine images of the same space group used by runtime search code.
+  Matrix/vector transform fields use `pmat` and `pvec` according to `/properties/symmetry/basis_transform`.
+items:
+  $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
+examples:
+- - pmat:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '1']
+    pvec: ['0', '0', '0']

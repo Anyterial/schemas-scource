@@ -1,0 +1,7 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://schemas.anyterial.se/json-schema/v0.1/pointgroups"
+title: "Schema for pointgroup data for Anyterial definition provider"
+description: "JSON Schema for Anyterial crystallographic symmetry definitions for pointgroup data"
+endpoints:
+  symmetry:
+    $$inherit: "/defs/v0.1/entrytypes/pointgroups"

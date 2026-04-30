@@ -15,9 +15,9 @@ all: schemas
 # Path to the process_schemas program
 PROCESS_SCHEMAS=dependencies/submodules/optimade-property-tools/bin/process_schemas
 # The base of the URI for the generated property definitions
-BASEID=https://schemas.anyterial.se/v0.1/
+BASEID=https://schemas.anyterial.se/
 # The versioned directory being processed
-BASEDIR=src/v0.1
+BASEDIR=src
 # The versions of the meta-schemas to use
 META_SCHEMAS_VER=v1.3 v1.2
 
@@ -50,12 +50,22 @@ SCHEMAS := $(wildcard src/*/*/*/*/*/*.yaml src/*/*/*/*/*.yaml src/*/*/*/*.yaml s
 SCHEMAS_JSON = $(patsubst src/%.yaml,output/%.json,$(SCHEMAS))
 SCHEMAS_MD = $(patsubst src/%.yaml,output/%.md,$(SCHEMAS))
 
+ALL_SCHEMAS := $(wildcard src/*/*/*/*/*/*/*.yaml src/*/*/*/*/*/*.yaml src/*/*/*/*/*.yaml src/*/*/*/*.yaml src/*/*/*.yaml)
+
+DEFINITIONS := $(filter src/defs/%.yaml, $(ALL_SCHEMAS))
+DEFINITIONS_JSON := $(patsubst src/%.yaml,output/%.json,$(DEFINITIONS))
+DEFINITIONS_MD := $(patsubst src/%.yaml,output/%.md,$(DEFINITIONS))
+
+OTHER_SCHEMAS := $(filter-out src/meta/%.yaml,$(filter-out src/defs/%,$(ALL_SCHEMAS)))
+OTHER_SCHEMAS_JSON := $(patsubst src/%.yaml,output/%.json,$(OTHER_SCHEMAS))
+OTHER_SCHEMAS_MD := $(patsubst src/%.yaml,output/%.md,$(OTHER_SCHEMAS))
+
 ifeq ($(origin schemas_html_ext), undefined)
-	SCHEMAS_HTML := $(patsubst src/%.yaml,output/%,$(SCHEMAS))
-	SCHEMAS_HTML_EXT =
+	DEFINITIONS_HTML := $(patsubst src/%.yaml,output/%,$(DEFINITIONS))
+	DEFINITIONS_HTML_EXT =
 else
-	SCHEMAS_HTML := $(patsubst src/%.yaml,output/%.html,$(SCHEMAS))
-	SCHEMAS_HTML_EXT = .html
+	DEFINITIONS_HTML := $(patsubst src/%.yaml,output/%.html,$(DEFINITIONS))
+	DEFINITIONS_HTML_EXT = .html
 endif
 
 EXT_SCHEMAS := $(filter-out dependencies/submodules/optimade-property-tools/external/json-schema/LICENSE, $(wildcard dependencies/submodules/optimade-property-tools/external/json-schema/*))
@@ -64,28 +74,39 @@ EXT_SCHEMAS_ARGS := $(foreach schema,$(EXT_SCHEMAS),--schema $(schema))
 META_SCHEMAS_JSON := $(foreach path,$(META_SCHEMA_PATHS),$(wildcard $(path)/optimade/*.json))
 META_SCHEMAS_ARGS := $(foreach schema,$(META_SCHEMAS_JSON),--schema $(schema))
 
-INDEXES := $(wildcard src/*)
-INDEXES_HTML := $(patsubst src/%,output/%/index.html,$(INDEXES))
+DEF_INDEXES_HTML = output/defs/index.html
+DEF_INDEXES_MD = output/defs/index.md
+RELEASES_INDEXES_HTML = output/releases/latest/index.html
+RELEASES_INDEXES_MD = output/releases/latest/index.md
 
-.PHONY: schemas
+.PHONY: schemas submodule-optimade-property-tools
 
-schemas: output/index.html $(SCHEMAS_JSON) $(SCHEMAS_MD) $(SCHEMAS_HTML) $(INDEXES_HTML)
+schemas: output/index.html submodule-optimade-property-tools schemas_build
+schemas_build: schemas_defs_json schemas_defs_docs schemas_defs_html schemas_other_json
+schemas_defs_json: $(DEFINITIONS_JSON)
+schemas_defs_docs: $(DEFINITIONS_MD)
+schemas_defs_html: $(DEFINITIONS_HTML)
+schemas_other_json: $(OTHER_SCHEMAS_JSON) schemas_defs_json
 
-output/%.json: src/%.yaml $(META_SCHEMAS_JSON)
+$(DEFINITIONS_JSON) $(OTHER_SCHEMAS_JSON): output/%.json: src/%.yaml $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
 	$(PROCESS_SCHEMAS) --remove-null $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(META_SCHEMAS_ARGS) $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
 
-output/%.md: src/%.yaml
+$(DEFINITIONS_MD): output/%.md: src/%.yaml $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
 	$(PROCESS_SCHEMAS) --remove-null -f md $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" --output "$@" "$<"
 
-$(SCHEMAS_HTML): output/%$(SCHEMAS_HTML_EXT): src/%.yaml $(HTML_TEMPLATE_DEPS)
+$(DEFINITIONS_HTML): output/%$(DEFINITIONS_HTML_EXT): src/%.yaml $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
-	$(PROCESS_SCHEMAS) --remove-null -f html $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(HTML_TEMPLATE_ARGS) --output "$@" "$<"
+	$(PROCESS_SCHEMAS) --remove-null -f html $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" --html-header '$(OPTIMADE_HTML_HEADER)' --html-top '$(OPTIMADE_HTML_TOP)' --output "$@" "$<"
 
-output/%/index.html: src/% $(SCHEMAS) $(HTML_TEMPLATE_DEPS)
+$(DEF_INDEXES_MD): output/%/index.md: src/% $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
-	$(PROCESS_SCHEMAS) --index --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(RESOLVE_PATHS_ARGS) -f html $(HTML_TEMPLATE_ARGS) $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
+	$(PROCESS_SCHEMAS) --index --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(RESOLVE_PATHS_ARGS) -f md $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
+
+$(DEF_INDEXES_HTML): output/%/index.html: src/% $(META_SCHEMAS_JSON)
+	mkdir -p "$(dir $@)"
+	$(PROCESS_SCHEMAS) --index --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(RESOLVE_PATHS_ARGS) -f html --html-header '$(OPTIMADE_HTML_HEADER)' --html-top '$(OPTIMADE_HTML_TOP)' $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
 
 output/index.html: $(TEMPLATE_DIR)/root_index.html $(HTML_TEMPLATE_DEPS)
 	mkdir -p "$(dir $@)"
@@ -95,5 +116,23 @@ output/index.html: $(TEMPLATE_DIR)/root_index.html $(HTML_TEMPLATE_DEPS)
 
 clean: clean_schemas
 
+# Retain the output directory itself in case it is a submodule/symlink to a schema repo
 clean_schemas:
-	rm -rf output
+	rm -rf output/defs output/json-ld output/json-schema output/meta
+
+schemas_check_variables:
+	@echo "DEFINITIONS = $(DEFINITIONS)"
+	@echo "DEFINITIONS_JSON = $(DEFINITIONS_JSON)"
+	@echo "DEFINITIONS_HTML = $(DEFINITIONS_HTML)"
+	@echo ""
+	@echo "OTHER_SCHEMAS = $(OTHER_SCHEMAS)"
+	@echo "OTHER_SCHEMAS_JSON = $(OTHER_SCHEMAS_JSON)"
+	@echo ""
+	@echo "META_SCHEMAS = $(META_SCHEMAS)"
+	@echo "META_SCHEMAS_JSON = $(META_SCHEMAS_JSON)"
+	@echo "META_SCHEMAS_ARGS = $(META_SCHEMAS_ARGS)"
+	@echo ""
+	@echo "OPTIMADE_VERSION = $(OPTIMADE_VERSION)"
+	@echo "OPTIMADE_VERSION_SUBST = $(OPTIMADE_VERSION_SUBST)"
+	@echo ""
+	@echo "INDEXES_HTML = $(INDEXES_HTML)"

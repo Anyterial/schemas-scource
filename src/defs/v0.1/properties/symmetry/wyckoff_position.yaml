@@ -1,0 +1,166 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/wyckoff_position
+title: Wyckoff position
+$comment: Reusable Anyterial definition for one Wyckoff-position record in a space-group setting.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: wyckoff_position
+  label: wyckoff_position_symmetry
+x-optimade-unit: inapplicable
+type:
+- object
+- 'null'
+description: |-
+  One Wyckoff position in a space-group setting.
+  The record gives the multiplicity, oriented site-symmetry symbol, representative coordinate, full orbit, and orbit factorized modulo centering translations.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a dictionary with the following keys:
+
+      - **multiplicity**: REQUIRED; Integer.
+        Multiplicity of the Wyckoff position in the conventional cell.
+
+      - **sitesym**: REQUIRED; String.
+        Oriented site-symmetry symbol.
+
+      - **hasfreedom**: REQUIRED; List of booleans.
+        Flags indicating whether each fractional coordinate has a free parameter.
+
+      - **first\_orbit**: REQUIRED; String.
+        First representative coordinate expression used by the generator.
+
+      - **orbit\_affine**: REQUIRED; List.
+        Full orbit in affine matrix/vector representation.
+
+      - **orbit\_xyz**: REQUIRED; List of strings.
+        Full orbit in `x,y,z` coordinate notation.
+
+      - **orbit\_mod\_centering\_affine**: REQUIRED; List.
+        Orbit representatives modulo centering translations in affine representation.
+
+      - **orbit\_mod\_centering\_xyz**: REQUIRED; List of strings.
+        Orbit representatives modulo centering translations in `x,y,z` notation.
+properties:
+  multiplicity:
+    x-optimade-type: integer
+    x-optimade-unit: inapplicable
+    type:
+    - integer
+    - 'null'
+    description: Multiplicity of the Wyckoff position in the conventional cell.
+  sitesym:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Oriented site-symmetry symbol.
+  hasfreedom:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
+    type:
+    - array
+    - 'null'
+    description: Three flags indicating whether each fractional coordinate contains a free parameter.
+    items:
+      x-optimade-type: boolean
+      x-optimade-unit: inapplicable
+      type:
+      - boolean
+      description: Whether the corresponding coordinate is free.
+  first_orbit_ita:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Representative coordinate expression following the ITA source convention, when distinct from `first_orbit`.
+  first_orbit:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Representative coordinate expression for the Wyckoff position.
+  orbit_affine:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Full orbit represented as affine matrix/vector data.
+    items:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      description: One generator-emitted affine orbit operation represented as nested exact lists.
+      items:
+        x-optimade-type: list
+        x-optimade-unit: inapplicable
+        type:
+        - array
+        description: One row or component list of the affine orbit representation.
+        items:
+          $$inherit: "/defs/v0.1/properties/core/fraction"
+  orbit_xyz:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Full orbit represented as `x,y,z` coordinate expressions.
+    items:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      description: One coordinate expression.
+  orbit_mod_centering_affine:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Orbit representatives modulo centering translations in affine matrix/vector representation.
+    items:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      description: One generator-emitted affine orbit operation represented as nested exact lists.
+      items:
+        x-optimade-type: list
+        x-optimade-unit: inapplicable
+        type:
+        - array
+        description: One row or component list of the affine orbit representation.
+        items:
+          $$inherit: "/defs/v0.1/properties/core/fraction"
+  orbit_mod_centering_xyz:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Orbit representatives modulo centering translations as `x,y,z` coordinate expressions.
+    items:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      description: One coordinate expression.
+examples:
+- multiplicity: 2
+  sitesym: '1'
+  hasfreedom: [true, true, true]
+  first_orbit: x,y,z
+  orbit_xyz: [x,y,z, -x,y,-z]
+  orbit_mod_centering_xyz: [x,y,z, -x,y,-z]

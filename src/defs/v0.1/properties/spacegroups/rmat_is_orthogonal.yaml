@@ -1,0 +1,19 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/rmat_is_orthogonal
+title: Symmetry operation rotation is orthogonal
+$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+x-optimade-type: boolean
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: rmat_is_orthogonal
+  label: rmat_is_orthogonal_spacegroups
+type:
+- boolean
+- 'null'
+description: Boolean flag indicating whether `rmat` is orthogonal in the conventional coordinate basis.
+x-optimade-unit: inapplicable
+examples:
+- true
+- false

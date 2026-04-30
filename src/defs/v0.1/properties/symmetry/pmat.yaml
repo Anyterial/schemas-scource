@@ -1,0 +1,50 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/pmat
+title: Basis transformation matrix
+$comment: Reusable Anyterial definition for the matrix part of a crystallographic basis or setting transformation.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: pmat
+  label: pmat_symmetry
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Matrix part of a crystallographic basis or setting transformation.
+  The matrix is represented exactly as three rows with three entries per row.
+  Entries are strings so that exact rational or algebraic values can be preserved without floating-point rounding.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a 3 by 3 matrix represented as a list of three row lists.
+  - Each row MUST contain three exact matrix entries represented as strings.
+  - The parent transform definition specifies the coordinate convention and whether the matrix maps from a source setting to a target setting or conversely.
+x-optimade-dimensions:
+  names: ["dim_lattice", "dim_lattice"]
+  sizes: [3, 3]
+items:
+  x-optimade-type: list
+  x-optimade-unit: inapplicable
+  x-optimade-dimensions:
+    names: ["dim_lattice"]
+    sizes: [3]
+  type:
+  - array
+  description: One row of the 3 by 3 basis-transformation matrix.
+  items:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    description: One exact matrix entry.
+examples:
+- - ['1', '0', '0']
+  - ['0', '1', '0']
+  - ['0', '0', '1']
+- - ['1', '0', '0']
+  - ['0', '1', '0']
+  - ['0', '0', '2']

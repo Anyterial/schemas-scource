@@ -1,0 +1,27 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/entries
+title: Entries
+$comment: Generic Anyterial top-level keyed data container used by several generated datasets.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: entries
+  label: entries_spacegroups
+x-optimade-unit: inapplicable
+type:
+- object
+- 'null'
+description: |-
+  Generic top-level keyed data container used by several generated JSON-LD datasets.
+  The meaning of keys and values is defined by the containing dataset metadata and by sibling fields.
+  This property is intentionally generic because `entries` is used for compact maps with different value types in different files.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a dictionary.
+  - Keys and values MUST be interpreted according to the containing dataset.
+properties: {}
+examples:
+- '1': p_1

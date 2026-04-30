@@ -1,0 +1,19 @@
+$$schema: "https://schemas.optimade.org/meta/v1.3/optimade/standard_definition"
+$id: "https://schemas.anyterial.se/defs/v0.1/standards/anyterial"
+title: "Anyterial definition provider standard"
+description: "Anyterial definition provider standard"
+x-optimade-definition:
+  label: "anyterial_standard"
+  kind: "standard"
+  format: "1.3"
+  version: "0.1.0"
+  name: "anyterial"
+entrytypes:
+  spacegroups:
+    $$inherit: "/defs/v0.1/entrytypes/spacegroups"
+    x-optimade-requirements:
+      support: "may"
+  smell:
+    $$inherit: "/defs/v0.1/entrytypes/pointgroups"
+    x-optimade-requirements:
+      support: "may"

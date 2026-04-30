@@ -1,0 +1,14 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/schoenflies_markup
+title: Schoenflies symbol markups
+$comment: Anyterial symmetry property definition inheriting the common string markup object.
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: schoenflies_markup
+  label: schoenflies_markup_pointgroups
+$$inherit: "/defs/v0.1/properties/core/string_markups"
+description: |-
+  Display-oriented renderings of the Schoenflies symbol in `schoenflies`.
+  The plain string value is stored in the corresponding unsuffixed property; this object only provides alternate markup forms for display.

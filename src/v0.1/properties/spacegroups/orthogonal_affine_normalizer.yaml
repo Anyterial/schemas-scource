@@ -98,18 +98,12 @@ properties:
         - 'null'
         description: Maximum absolute value allowed for entries of candidate linear matrices.
       det_abs:
-        x-optimade-type: list
+        x-optimade-type: integer
         x-optimade-unit: inapplicable
         type:
-        - array
+        - integer
         - 'null'
-        description: Allowed absolute determinant values for candidate matrices.
-        items:
-          x-optimade-type: integer
-          x-optimade-unit: inapplicable
-          type:
-          - integer
-          description: One allowed absolute determinant.
+        description: Absolute determinant required for candidate matrices.
 examples:
 - items:
   - rmat:

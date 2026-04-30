@@ -15,10 +15,10 @@ type:
 description: spglib Hall numbers corresponding to the generated setting.
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
+  x-optimade-type: integer
   x-optimade-unit: inapplicable
   type:
-  - string
+  - integer
 examples:
 - - 1
 - - 2

@@ -47,9 +47,13 @@ items:
       type:
       - array
       - 'null'
-      description: Normal vector of the plane.
+      description: Integer normal vector of the plane.
       items:
-        $$inherit: "/properties/core/fraction"
+        x-optimade-type: integer
+        x-optimade-unit: inapplicable
+        type:
+        - integer
+        description: One integer component of the normal vector.
     point:
       x-optimade-type: list
       x-optimade-unit: inapplicable
@@ -66,5 +70,5 @@ items:
       $$inherit: "/properties/core/fraction"
 examples:
 - - algebraic: 2*x,0,2*z
-    normal: ['0', '1', '0']
+    normal: [0, 1, 0]
     point: ['0', '0', '0']

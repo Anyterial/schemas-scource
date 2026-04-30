@@ -44,11 +44,11 @@ items:
       - 'null'
       description: Characters for the conjugacy classes in table order.
       items:
-        x-optimade-type: string
+        x-optimade-type: integer
         type:
-        - string
+        - integer
         - 'null'
-        description: One character value, represented in the generator output as an exact integer, real value, or symbolic complex value depending on the table.
+        description: One real character value represented as an exact integer.
         x-optimade-unit: inapplicable
       x-optimade-unit: inapplicable
     frobenius_schur_indicator:

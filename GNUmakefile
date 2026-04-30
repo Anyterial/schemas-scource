@@ -26,7 +26,7 @@ META_SCHEMAS_VER=v1.3 v1.2
 #################################
 
 # Path to the OPTIMADE schemas repo
-OPTIMADE_SCHEMAS_DIR=dependencies/submodules/schemas
+OPTIMADE_SCHEMAS_DIR=dependencies/submodules/optimade-schemas
 # Path to the meta-schemas to use
 META_SCHEMA_PATHS := $(foreach ver,$(META_SCHEMAS_VER),$(OPTIMADE_SCHEMAS_DIR)/meta/$(ver))
 # Add the OPTIMADE schemas repo as a path relative to which resolve $$inherit
@@ -76,17 +76,16 @@ META_SCHEMAS_ARGS := $(foreach schema,$(META_SCHEMAS_JSON),--schema $(schema))
 
 DEF_INDEXES_HTML = output/defs/index.html
 DEF_INDEXES_MD = output/defs/index.md
-RELEASES_INDEXES_HTML = output/releases/latest/index.html
-RELEASES_INDEXES_MD = output/releases/latest/index.md
 
 .PHONY: schemas submodule-optimade-property-tools
 
-schemas: output/index.html submodule-optimade-property-tools schemas_build
-schemas_build: schemas_defs_json schemas_defs_docs schemas_defs_html schemas_other_json
+schemas: submodule-optimade-property-tools schemas_build
+schemas_build: schemas_defs_json schemas_defs_docs schemas_defs_html schemas_other_json schemas_indexes_docs
 schemas_defs_json: $(DEFINITIONS_JSON)
 schemas_defs_docs: $(DEFINITIONS_MD)
 schemas_defs_html: $(DEFINITIONS_HTML)
 schemas_other_json: $(OTHER_SCHEMAS_JSON) schemas_defs_json
+schemas_indexes_docs: $(DEF_INDEXES_HTML) $(DEF_INDEXES_MD) output/index.html
 
 $(DEFINITIONS_JSON) $(OTHER_SCHEMAS_JSON): output/%.json: src/%.yaml $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
@@ -98,7 +97,7 @@ $(DEFINITIONS_MD): output/%.md: src/%.yaml $(META_SCHEMAS_JSON)
 
 $(DEFINITIONS_HTML): output/%$(DEFINITIONS_HTML_EXT): src/%.yaml $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
-	$(PROCESS_SCHEMAS) --remove-null -f html $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" --html-header '$(OPTIMADE_HTML_HEADER)' --html-top '$(OPTIMADE_HTML_TOP)' --output "$@" "$<"
+	$(PROCESS_SCHEMAS) --remove-null -f html $(RESOLVE_PATHS_ARGS) --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(HTML_TEMPLATE_ARGS) --output "$@" "$<"
 
 $(DEF_INDEXES_MD): output/%/index.md: src/% $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
@@ -106,7 +105,7 @@ $(DEF_INDEXES_MD): output/%/index.md: src/% $(META_SCHEMAS_JSON)
 
 $(DEF_INDEXES_HTML): output/%/index.html: src/% $(META_SCHEMAS_JSON)
 	mkdir -p "$(dir $@)"
-	$(PROCESS_SCHEMAS) --index --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(RESOLVE_PATHS_ARGS) -f html --html-header '$(OPTIMADE_HTML_HEADER)' --html-top '$(OPTIMADE_HTML_TOP)' $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
+	$(PROCESS_SCHEMAS) --index --basedir "$(BASEDIR)" --baseid "$(BASEID)" $(RESOLVE_PATHS_ARGS) -f html $(HTML_TEMPLATE_ARGS) $(EXT_SCHEMAS_ARGS) --output "$@" "$<"
 
 output/index.html: $(TEMPLATE_DIR)/root_index.html $(HTML_TEMPLATE_DEPS)
 	mkdir -p "$(dir $@)"

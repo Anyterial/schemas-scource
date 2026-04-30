@@ -1,8 +1,8 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/spacegroups/spacegroups
 title: Space groups
-$comment: Anyterial top-level Hall-entry keyed space-group setting map.
-x-optimade-type: dictionary
+$comment: Anyterial top-level ordered space-group setting table.
+x-optimade-type: list
 x-optimade-definition:
   kind: property
   version: 0.1.0
@@ -11,22 +11,27 @@ x-optimade-definition:
   label: spacegroups_spacegroups
 x-optimade-unit: inapplicable
 type:
-- object
+- array
 - 'null'
 description: |-
-  Hall-entry keyed map of crystallographic space-group setting records.
-  Each key is the normalized Hall entry used by the data-generator tables, with underscores replacing spaces.
-  Each value describes one concrete Hall/International Tables setting of a space group, including symbols, classifications, symmetry operations, asymmetric-unit information, Wyckoff positions, and related auxiliary data.
+  Ordered table of crystallographic space-group setting records.
+  Each item describes one concrete Hall/International Tables setting of a space group, including symbols, classifications, symmetry operations, asymmetric-unit information, Wyckoff positions, and related auxiliary data.
+  The companion `index_hall_entry_to_spacegroups` property maps normalized Hall entries to indices in this list.
 
   **Requirements/Conventions**:
 
-  - Keys are Hall-setting identifiers, not merely IT space-group numbers.
-  - A single IT number can occur under several Hall keys.
-  - Values are dictionaries for the specific setting represented by the key.
+  - Items MUST be ordered in the same setting order as `symbols.json.gz`, with additional cctbx-only Hall settings kept in their IT-number block.
+  - A single IT number can occur in several items.
   - The `setting_it_nc` property gives the corresponding International Tables `n:c` setting code when applicable.
-properties: {}
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  - 'null'
+  description: One space-group setting record.
+  properties: {}
 examples:
-- c_2y:
-    setting_it_nc: 5:b1
+- - setting_it_nc: 5:b1
     it_number: 5
     hall_entry: c_2y

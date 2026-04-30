@@ -1,8 +1,8 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/pointgroups/pointgroups
 title: Point groups
-$comment: Anyterial top-level point-group keyed map.
-x-optimade-type: dictionary
+$comment: Anyterial top-level ordered point-group table.
+x-optimade-type: list
 x-optimade-definition:
   kind: property
   version: 0.1.0
@@ -11,20 +11,25 @@ x-optimade-definition:
   label: pointgroups_pointgroups
 x-optimade-unit: inapplicable
 type:
-- object
+- array
 - 'null'
 description: |-
-  Point-group keyed map of crystallographic point-group records.
-  Each key is a Hermann-Mauguin point-group symbol.
-  Each value contains point-group classification, finite point-group operations, conjugacy classes, and real and complex character tables generated from cctbx and spgrep.
+  Ordered table of crystallographic point-group records.
+  Each item contains point-group classification, finite point-group operations, conjugacy classes, and real and complex character tables generated from cctbx and spgrep.
 
   **Requirements/Conventions**:
 
-  - The map covers the 32 crystallographic point groups.
+  - The table covers the 32 crystallographic point groups.
   - The point-group records are independent of any particular space-group setting.
   - Character-table rows use Mulliken labels and include formatted label variants when available.
-properties: {}
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  - 'null'
+  description: One crystallographic point-group record.
+  properties: {}
 examples:
-- 2/m:
-    hm_symbol: 2/m
+- - hm_symbol: 2/m
     order: 4

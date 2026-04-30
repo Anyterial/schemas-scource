@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/spacegroups/items
 title: Items
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+$comment: Generic Anyterial ordered data-list container used by several generated datasets.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -9,86 +9,23 @@ x-optimade-definition:
   format: '1.3'
   name: items
   label: items_spacegroups
+x-optimade-unit: inapplicable
 type:
 - array
 - 'null'
 description: |-
-  List of records in a compact generated table.
-
-  This property is used for tables whose natural top-level representation is an ordered list rather than a map. In symbol tables it contains one record per generated Hall or International Tables setting. In transform tables it contains one record per transform candidate or transform entry.
-
-  **Requirements/Conventions**:
-
-  - The interpretation of each item is determined by the dataset and by the fields present in the item.
-  - Ordering is deterministic and produced by the corresponding generator.
-x-optimade-unit: inapplicable
+  Generic ordered data-list container used by several generated JSON-LD datasets.
+  The item schema is defined by the containing dataset or parent property.
+  This property is intentionally generic because `items` is used for symbol rows, transform rows, and normalizer rows in different contexts.
 items:
   x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
   type:
   - object
   - 'null'
-  description: One item in the containing list-valued dataset.
+  description: One parent-defined item object.
   properties: {}
-  x-optimade-unit: inapplicable
 examples:
 - - setting_it_nc: '1'
     hall: P 1
     it_number: 1
-    hm_short: P 1
-    hm_full: P 1
-    hm_extended: P 1
-  - setting_it_nc: '2'
-    hall: -P 1
-    it_number: 2
-    hm_short: P -1
-    hm_full: P -1
-    hm_extended: P -1
-  - setting_it_nc: 3:a
-    hall: P 2x
-    it_number: 3
-    hm_short: P 2
-    hm_full: P 2 1 1
-    hm_extended: P 2 1 1
-- - index: 1
-    wyckoff_splitting:
-      a:
-      - - a
-        - x,y,z
-    pmat:
-    - - '1'
-      - '0'
-    - - '0'
-      - '1'
-    pvec:
-    - '0'
-    - '0'
-  - index: 2
-    wyckoff_splitting:
-      a:
-      - - a
-        - x,y,z
-      - - a
-        - x,y,z
-    pmat:
-    - - '1'
-      - '0'
-    - - '0'
-      - '1'
-    pvec:
-    - '0'
-    - '0'
-  - index: 3
-    wyckoff_splitting:
-      a:
-      - - a
-        - x,y,z
-      - - a
-        - x,y,z
-    pmat:
-    - - '1'
-      - '0'
-    - - '0'
-      - '1'
-    pvec:
-    - '0'
-    - '0'

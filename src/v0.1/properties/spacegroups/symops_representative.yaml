@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/spacegroups/symops_representative
-title: Symops Representative
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+title: Representative symmetry operations
+$comment: Anyterial property definition using the common reusable symop object definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -9,142 +9,24 @@ x-optimade-definition:
   format: '1.3'
   name: symops_representative
   label: symops_representative_spacegroups
+x-optimade-unit: inapplicable
 type:
 - array
 - 'null'
-description: Representative symmetry operations modulo centering translations. This list contains one representative for each point-group operation coset of the full space group.
-x-optimade-unit: inapplicable
+description: |-
+  Representative symmetry-operation descriptors modulo centering translations.
+  Each list member is a `symop` object as defined by `/properties/symmetry/symop`.
+  For space-group operations, generated data currently uses `rot_type`, `axis`, `sense`, `screw_glide`, and `origin_shift`.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a list of dictionaries.
+  - Each dictionary MUST follow the schema inherited from `/properties/symmetry/symop`.
 items:
-  x-optimade-type: dictionary
-  type:
-  - object
-  - 'null'
-  description: One symmetry operation or operation-class representative.
-  properties:
-    rot_type:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Crystallographic rotation type or operation type label.
-      x-optimade-unit: inapplicable
-    sense:
-      x-optimade-type: integer
-      type:
-      - integer
-      - 'null'
-      description: Rotation sense/sign convention used by the generator.
-      x-optimade-unit: inapplicable
-    axis:
-      x-optimade-type: list
-      type:
-      - array
-      - 'null'
-      description: Three integer components.
-      items:
-        x-optimade-type: integer
-        type:
-        - integer
-        - 'null'
-        description: One integer component.
-        x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
-    screw_glide:
-      x-optimade-type: list
-      x-optimade-unit: inapplicable
-      x-optimade-dimensions:
-        names: ["dim_lattice"]
-        sizes: [3]
-      type:
-      - array
-      - 'null'
-      description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as a list of fraction strings.
-      items:
-        $$inherit: "/properties/core/fraction"
-        $$keep:
-        - x-optimade-type
-        - x-optimade-unit
-        - type
-        description: One exact fractional component.
-    origin_shift:
-      x-optimade-type: list
-      x-optimade-unit: inapplicable
-      x-optimade-dimensions:
-        names: ["dim_lattice"]
-        sizes: [3]
-      type:
-      - array
-      - 'null'
-      description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as a list of fraction strings.
-      items:
-        $$inherit: "/properties/core/fraction"
-        $$keep:
-        - x-optimade-type
-        - x-optimade-unit
-        - type
-        description: One exact fractional component.
-    matrix:
-      x-optimade-type: list
-      type:
-      - array
-      - 'null'
-      description: Three rows of a 3 by 3 numeric matrix.
-      items:
-        x-optimade-type: list
-        type:
-        - array
-        - 'null'
-        description: One matrix row.
-        items:
-          x-optimade-type: float
-          type:
-          - number
-          - 'null'
-          description: One matrix entry.
-          x-optimade-unit: inapplicable
-        x-optimade-unit: inapplicable
-      x-optimade-unit: inapplicable
-    xyz:
-      x-optimade-type: string
-      type:
-      - string
-      - 'null'
-      description: Operation in x,y,z coordinate notation.
-      x-optimade-unit: inapplicable
-    type:
-      x-optimade-type: integer
-      type:
-      - integer
-      - 'null'
-      description: Numeric operation type code used internally for point-group operations.
-      x-optimade-unit: inapplicable
-    is_proper:
-      x-optimade-type: boolean
-      type:
-      - boolean
-      - 'null'
-      description: Whether the operation is proper, i.e., has determinant +1.
-      x-optimade-unit: inapplicable
-  x-optimade-unit: inapplicable
+  $$inherit: "/properties/symmetry/symop"
 examples:
 - - rot_type: '1'
     sense: 0
-    axis:
-    - 0
-    - 0
-    screw_glide: [ "0", "0", "0" ]
-    origin_shift: [ "0", "0", "0" ]
-- - rot_type: '2'
-    sense: 0
-    axis:
-    - 0
-    - 1
-    screw_glide: [ "0", "0", "0" ]
-    origin_shift: [ "0", "0", "0" ]
-  - rot_type: '1'
-    sense: 0
-    axis:
-    - 0
-    - 0
-    screw_glide: [ "0", "0", "0" ]
-    origin_shift: [ "0", "0", "0" ]
+    axis: [0, 0, 0]
+    screw_glide: ['0', '0', '0']
+    origin_shift: ['0', '0', '0']

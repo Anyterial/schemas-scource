@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/symmetry/symop
-title: symmetry operation
-$comment: Reusable Anyterial source definition for one crystallographic symmetry-operation object used inside point-group and space-group operation lists.
+title: Symmetry operation
+$comment: Reusable Anyterial source definition for one crystallographic symmetry-operation descriptor used inside point-group and space-group operation lists.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,89 +14,60 @@ type:
 - object
 - 'null'
 description: |-
-  A single crystallographic symmetry operation, represented by its linear part and by standard descriptors of the corresponding rotation, rotoinversion, or mirror operation.
-  It describes the common fields that identify the linear operation and allows the additional translational descriptors needed for space-group affine operations.
+  A single crystallographic symmetry-operation descriptor.
+  Space-group operation lists currently store the operation type, axis, sense, and screw/glide decomposition.
+  Point-group operation lists currently store the full integer operation matrix under the legacy key `matrix` together with an integer operation-type code under `type`.
+  Future generated data may also use the semantic `rmat` key for the linear matrix part.
 
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
 
-      - **rmat**: REQUIRED; Integer 3x3 matrix.
-        The transformation matrix acting on the fractional coordinates.
-        For a point-group operation this matrix is the complete operation. For a space-group operation this matrix is the rotational part of an affine operation.
+      - **rot\_type**: OPTIONAL; String.
+        Crystallographic operation-type label for the linear part, such as `1`, `-1`, `2`, `m`, `-3`, `4`, `-4`, `6`, or `-6`.
+        This is the preferred symbolic operation-type field in space-group operation descriptors.
 
-      - **xyz**: REQUIRED; String.
-        Coordinate expression for the operation in `x,y,z` notation. For a point-group operation this expression represents only the linear part.
-        For a space-group operation it also includes the affine translation part.
+      - **type**: OPTIONAL; Integer.
+        Legacy numeric operation-type code used by point-group operation descriptors.
 
-      - **rot\_type**: REQUIRED; String.
-        Gives the crystallographic operation-type label for the linear part.
-        The value `1` denotes the identity, `-1` inversion, `2`, `3`, `4`, and `6` proper rotations, `m` a mirror operation, and `-3`, `-4`, and `-6` rotoinversions.
-        The label classifies the linear operation only; screw and glide information is represented separately.
+      - **axis**: OPTIONAL; List of 3 Integers.
+        Operation axis or invariant direction using the integer-vector convention returned by the generator.
 
-      - **is\_proper**: REQUIRED; Boolean.
-        States whether the linear operation is proper, i.e., whether `det(rmat) = +1`.
-        Improper operations have `det(rmat) = -1`.
-
-      - **axis**: REQUIRED; List of 3 Integers.
-        The operation axis or invariant direction using the integer-vector convention returned by the generator.
-        It is `null` or `[0,0,0]` when no unique axis is defined, e.g., for the identity or inversion.
-
-      - **sense**: REQUIRED; Integer.
-        The sense/sign for the rotation: positive for counterclockwise, negative for clockwise, and zero when no handed rotation sense is applicable.
+      - **sense**: OPTIONAL; Integer.
+        Rotation sense/sign convention returned by the generator; `0` is used when no handed rotation sense is applicable.
 
       - **screw\_glide**: OPTIONAL; List of 3 Fractions (String).
-        When present, gives the screw-axis or glide-plane component associated with the affine operation, represented exactly as fractions.
+        Screw-axis or glide-plane component associated with a space-group affine operation.
 
       - **origin\_shift**: OPTIONAL; List of 3 Fractions (String).
-        When present, gives the origin shift associated with the screw/glide decomposition, represented exactly as fractions.
+        Origin shift associated with the screw/glide decomposition of a space-group affine operation.
+
+      - **matrix**: OPTIONAL; Integer 3x3 matrix.
+        Legacy full point-group operation matrix.
+
+      - **rmat**: OPTIONAL; Exact 3x3 matrix.
+        Semantic linear matrix part of an affine operation when emitted by a parent table.
+
+      - **xyz**: OPTIONAL; String.
+        Coordinate expression for the operation in `x,y,z` notation when available.
+
+      - **is\_proper**: OPTIONAL; Boolean.
+        States whether the linear operation is proper, i.e., whether its determinant is +1.
 properties:
-  rmat:
-    x-optimade-type: list
-    x-optimade-unit: inapplicable
-    x-optimade-dimensions:
-      names: ["dim_lattice", "dim_lattice"]
-      sizes: [3, 3]
-    type:
-    - array
-    - 'null'
-    description: Linear part of the operation as three rows of a 3 by 3 integer matrix acting on fractional coordinates.
-    items:
-      x-optimade-type: list
-      x-optimade-unit: inapplicable
-      x-optimade-dimensions:
-        names: ["dim_lattice"]
-        sizes: [3]
-      type:
-      - array
-      description: One row of the 3 by 3 integer matrix.
-      items:
-        x-optimade-type: integer
-        x-optimade-unit: dimensionless
-        type:
-        - integer
-        description: One integer matrix entry.
-  xyz:
-    x-optimade-type: string
-    x-optimade-unit: inapplicable
-    type:
-    - string
-    - 'null'
-    description: Optional operation in `x,y,z` coordinate notation.
   rot_type:
     x-optimade-type: string
     x-optimade-unit: inapplicable
     type:
     - string
     - 'null'
-    description: Crystallographic operation-type label for the linear part, such as `1`, `-1`, `2`, `m`, `-3`, `4`, `-4`, `6`, or `-6`.
-  is_proper:
-    x-optimade-type: boolean
+    description: Symbolic crystallographic operation-type label for the linear part.
+  type:
+    x-optimade-type: integer
     x-optimade-unit: inapplicable
     type:
-    - boolean
+    - integer
     - 'null'
-    description: Whether the linear operation is proper, i.e., whether the determinant of `rmat` is +1.
+    description: Legacy numeric point-group operation-type code.
   axis:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -119,7 +90,7 @@ properties:
     type:
     - integer
     - 'null'
-    description: Rotation sense/sign convention returned by the generator; `0` is used when no handed rotation sense is applicable.
+    description: Rotation sense/sign convention returned by the generator.
   screw_glide:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -129,14 +100,9 @@ properties:
     type:
     - array
     - 'null'
-    description: Optional screw-axis or glide-plane component for a space-group affine operation, represented exactly as a list of fraction strings.
+    description: Screw-axis or glide-plane component represented exactly as a list of fraction strings.
     items:
       $$inherit: "/properties/core/fraction"
-      $$keep:
-      - x-optimade-type
-      - x-optimade-unit
-      - type
-      description: One exact fractional component.
   origin_shift:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -146,41 +112,62 @@ properties:
     type:
     - array
     - 'null'
-    description: Optional origin-shift descriptor associated with the screw/glide decomposition of a space-group affine operation, represented exactly as a list of fraction strings.
+    description: Origin-shift descriptor represented exactly as a list of fraction strings.
     items:
       $$inherit: "/properties/core/fraction"
-      $$keep:
-      - x-optimade-type
-      - x-optimade-unit
-      - type
-      description: One exact fractional component.
+  matrix:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice", "dim_lattice"]
+      sizes: [3, 3]
+    type:
+    - array
+    - 'null'
+    description: Legacy integer 3 by 3 operation matrix used by point-group symops.
+    items:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
+      type:
+      - array
+      description: One row of the integer operation matrix.
+      items:
+        x-optimade-type: integer
+        x-optimade-unit: dimensionless
+        type:
+        - integer
+        description: One integer matrix entry.
+  rmat:
+    $$inherit: "/properties/symmetry/rmat"
+  xyz:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Operation in `x,y,z` coordinate notation.
+  is_proper:
+    x-optimade-type: boolean
+    x-optimade-unit: inapplicable
+    type:
+    - boolean
+    - 'null'
+    description: Whether the linear operation is proper.
 examples:
-- rmat:
+- rot_type: '2'
+  sense: 0
+  axis: [0, 1, 0]
+  screw_glide: ['0', '0', '0']
+  origin_shift: ['0', '0', '0']
+- matrix:
   - [1, 0, 0]
   - [0, 1, 0]
   - [0, 0, 1]
   xyz: x,y,z
-  rot_type: '1'
+  type: 1
   is_proper: true
   axis: [0, 0, 0]
   sense: 0
-- rmat:
-  - [-1, 0, 0]
-  - [0, 1, 0]
-  - [0, 0, 1]
-  xyz: -x,y,z
-  rot_type: m
-  is_proper: false
-  axis: [1, 0, 0]
-  sense: 0
-- rmat:
-  - [0, -1, 0]
-  - [1, 0, 0]
-  - [0, 0, 1]
-  xyz: -y,x,z+1/4
-  rot_type: '4'
-  is_proper: true
-  axis: [0, 0, 1]
-  sense: 1
-  screw_glide: [ "0", "0", "1/4" ]
-  origin_shift: [ "0", "0", "0" ]

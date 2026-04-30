@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/v0.1/properties/pointgroups/symops
 title: Symmetry operations
-$comment: Anyterial symmetry property definition using the common reusable symop object definition.
+$comment: Anyterial property definition using the common reusable symop object definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -14,32 +14,19 @@ type:
 - array
 - 'null'
 description: |-
-  Full list of symmetry operations for a point group.
-  Each list member is a `symop` object as defined by the shared Anyterial symmetry-operation definition.
+  Full list of symmetry-operation descriptors for a point group.
+  Each list member is a `symop` object as defined by `/properties/symmetry/symop`.
+  For point-group operations, generated data currently uses `matrix` and `type`.
 
   **Requirements/Conventions**:
 
   - It MUST be a list of dictionaries.
   - Each dictionary MUST follow the schema inherited from `/properties/symmetry/symop`.
-  - For point-group operations, the `rmat` matrix is the complete operation and the `xyz` expression represents only the linear part.
 items:
   $$inherit: "/properties/symmetry/symop"
 examples:
-- - rmat:
-    - [1, 0, 0]
-    - [0, 1, 0]
-    - [0, 0, 1]
-    xyz: x,y,z
-    rot_type: '1'
-    is_proper: true
+- - rot_type: '1'
+    sense: 0
     axis: [0, 0, 0]
-    sense: 0
-  - rmat:
-    - [-1, 0, 0]
-    - [0, 1, 0]
-    - [0, 0, 1]
-    xyz: -x,y,z
-    rot_type: m
-    is_proper: false
-    axis: [1, 0, 0]
-    sense: 0
+    screw_glide: ['0', '0', '0']
+    origin_shift: ['0', '0', '0']

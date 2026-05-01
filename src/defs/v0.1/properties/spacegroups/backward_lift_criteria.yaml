@@ -14,29 +14,27 @@ type:
 - object
 - 'null'
 description: |-
-  Criteria table used to lift occupied Wyckoff data from a subgroup back to a supergroup along a chosen Bärnighausen transform.
-  The outer map is keyed by supergroup IT number and the next map is keyed by subgroup IT number.
+  Criteria table for one supergroup IT number used to lift occupied Wyckoff data from a subgroup back to that supergroup along a chosen Bärnighausen transform.
+  The map is keyed by subgroup IT number.
   Values are lists of transform records carrying a basis transform and a dictionary of Wyckoff-letter criteria.
 
   **Requirements/Conventions**:
 
-  - Dynamic outer keys MUST be supergroup IT numbers represented as strings.
-  - Dynamic second-level keys MUST be subgroup IT numbers represented as strings.
+  - Dynamic keys MUST be subgroup IT numbers represented as strings.
   - Transform records SHOULD include `index`, `pmat`, `pvec`, and `criteria`.
 properties: {}
 examples:
-- '1':
-    '2':
-    - index: 2
-      pmat:
-      - ['1', '0', '0']
-      - ['0', '1', '0']
-      - ['0', '0', '2']
-      pvec: ['0', '0', '0']
-      criteria:
-        a:
-        - roles:
-          - [a, 0]
-          coeffs:
-          - [['1', '0', '0']]
-          target: ['0', '0', '0']
+- '2':
+  - index: 2
+    pmat:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '2']
+    pvec: ['0', '0', '0']
+    criteria:
+      a:
+      - roles:
+        - [a, 0]
+        coeffs:
+        - [['1', '0', '0']]
+        target: ['0', '0', '0']

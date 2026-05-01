@@ -14,21 +14,40 @@ type:
 - object
 - 'null'
 description: |-
-  IT-number keyed same-space-group affine-image records for the International Tables standard settings.
+  Same-space-group affine-image record for one International Tables standard setting.
 
   **Requirements/Conventions**:
 
-  - It MUST be a dictionary.
-  - Keys MUST be International Tables space-group numbers encoded as strings.
-  - Values MUST be dictionaries containing the Hall reference setting and the list of affine images for that IT number.
-properties: {}
+  - It MUST be a dictionary with the following keys:
+
+      - **it\_number**: REQUIRED; Integer.
+        International Tables space-group number for the standard setting.
+
+      - **hall**: REQUIRED; String.
+        Hall-entry key of the reference setting used for the standard setting.
+
+      - **affine\_images**: REQUIRED; List of dictionaries.
+        Same-space-group affine images represented by exact `pmat` and `pvec` transforms.
+properties:
+  it_number:
+    $$inherit: "/defs/v0.1/properties/spacegroups/it_number"
+  hall:
+    $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
+  affine_images:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Same-space-group affine image transforms.
+    items:
+      $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
-- '1':
-    it_number: 1
-    hall: p_1
-    affine_images:
-    - pmat:
-      - ['1', '0', '0']
-      - ['0', '1', '0']
-      - ['0', '0', '1']
-      pvec: ['0', '0', '0']
+- it_number: 1
+  hall: p_1
+  affine_images:
+  - pmat:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '1']
+    pvec: ['0', '0', '0']

@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/isomorphic_subgroups
 title: Isomorphic subgroup transforms
-$comment: Anyterial transform collection property using the common basis-transform definition for transform items.
+$comment: Anyterial keyed table of bounded-index isomorphic subgroup transforms.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,22 +14,77 @@ type:
 - object
 - 'null'
 description: |-
-  Isomorphic subgroup transforms of bounded index. These transforms map a space group to a subgroup of the same space-group type, usually corresponding to an enlarged unit cell.
-  The outer dictionary is keyed by the parent table convention, for example Hall entries or IT numbers.
-  Transform records use `pmat` and `pvec` as defined by `/properties/symmetry/basis_transform`.
+  Isomorphic subgroup transforms of bounded index for one parent setting or space-group type.
+  An isomorphic subgroup has the same space-group type as the parent but is embedded with a finite index, usually corresponding to an enlarged unit cell or a sublattice choice.
+  These transforms are useful for algorithms that need to enumerate same-type subgroup embeddings, compare structures under supercell changes, or construct bounded same-space-group refinement paths.
+
+  The transform records use the basis-transform convention represented by `pmat` and `pvec`.
+  The `index` field is the subgroup index and equals the determinant factor of the basis transformation.
+  The generator currently searches indices up to its configured maximum index and deduplicates equivalent transforms under normalizer equivalence.
 
   **Requirements/Conventions**:
 
-  - Dynamic outer keys identify parent settings or space groups according to the containing dataset.
-  - Values are either dictionaries containing an `items` list of transform records or direct maps to lists of transform records.
-  - Each transform record SHOULD follow `/properties/symmetry/basis_transform` for its matrix and vector fields.
-properties: {}
-examples:
-- c_2y:
+  - It MUST be a dictionary containing an `items` list.
+  - Each item in `items` MUST describe one exact isomorphic subgroup transform.
+  - Matrix and vector entries MUST be exact strings, using integer strings or fraction strings as appropriate.
+properties:
+  items:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Isomorphic subgroup transform records for one parent key.
     items:
-    - index: 2
-      pmat:
-      - ['1', '0', '0']
-      - ['0', '1', '0']
-      - ['0', '0', '2']
-      pvec: ['0', '0', '0']
+      x-optimade-type: dictionary
+      x-optimade-unit: inapplicable
+      type:
+      - object
+      - 'null'
+      description: |-
+        One exact isomorphic subgroup transform.
+
+        **Requirements/Conventions**:
+
+        - It MUST be a dictionary with the following keys:
+
+            - **index**: REQUIRED; Integer.
+              Subgroup index of the isomorphic embedding.
+
+            - **pmat**: REQUIRED; Exact 3x3 matrix.
+              Matrix part of the basis transform.
+
+            - **pvec**: REQUIRED; List of 3 Fractions (String).
+              Origin-shift vector of the basis transform.
+
+            - **wyckoff\_splitting**: REQUIRED; Dictionary.
+              Wyckoff-position splitting data induced by this transform.
+      properties:
+        index:
+          $$inherit: "/defs/v0.1/properties/spacegroups/index"
+        pmat:
+          $$inherit: "/defs/v0.1/properties/spacegroups/pmat"
+        pvec:
+          $$inherit: "/defs/v0.1/properties/spacegroups/pvec"
+        wyckoff_splitting:
+          $$inherit: "/defs/v0.1/properties/spacegroups/wyckoff_splitting"
+examples:
+- items:
+  - index: 2
+    wyckoff_splitting:
+      a:
+      - - a
+        - x,y,z
+        - - ['1', '0', '0', '0']
+          - ['0', '1', '0', '0']
+          - ['0', '0', '1/2', '1/2']
+      - - a
+        - x,y,z
+        - - ['1', '0', '0', '0']
+          - ['0', '1', '0', '0']
+          - ['0', '0', '1/2', '0']
+    pmat:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '2']
+    pvec: ['0', '0', '0']

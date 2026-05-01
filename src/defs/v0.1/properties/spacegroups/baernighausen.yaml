@@ -14,22 +14,21 @@ type:
 - object
 - 'null'
 description: |-
-  Bärnighausen subgroup transform table. Entries describe generated embeddings of a subgroup setting into a supergroup setting.
-  The outer dictionary is keyed by the parent table convention, for example Hall entries or IT numbers.
+  Bärnighausen subgroup transform table for one parent setting or space-group type.
+  Entries describe generated embeddings of subgroup settings into the containing parent setting.
   Transform records use `pmat` and `pvec` as defined by `/properties/symmetry/basis_transform`.
 
   **Requirements/Conventions**:
 
-  - Dynamic outer keys identify parent settings or space groups according to the containing dataset.
-  - Values are either dictionaries containing an `items` list of transform records or direct maps to lists of transform records.
+  - Dynamic keys identify target subgroup settings or target subgroup space-group types according to the containing dataset.
+  - Values are lists of transform records.
   - Each transform record SHOULD follow `/properties/symmetry/basis_transform` for its matrix and vector fields.
 properties: {}
 examples:
-- c_2y:
-    items:
-    - index: 2
-      pmat:
-      - ['1', '0', '0']
-      - ['0', '1', '0']
-      - ['0', '0', '2']
-      pvec: ['0', '0', '0']
+- p_1:
+  - index: 2
+    pmat:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '2']
+    pvec: ['0', '0', '0']

@@ -156,13 +156,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  entries:
-    $$inherit: /defs/v0.1/properties/spacegroups/entries
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   euclidean_normalizer:
     $$inherit: /defs/v0.1/properties/spacegroups/euclidean_normalizer
     x-optimade-requirements:
@@ -191,8 +184,43 @@ properties:
       sortable: false
       query-support: none
       response-level: may
+  index_hall_entry_to_spacegroup_symbols:
+    $$inherit: /defs/v0.1/properties/spacegroups/index_hall_entry_to_spacegroup_symbols
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  index_hall_entry_to_spacegroups:
+    $$inherit: /defs/v0.1/properties/spacegroups/index_hall_entry_to_spacegroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  index_it_number_to_spglib_default_spacegroups:
+    $$inherit: /defs/v0.1/properties/spacegroups/index_it_number_to_spglib_default_spacegroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  index_it_number_to_std_spacegroups:
+    $$inherit: /defs/v0.1/properties/spacegroups/index_it_number_to_std_spacegroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
   hall_entry:
     $$inherit: /defs/v0.1/properties/spacegroups/hall_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_to_it_std_transform:
+    $$inherit: /defs/v0.1/properties/spacegroups/hall_to_it_std_transform
     x-optimade-requirements:
       support: may
       sortable: false
@@ -471,8 +499,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  relation_details:
-    $$inherit: /defs/v0.1/properties/spacegroups/relation_details
+  maximal_subgroup_relations:
+    $$inherit: /defs/v0.1/properties/spacegroups/maximal_subgroup_relations
     x-optimade-requirements:
       support: may
       sortable: false
@@ -753,6 +781,13 @@ properties:
       response-level: may
   schoenflies_markup:
     $$inherit: /defs/v0.1/properties/spacegroups/schoenflies_markup
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  same_space_group_affine_images_std:
+    $$inherit: /defs/v0.1/properties/spacegroups/same_space_group_affine_images_std
     x-optimade-requirements:
       support: may
       sortable: false

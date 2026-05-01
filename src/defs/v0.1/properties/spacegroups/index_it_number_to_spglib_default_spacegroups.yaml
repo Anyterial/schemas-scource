@@ -1,0 +1,28 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/index_it_number_to_spglib_default_spacegroups
+title: IT number to spglib default spacegroups index
+$comment: Indexed lookup into symmetry_basics spacegroups for the default spglib setting of each IT number.
+x-optimade-type: dictionary
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: index_it_number_to_spglib_default_spacegroups
+  label: index_it_number_to_spglib_default_spacegroups_spacegroups
+x-optimade-unit: inapplicable
+type:
+- object
+- 'null'
+description: |-
+  IT-number keyed lookup from the default spglib Hall setting to the corresponding row index in the top-level `spacegroups` list.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a dictionary.
+  - Keys MUST be International Tables space-group numbers encoded as strings.
+  - Values MUST be list indices into the top-level `spacegroups` array of `symmetry_basics.json.gz`.
+properties: {}
+examples:
+- '1': 0
+- '2': 1
+

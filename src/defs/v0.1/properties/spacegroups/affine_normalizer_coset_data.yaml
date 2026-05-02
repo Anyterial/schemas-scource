@@ -28,7 +28,7 @@ description: |-
 
   - It MUST be a list of dictionaries.
   - The list order MUST match the generator's Hall-setting order.
-  - The companion `hall_symbol_to_affine_normalizer_coset_data` index maps normalized Hall entries to zero-based positions in this list.
+  - The companion top-level `indicies.hall_symbol_to_affine_normalizer_coset_data` lookup maps normalized Hall entries to zero-based positions in this list; it is not an OPTIMADE property.
   - Each dictionary MUST contain a `hall_entry` value equal to the Hall-entry key used by the companion index.
   - Count fields MUST equal the length of their corresponding representative lists.
   - Matrix and vector entries inside representatives MUST be exact strings, using integer strings or fraction strings as appropriate.

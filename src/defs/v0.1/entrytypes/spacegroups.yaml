@@ -100,6 +100,20 @@ properties:
       sortable: false
       query-support: none
       response-level: may
+  transformations_per_hall:
+    $$inherit: /defs/v0.1/properties/spacegroups/transformations_per_hall
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  transformations_per_it_number:
+    $$inherit: /defs/v0.1/properties/spacegroups/transformations_per_it_number
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
   bravais_type:
     $$inherit: /defs/v0.1/properties/spacegroups/bravais_type
     x-optimade-requirements:
@@ -172,41 +186,6 @@ properties:
       response-level: may
   hall_aliases:
     $$inherit: /defs/v0.1/properties/spacegroups/hall_aliases
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  hall_symbol_to_affine_normalizer_coset_data:
-    $$inherit: /defs/v0.1/properties/spacegroups/hall_symbol_to_affine_normalizer_coset_data
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  index_hall_entry_to_spacegroup_symbols:
-    $$inherit: /defs/v0.1/properties/spacegroups/index_hall_entry_to_spacegroup_symbols
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  index_hall_entry_to_spacegroups:
-    $$inherit: /defs/v0.1/properties/spacegroups/index_hall_entry_to_spacegroups
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  index_it_number_to_spglib_default_spacegroups:
-    $$inherit: /defs/v0.1/properties/spacegroups/index_it_number_to_spglib_default_spacegroups
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  index_it_number_to_std_spacegroups:
-    $$inherit: /defs/v0.1/properties/spacegroups/index_it_number_to_std_spacegroups
     x-optimade-requirements:
       support: may
       sortable: false

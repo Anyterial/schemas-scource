@@ -16,7 +16,7 @@ type:
 description: |-
   Ordered table of crystallographic space-group setting records.
   Each item describes one concrete Hall/International Tables setting of a space group, including symbols, classifications, symmetry operations, asymmetric-unit information, Wyckoff positions, and related auxiliary data.
-  The companion `index_hall_entry_to_spacegroups` property maps normalized Hall entries to indices in this list.
+  The companion top-level `indicies.index_hall_entry_to_spacegroups` lookup maps normalized Hall entries to indices in this list; it is not an OPTIMADE property.
 
   **Requirements/Conventions**:
 

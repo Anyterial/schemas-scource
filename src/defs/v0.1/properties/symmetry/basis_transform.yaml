@@ -92,21 +92,61 @@ properties:
     - 'null'
     description: Generator classification of the transform or representative.
   wyckoff_splitting:
-    x-optimade-type: dictionary
+    x-optimade-type: list
     x-optimade-unit: inapplicable
     type:
-    - object
+    - array
     - 'null'
-    description: Wyckoff-position splitting metadata induced by the transform.
-    properties: {}
+    description: Wyckoff-position splitting metadata induced by the transform, grouped by explicit parent Wyckoff letter.
+    items:
+      x-optimade-type: dictionary
+      x-optimade-unit: inapplicable
+      type:
+      - object
+      description: Splitting data for one parent Wyckoff position.
+      required: [parent, splits]
+      properties:
+        parent:
+          x-optimade-type: string
+          x-optimade-unit: inapplicable
+          type:
+          - string
+          description: Parent Wyckoff letter.
+        splits:
+          x-optimade-type: list
+          x-optimade-unit: inapplicable
+          type:
+          - array
+          description: Ordered split records for this parent Wyckoff letter.
+          items: {}
   criteria:
-    x-optimade-type: dictionary
+    x-optimade-type: list
     x-optimade-unit: inapplicable
     type:
-    - object
+    - array
     - 'null'
-    description: Backward-lift constraint metadata induced by the transform.
-    properties: {}
+    description: Backward-lift constraint metadata induced by the transform, grouped by explicit parent Wyckoff letter.
+    items:
+      x-optimade-type: dictionary
+      x-optimade-unit: inapplicable
+      type:
+      - object
+      description: Backward-lift criteria for one parent Wyckoff position.
+      required: [parent, criteria]
+      properties:
+        parent:
+          x-optimade-type: string
+          x-optimade-unit: inapplicable
+          type:
+          - string
+          description: Parent Wyckoff letter.
+        criteria:
+          x-optimade-type: list
+          x-optimade-unit: inapplicable
+          type:
+          - array
+          description: Criteria records for this parent Wyckoff letter.
+          items: {}
 examples:
 - affine_transformation:
     matrix:

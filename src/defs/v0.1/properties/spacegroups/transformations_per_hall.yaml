@@ -1,0 +1,52 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/transformations_per_hall
+title: Transformations per Hall entry
+$comment: Anyterial property definition for Hall-entry grouped transformation records.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: transformations_per_hall
+  label: transformations_per_hall_spacegroups
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Transformation data grouped by Hall entry.
+  Each list item contains the Hall entry as ordinary data together with all transformation sections generated for that setting.
+  This representation avoids using Hall entries as JSON dictionary keys in the OPTIMADE-described payload.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a list of dictionaries.
+  - Each dictionary MUST contain `hall_entry`.
+  - Each dictionary SHOULD contain the generated transformation sections for that Hall setting.
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  description: Transformation record for one Hall entry.
+  required: [hall_entry]
+  properties:
+    hall_entry:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
+    euclidean_normalizer:
+      $$inherit: "/defs/v0.1/properties/spacegroups/euclidean_normalizer"
+    hall_to_it_std_transform:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hall_to_it_std_transform"
+    orthogonal_affine_normalizer:
+      $$inherit: "/defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer"
+    affine_normalizer:
+      $$inherit: "/defs/v0.1/properties/spacegroups/affine_normalizer"
+    continuous_normalizer:
+      $$inherit: "/defs/v0.1/properties/spacegroups/continuous_normalizer"
+    isomorphic_subgroups:
+      $$inherit: "/defs/v0.1/properties/spacegroups/isomorphic_subgroups"
+    baernighausen:
+      $$inherit: "/defs/v0.1/properties/spacegroups/baernighausen"
+examples:
+- - hall_entry: p_1
+    baernighausen: []

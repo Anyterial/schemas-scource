@@ -21,6 +21,9 @@ description: |-
 
   - It MUST be a dictionary with the following keys:
 
+      - **letter**: REQUIRED; String.
+        Wyckoff letter for this position in the setting.
+
       - **multiplicity**: REQUIRED; Integer.
         Multiplicity of the Wyckoff position in the conventional cell.
 
@@ -45,6 +48,13 @@ description: |-
       - **orbit\_mod\_centering\_xyz**: REQUIRED; List of strings.
         Orbit representatives modulo centering translations in `x,y,z` notation.
 properties:
+  letter:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Wyckoff letter for this position in the setting.
   multiplicity:
     x-optimade-type: integer
     x-optimade-unit: inapplicable
@@ -158,7 +168,8 @@ properties:
       - string
       description: One coordinate expression.
 examples:
-- multiplicity: 2
+- letter: e
+  multiplicity: 2
   sitesym: '1'
   hasfreedom: [true, true, true]
   first_orbit: x,y,z

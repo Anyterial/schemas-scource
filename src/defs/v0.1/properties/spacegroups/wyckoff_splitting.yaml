@@ -1,8 +1,8 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/wyckoff_splitting
 title: Wyckoff splitting
-$comment: Anyterial property definition for Wyckoff-position splitting data attached to subgroup transforms.
-x-optimade-type: dictionary
+$comment: Anyterial property definition for Wyckoff-position splitting data attached to transforms.
+x-optimade-type: list
 x-optimade-definition:
   kind: property
   version: 0.1.0
@@ -11,20 +11,41 @@ x-optimade-definition:
   label: wyckoff_splitting_spacegroups
 x-optimade-unit: inapplicable
 type:
-- object
+- array
 - 'null'
 description: |-
   Wyckoff-position splitting data associated with a subgroup or same-space-group transform.
-  The map is keyed by parent Wyckoff letter.
-  Each value is an ordered list of subgroup Wyckoff-position assignments or coordinate expressions as emitted by the generator.
+  Each list item gives the split of one parent Wyckoff position.
+  The parent Wyckoff letter is stored in the `parent` field rather than as a JSON dictionary key.
 
   **Requirements/Conventions**:
 
-  - Dynamic keys MUST be parent Wyckoff letters.
-  - Values MUST be lists.
-  - Each listed item is currently a compact generator record whose exact shape is defined by the parent transform table.
-properties: {}
+  - It MUST be a list of dictionaries.
+  - Each dictionary MUST contain `parent`, the Wyckoff letter in the parent setting.
+  - Each dictionary MUST contain `splits`, an ordered list of subgroup Wyckoff-position assignments or coordinate expressions emitted by the generator.
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  description: Splitting data for one parent Wyckoff position.
+  required: [parent, splits]
+  properties:
+    parent:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      description: Parent Wyckoff letter.
+    splits:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      description: Ordered split records for this parent Wyckoff letter.
+      items: {}
 examples:
-- c:
-  - [e, x,y,z]
-  - [e, -x,y,-z]
+- - parent: c
+    splits:
+    - [e, x,y,z]
+    - [e, -x,y,-z]

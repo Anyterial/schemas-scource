@@ -2,7 +2,7 @@ $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/baernighausen
 title: Bärnighausen subgroup transforms
 $comment: Anyterial transform collection property using the common basis-transform definition for transform items.
-x-optimade-type: dictionary
+x-optimade-type: list
 x-optimade-definition:
   kind: property
   version: 0.1.0
@@ -11,25 +11,56 @@ x-optimade-definition:
   label: baernighausen_spacegroups
 x-optimade-unit: inapplicable
 type:
-- object
+- array
 - 'null'
 description: |-
   Bärnighausen subgroup transform table for one parent setting or space-group type.
   Entries describe generated embeddings of subgroup settings into the containing parent setting.
+  Each list item groups transform records for one target subgroup, with the target stored as ordinary data rather than as a JSON dictionary key.
   Transform records follow `/properties/symmetry/basis_transform`.
 
   **Requirements/Conventions**:
 
-  - Dynamic keys identify target subgroup settings or target subgroup space-group types according to the containing dataset.
-  - Values are lists of transform records.
-  - Each transform record SHOULD follow `/properties/symmetry/basis_transform`.
-properties: {}
+  - It MUST be a list of dictionaries.
+  - Each dictionary MUST contain either `target_hall_entry` or `target_it_number`, depending on whether the containing dataset is Hall-setting keyed or IT-number keyed.
+  - Each dictionary MUST contain `transforms`, a list of basis-transform records.
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  description: Bärnighausen transform group for one target subgroup.
+  required: [transforms]
+  properties:
+    target_hall_entry:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      - 'null'
+      description: Target Hall entry when the containing dataset is Hall-setting keyed.
+    target_it_number:
+      x-optimade-type: integer
+      x-optimade-unit: inapplicable
+      type:
+      - integer
+      - 'null'
+      description: Target International Tables number when the containing dataset is IT-number keyed.
+    transforms:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      description: Basis transforms for this target subgroup.
+      items:
+        $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
-- p_1:
-  - index: 2
-    affine_transformation:
-      matrix:
-      - ['1', '0', '0']
-      - ['0', '1', '0']
-      - ['0', '0', '2']
-      vector: ['0', '0', '0']
+- - target_hall_entry: p_1
+    transforms:
+    - index: 2
+      affine_transformation:
+        matrix:
+        - ['1', '0', '0']
+        - ['0', '1', '0']
+        - ['0', '0', '2']
+        vector: ['0', '0', '0']

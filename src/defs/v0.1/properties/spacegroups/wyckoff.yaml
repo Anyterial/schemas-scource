@@ -1,8 +1,8 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/wyckoff
 title: Wyckoff positions
-$comment: Anyterial Wyckoff-position map property using the common wyckoff-position record definition.
-x-optimade-type: dictionary
+$comment: Anyterial Wyckoff-position list property using the common wyckoff-position record definition.
+x-optimade-type: list
 x-optimade-definition:
   kind: property
   version: 0.1.0
@@ -11,22 +11,24 @@ x-optimade-definition:
   label: wyckoff_spacegroups
 x-optimade-unit: inapplicable
 type:
-- object
+- array
 - 'null'
 description: |-
   Wyckoff-position table for a specific space-group setting.
-  Each key is a Wyckoff letter and each value describes one Wyckoff position.
-  Values follow `/properties/symmetry/wyckoff_position`.
+  Each list item describes one Wyckoff position and includes the Wyckoff letter as ordinary data.
+  This list representation avoids using JSON dictionary keys as crystallographic data.
+  Items follow `/properties/symmetry/wyckoff_position`.
 
   **Requirements/Conventions**:
 
-  - Dynamic keys MUST be Wyckoff letters for the setting.
-  - Each value MUST be a dictionary describing the corresponding Wyckoff position.
+  - It MUST be a list of dictionaries.
+  - Each item MUST include `letter`, identifying the Wyckoff letter for that position in the setting.
   - `orbit_affine` and `orbit_xyz` contain the full orbit.
   - `orbit_mod_centering_affine` and `orbit_mod_centering_xyz` contain one representative modulo centering translations.
-properties: {}
+items:
+  $$inherit: "/defs/v0.1/properties/symmetry/wyckoff_position"
 examples:
-- e:
+- - letter: e
     multiplicity: 2
     sitesym: '1'
     hasfreedom: [true, true, true]

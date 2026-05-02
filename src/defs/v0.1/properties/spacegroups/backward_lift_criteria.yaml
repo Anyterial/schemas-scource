@@ -57,7 +57,7 @@ examples:
         vector: ['0', '0', '0']
       criteria:
       - parent: a
-        criteria:
+        constraints:
         - roles:
           - [a, 0]
           coeffs:

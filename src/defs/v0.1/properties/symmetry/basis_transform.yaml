@@ -42,10 +42,10 @@ description: |-
       - **operation\_kind**: OPTIONAL; String.
         Generator classification of the transform or representative.
 
-      - **wyckoff\_splitting**: OPTIONAL; Dictionary.
+      - **wyckoff\_splitting**: OPTIONAL; List.
         Wyckoff-position splitting metadata induced by the transform when available.
 
-      - **criteria**: OPTIONAL; Dictionary.
+      - **criteria**: OPTIONAL; List.
         Backward-lift constraint metadata induced by the transform when available.
 properties:
   affine_transformation:
@@ -118,7 +118,40 @@ properties:
           type:
           - array
           description: Ordered split records for this parent Wyckoff letter.
-          items: {}
+          items:
+            x-optimade-type: dictionary
+            x-optimade-unit: inapplicable
+            type:
+            - object
+            description: One Wyckoff split record.
+            required: [letter, xyz, affine]
+            properties:
+              letter:
+                x-optimade-type: string
+                x-optimade-unit: inapplicable
+                type:
+                - string
+                description: Subgroup Wyckoff letter assigned by this split branch.
+              xyz:
+                x-optimade-type: string
+                x-optimade-unit: inapplicable
+                type:
+                - string
+                description: Coordinate expression for the split branch.
+              affine:
+                x-optimade-type: list
+                x-optimade-unit: inapplicable
+                type:
+                - array
+                description: Exact affine representation for the split branch.
+                items:
+                  x-optimade-type: list
+                  x-optimade-unit: inapplicable
+                  type:
+                  - array
+                  description: One affine row.
+                  items:
+                    $$inherit: "/defs/v0.1/properties/core/fraction"
   criteria:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -131,8 +164,8 @@ properties:
       x-optimade-unit: inapplicable
       type:
       - object
-      description: Backward-lift criteria for one parent Wyckoff position.
-      required: [parent, criteria]
+      description: Backward-lift constraints for one parent Wyckoff position.
+      required: [parent, constraints]
       properties:
         parent:
           x-optimade-type: string
@@ -140,13 +173,73 @@ properties:
           type:
           - string
           description: Parent Wyckoff letter.
-        criteria:
+        constraints:
           x-optimade-type: list
           x-optimade-unit: inapplicable
           type:
           - array
-          description: Criteria records for this parent Wyckoff letter.
-          items: {}
+          description: Constraint records for this parent Wyckoff letter.
+          items:
+            x-optimade-type: dictionary
+            x-optimade-unit: inapplicable
+            type:
+            - object
+            description: One linear backward-lift constraint record.
+            properties:
+              roles:
+                x-optimade-type: list
+                x-optimade-unit: inapplicable
+                type:
+                - array
+                description: Wyckoff-position role references entering the constraint.
+                items:
+                  x-optimade-type: dictionary
+                  x-optimade-unit: inapplicable
+                  type:
+                  - object
+                  description: One role reference.
+                  required: [letter, index]
+                  properties:
+                    letter:
+                      x-optimade-type: string
+                      x-optimade-unit: inapplicable
+                      type:
+                      - string
+                      description: Wyckoff letter for the referenced role.
+                    index:
+                      x-optimade-type: integer
+                      x-optimade-unit: inapplicable
+                      type:
+                      - integer
+                      description: Zero-based occurrence index for the role.
+              coeffs:
+                x-optimade-type: list
+                x-optimade-unit: inapplicable
+                type:
+                - array
+                description: Exact coefficient vectors for the constraint.
+                items:
+                  x-optimade-type: list
+                  x-optimade-unit: inapplicable
+                  type:
+                  - array
+                  description: Coefficients associated with one role.
+                  items:
+                    x-optimade-type: list
+                    x-optimade-unit: inapplicable
+                    type:
+                    - array
+                    description: One exact coefficient vector.
+                    items:
+                      $$inherit: "/defs/v0.1/properties/core/fraction"
+              target:
+                x-optimade-type: list
+                x-optimade-unit: inapplicable
+                type:
+                - array
+                description: Exact target vector or scalar for the constraint.
+                items:
+                  $$inherit: "/defs/v0.1/properties/core/fraction"
 examples:
 - affine_transformation:
     matrix:

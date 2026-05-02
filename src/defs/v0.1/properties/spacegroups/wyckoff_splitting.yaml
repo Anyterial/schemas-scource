@@ -43,7 +43,40 @@ items:
       type:
       - array
       description: Ordered split records for this parent Wyckoff letter.
-      items: {}
+      items:
+        x-optimade-type: dictionary
+        x-optimade-unit: inapplicable
+        type:
+        - object
+        description: One Wyckoff split record.
+        required: [letter, xyz, affine]
+        properties:
+          letter:
+            x-optimade-type: string
+            x-optimade-unit: inapplicable
+            type:
+            - string
+            description: Subgroup Wyckoff letter assigned by this split branch.
+          xyz:
+            x-optimade-type: string
+            x-optimade-unit: inapplicable
+            type:
+            - string
+            description: Coordinate expression for the split branch.
+          affine:
+            x-optimade-type: list
+            x-optimade-unit: inapplicable
+            type:
+            - array
+            description: Exact affine representation for the split branch.
+            items:
+              x-optimade-type: list
+              x-optimade-unit: inapplicable
+              type:
+              - array
+              description: One affine row.
+              items:
+                $$inherit: "/defs/v0.1/properties/core/fraction"
 examples:
 - - parent: c
     splits:

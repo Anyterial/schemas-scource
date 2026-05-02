@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/affine_transformation
 title: Affine transformation
-$comment: Reusable Anyterial definition for one exact crystallographic affine transformation record.
+$comment: Reusable Anyterial definition for the pure affine-map part of crystallographic transformation records.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,8 +15,8 @@ type:
 - 'null'
 description: |-
   One exact affine transformation acting on fractional crystallographic coordinates.
-  The transformation core is represented by a 3 by 3 matrix and a 3-vector, both serialized with exact string entries.
-  Parent properties define the coordinate convention and semantic role of the transformation, for example whether it is a setting transform, a subgroup embedding, a same-space-group image, or a normalizer representative.
+  The transformation is represented by a 3 by 3 matrix and a 3-vector, both serialized with exact string entries.
+  Parent properties define the coordinate convention and semantic role of the transformation, for example whether it is an operation within one setting, a setting transform, a subgroup embedding, or a normalizer representative.
 
   **Requirements/Conventions**:
 
@@ -37,28 +37,6 @@ description: |-
 
       - **is\_orthogonal**: OPTIONAL; Boolean.
         Whether `matrix` is orthogonal in the exact representation used by the generator.
-
-      - **compatible\_systems**: OPTIONAL; List of strings.
-        Crystal metric systems for which the transformation is compatible.
-        This is used for bounded affine normalizer representatives.
-
-      - **operation\_kind**: OPTIONAL; String.
-        Generator classification of the operation or representative.
-
-      - **index**: OPTIONAL; Integer.
-        Subgroup index, same-setting transform index, or other index metadata whose interpretation is defined by the parent property.
-
-      - **subgroup\_type**: OPTIONAL; String.
-        International Tables subgroup-type label when the transformation describes a subgroup embedding.
-
-      - **k\_subtype**: OPTIONAL; String or null.
-        Klassengleiche subtype when the transformation describes a klassengleiche subgroup relation.
-
-      - **wyckoff\_splitting**: OPTIONAL; Dictionary.
-        Wyckoff-position splitting metadata induced by the transformation when available.
-
-      - **criteria**: OPTIONAL; Dictionary.
-        Backward-lift constraint metadata induced by the transformation when available.
 properties:
   matrix:
     x-optimade-type: list
@@ -114,63 +92,6 @@ properties:
     - boolean
     - 'null'
     description: Whether the matrix part is orthogonal.
-  compatible_systems:
-    x-optimade-type: list
-    x-optimade-unit: inapplicable
-    type:
-    - array
-    - 'null'
-    description: Crystal metric systems compatible with the transformation.
-    items:
-      x-optimade-type: string
-      x-optimade-unit: inapplicable
-      type:
-      - string
-      description: One compatible crystal-system label.
-  operation_kind:
-    x-optimade-type: string
-    x-optimade-unit: inapplicable
-    type:
-    - string
-    - 'null'
-    description: Generator classification of the operation or representative.
-  index:
-    x-optimade-type: integer
-    x-optimade-unit: inapplicable
-    type:
-    - integer
-    - 'null'
-    description: Index metadata whose interpretation is supplied by the parent property.
-  subgroup_type:
-    x-optimade-type: string
-    x-optimade-unit: inapplicable
-    type:
-    - string
-    - 'null'
-    description: International Tables subgroup-type label when applicable.
-  k_subtype:
-    x-optimade-type: string
-    x-optimade-unit: inapplicable
-    type:
-    - string
-    - 'null'
-    description: Klassengleiche subtype when applicable.
-  wyckoff_splitting:
-    x-optimade-type: dictionary
-    x-optimade-unit: inapplicable
-    type:
-    - object
-    - 'null'
-    description: Wyckoff-position splitting metadata induced by the transformation.
-    properties: {}
-  criteria:
-    x-optimade-type: dictionary
-    x-optimade-unit: inapplicable
-    type:
-    - object
-    - 'null'
-    description: Backward-lift constraint metadata induced by the transformation.
-    properties: {}
 examples:
 - matrix:
   - ['-1', '0', '0']

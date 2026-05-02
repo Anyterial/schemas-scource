@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/basis_transform
 title: Basis transformation
-$comment: Reusable Anyterial definition for one crystallographic change-of-basis or setting transform.
+$comment: Reusable Anyterial definition for one crystallographic basis, setting, cell, or embedding transform.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,58 +14,104 @@ type:
 - object
 - 'null'
 description: |-
-  One crystallographic basis or setting transformation represented by an exact matrix and an exact origin shift.
-  Parent tables use this object for Bärnighausen transforms, isomorphic subgroup transforms, Hall-to-standard transforms, and related setting maps.
+  One crystallographic transform between coordinate descriptions, settings, cells, or related group embeddings.
+  The affine map itself is stored in the embedded `affine_transformation` field.
+  Parent tables use this object for Hall-to-standard transforms, Bärnighausen subgroup transforms, isomorphic subgroup transforms, normalizer representatives, and same-space-group affine images.
 
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
 
-      - **pmat**: REQUIRED; Exact 3x3 matrix.
-        Matrix part of the basis or setting transformation.
-
-      - **pvec**: REQUIRED; List of 3 Fractions (String).
-        Translation or origin-shift vector of the basis or setting transformation.
+      - **affine\_transformation**: REQUIRED; Dictionary.
+        Exact affine map for the transform.
+        It MUST follow `/defs/v0.1/properties/symmetry/affine_transformation`.
 
       - **index**: OPTIONAL; Integer.
-        Subgroup index or cell-index metadata when the parent table defines such an index.
+        Subgroup index, same-setting transform index, or cell-index metadata whose interpretation is defined by the parent table.
 
-      - **target**: OPTIONAL; String or integer.
-        Target setting, Hall entry, IT number, or other target identifier as defined by the parent table.
+      - **subgroup\_type**: OPTIONAL; String.
+        International Tables subgroup-type label when the transform describes a subgroup embedding.
+
+      - **k\_subtype**: OPTIONAL; String or null.
+        Klassengleiche subtype when the transform describes a klassengleiche subgroup relation.
+
+      - **compatible\_systems**: OPTIONAL; List of strings.
+        Crystal metric systems for which the transform is compatible.
+        This is used for bounded affine normalizer representatives.
+
+      - **operation\_kind**: OPTIONAL; String.
+        Generator classification of the transform or representative.
 
       - **wyckoff\_splitting**: OPTIONAL; Dictionary.
-        Wyckoff-position splitting metadata associated with the transform when available.
+        Wyckoff-position splitting metadata induced by the transform when available.
+
+      - **criteria**: OPTIONAL; Dictionary.
+        Backward-lift constraint metadata induced by the transform when available.
 properties:
-  pmat:
-    $$inherit: "/defs/v0.1/properties/symmetry/pmat"
-  pvec:
-    $$inherit: "/defs/v0.1/properties/symmetry/pvec"
+  affine_transformation:
+    $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
   index:
     x-optimade-type: integer
     x-optimade-unit: inapplicable
     type:
     - integer
     - 'null'
-    description: Optional subgroup or cell index associated with the transform.
-  target:
+    description: Index metadata whose interpretation is supplied by the parent property.
+  subgroup_type:
     x-optimade-type: string
     x-optimade-unit: inapplicable
     type:
     - string
     - 'null'
-    description: Optional target identifier whose interpretation is supplied by the parent table.
+    description: International Tables subgroup-type label when applicable.
+  k_subtype:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Klassengleiche subtype when applicable.
+  compatible_systems:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Crystal metric systems compatible with the transform.
+    items:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      description: One compatible crystal-system label.
+  operation_kind:
+    x-optimade-type: string
+    x-optimade-unit: inapplicable
+    type:
+    - string
+    - 'null'
+    description: Generator classification of the transform or representative.
   wyckoff_splitting:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
     type:
     - object
     - 'null'
-    description: Optional Wyckoff-position splitting metadata associated with the transform.
+    description: Wyckoff-position splitting metadata induced by the transform.
+    properties: {}
+  criteria:
+    x-optimade-type: dictionary
+    x-optimade-unit: inapplicable
+    type:
+    - object
+    - 'null'
+    description: Backward-lift constraint metadata induced by the transform.
     properties: {}
 examples:
-- index: 2
-  pmat:
-  - ['1', '0', '0']
-  - ['0', '1', '0']
-  - ['0', '0', '2']
-  pvec: ['0', '0', '0']
+- affine_transformation:
+    matrix:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '2']
+    vector: ['0', '0', '0']
+  index: 2

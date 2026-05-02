@@ -16,9 +16,9 @@ type:
 description: |-
   Same-space-group affine images for a standard setting.
   The list combines Euclidean normalizer operations and isomorphic subgroup transforms to enumerate alternative affine images of the same space group used by runtime search code.
-  Matrix/vector transform fields follow `/properties/symmetry/affine_transformation`.
+  Matrix/vector transform fields follow `/properties/symmetry/basis_transform`.
 items:
-  $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
+  $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
 - - matrix:
     - ['1', '0', '0']

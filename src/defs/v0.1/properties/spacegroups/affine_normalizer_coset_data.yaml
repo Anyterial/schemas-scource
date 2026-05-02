@@ -57,11 +57,11 @@ items:
 
         - **orthogonal\_affine\_normalizer\_cosets**: REQUIRED; List of dictionaries.
           Signed-permutation affine normalizer coset representatives modulo the space group.
-          Each item follows `/defs/v0.1/properties/symmetry/affine_transformation`.
+          Each item follows `/defs/v0.1/properties/symmetry/basis_transform`.
 
         - **affine\_normalizer\_cosets**: REQUIRED; List of dictionaries.
           Bounded affine normalizer coset representatives modulo the space group.
-          Each item follows `/defs/v0.1/properties/symmetry/affine_transformation`.
+          Each item follows `/defs/v0.1/properties/symmetry/basis_transform`.
 
         - **n\_orthogonal\_cosets**: REQUIRED; Integer.
           Number of representatives in `orthogonal_affine_normalizer_cosets`.
@@ -195,24 +195,26 @@ examples:
     it_number: 1
     crystal_system: triclinic
     orthogonal_affine_normalizer_cosets:
-    - matrix:
-      - ['-1', '0', '0']
-      - ['0', '-1', '0']
-      - ['0', '0', '-1']
-      vector: ['0', '0', '0']
-      xyz: -x,-y,-z
-      det: -1
-      is_orthogonal: true
+    - affine_transformation:
+        matrix:
+        - ['-1', '0', '0']
+        - ['0', '-1', '0']
+        - ['0', '0', '-1']
+        vector: ['0', '0', '0']
+        xyz: -x,-y,-z
+        det: -1
+        is_orthogonal: true
       compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
     affine_normalizer_cosets:
-    - matrix:
-      - ['-1', '0', '0']
-      - ['0', '-1', '0']
-      - ['0', '0', '-1']
-      vector: ['0', '0', '0']
-      xyz: -x,-y,-z
-      det: -1
-      is_orthogonal: true
+    - affine_transformation:
+        matrix:
+        - ['-1', '0', '0']
+        - ['0', '-1', '0']
+        - ['0', '0', '-1']
+        vector: ['0', '0', '0']
+        xyz: -x,-y,-z
+        det: -1
+        is_orthogonal: true
       compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
     n_orthogonal_cosets: 47
     n_cosets: 63

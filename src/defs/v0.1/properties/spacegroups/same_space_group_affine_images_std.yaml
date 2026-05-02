@@ -41,13 +41,14 @@ properties:
     - 'null'
     description: Same-space-group affine image transforms.
     items:
-      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
+      $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
 - it_number: 1
   hall: p_1
   affine_images:
-  - matrix:
-    - ['1', '0', '0']
-    - ['0', '1', '0']
-    - ['0', '0', '1']
-    vector: ['0', '0', '0']
+  - affine_transformation:
+      matrix:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '1']
+      vector: ['0', '0', '0']

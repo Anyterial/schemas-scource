@@ -36,7 +36,7 @@ properties:
     - 'null'
     description: Isomorphic subgroup transform records for one parent key.
     items:
-      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
+      $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
 - items:
   - index: 2
@@ -52,8 +52,9 @@ examples:
         - - ['1', '0', '0', '0']
           - ['0', '1', '0', '0']
           - ['0', '0', '1/2', '0']
-    matrix:
-    - ['1', '0', '0']
-    - ['0', '1', '0']
-    - ['0', '0', '2']
-    vector: ['0', '0', '0']
+    affine_transformation:
+      matrix:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '2']
+      vector: ['0', '0', '0']

@@ -478,13 +478,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  pmat:
-    $$inherit: /defs/v0.1/properties/spacegroups/pmat
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   point_group:
     $$inherit: /defs/v0.1/properties/spacegroups/point_group
     x-optimade-requirements:
@@ -492,36 +485,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  pvec:
-    $$inherit: /defs/v0.1/properties/spacegroups/pvec
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   maximal_subgroup_relations:
     $$inherit: /defs/v0.1/properties/spacegroups/maximal_subgroup_relations
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  rmat:
-    $$inherit: /defs/v0.1/properties/spacegroups/rmat
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  rmat_det:
-    $$inherit: /defs/v0.1/properties/spacegroups/rmat_det
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  rmat_is_orthogonal:
-    $$inherit: /defs/v0.1/properties/spacegroups/rmat_is_orthogonal
     x-optimade-requirements:
       support: may
       sortable: false
@@ -662,13 +627,6 @@ properties:
       response-level: may
   to_hall_symbol:
     $$inherit: /defs/v0.1/properties/spacegroups/to_hall_symbol
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  tvec:
-    $$inherit: /defs/v0.1/properties/spacegroups/tvec
     x-optimade-requirements:
       support: may
       sortable: false

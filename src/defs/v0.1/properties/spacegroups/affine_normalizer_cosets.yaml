@@ -15,16 +15,17 @@ type:
 - 'null'
 description: |-
   Runtime list of bounded affine normalizer coset representatives modulo the space group.
-  Each item is one finite listed representative and follows `/properties/symmetry/affine_transformation`.
+  Each item is one finite listed representative and follows `/properties/symmetry/basis_transform`.
   The list is a bounded representative table, not a complete infinite affine normalizer.
 items:
-  $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
+  $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
-- - matrix:
-    - ['-1', '0', '0']
-    - ['0', '-1', '0']
-    - ['0', '0', '1']
-    vector: ['0', '0', '0']
-    xyz: -x,-y,z
-    det: 1
-    is_orthogonal: true
+- - affine_transformation:
+      matrix:
+      - ['-1', '0', '0']
+      - ['0', '-1', '0']
+      - ['0', '0', '1']
+      vector: ['0', '0', '0']
+      xyz: -x,-y,z
+      det: 1
+      is_orthogonal: true

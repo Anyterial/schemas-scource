@@ -44,13 +44,10 @@ description: |-
         Transform index.
         For this table the value is `1` because the transform maps between settings of the same space group.
 
-      - **matrix**: REQUIRED; Exact 3x3 matrix.
-        Matrix part of the basis transform.
-        The transform convention is `x_from_hall = matrix * x_to_ref_hall + vector`.
-
-      - **vector**: REQUIRED; List of 3 Fractions (String).
-        Origin-shift vector of the basis transform.
-        The transform convention is `x_from_hall = matrix * x_to_ref_hall + vector`.
+      - **affine\_transformation**: REQUIRED; Dictionary.
+        Exact affine map for this setting transform.
+        It MUST follow `/defs/v0.1/properties/symmetry/affine_transformation`.
+        The transform convention is `x_from_hall = matrix * x_to_ref_hall + vector`, where `matrix` and `vector` are the fields inside `affine_transformation`.
 properties:
   hall_entry:
     $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
@@ -62,47 +59,17 @@ properties:
     $$inherit: "/defs/v0.1/properties/spacegroups/to_hall_symbol"
   index:
     $$inherit: "/defs/v0.1/properties/spacegroups/index"
-  matrix:
-    x-optimade-type: list
-    x-optimade-unit: inapplicable
-    x-optimade-dimensions:
-      names: ["dim_lattice", "dim_lattice"]
-      sizes: [3, 3]
-    type:
-    - array
-    - 'null'
-    description: Exact 3 by 3 matrix part of the affine transformation.
-    items:
-      x-optimade-type: list
-      x-optimade-unit: inapplicable
-      x-optimade-dimensions:
-        names: ["dim_lattice"]
-        sizes: [3]
-      type:
-      - array
-      description: One row of the exact 3 by 3 matrix.
-      items:
-        $$inherit: "/defs/v0.1/properties/core/fraction"
-  vector:
-    x-optimade-type: list
-    x-optimade-unit: inapplicable
-    x-optimade-dimensions:
-      names: ["dim_lattice"]
-      sizes: [3]
-    type:
-    - array
-    - 'null'
-    description: Exact fractional-coordinate vector part of the affine transformation.
-    items:
-      $$inherit: "/defs/v0.1/properties/core/fraction"
+  affine_transformation:
+    $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
 - hall_entry: p_1
   it_number: 1
   to_hall: p_1
   to_hall_symbol: p 1
   index: 1
-  matrix:
-  - ['1', '0', '0']
-  - ['0', '1', '0']
-  - ['0', '0', '1']
-  vector: ['0', '0', '0']
+  affine_transformation:
+    matrix:
+    - ['1', '0', '0']
+    - ['0', '1', '0']
+    - ['0', '0', '1']
+    vector: ['0', '0', '0']

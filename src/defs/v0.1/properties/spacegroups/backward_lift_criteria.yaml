@@ -26,11 +26,12 @@ properties: {}
 examples:
 - '2':
   - index: 2
-    matrix:
-    - ['1', '0', '0']
-    - ['0', '1', '0']
-    - ['0', '0', '2']
-    vector: ['0', '0', '0']
+    affine_transformation:
+      matrix:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '2']
+      vector: ['0', '0', '0']
     criteria:
       a:
       - roles:

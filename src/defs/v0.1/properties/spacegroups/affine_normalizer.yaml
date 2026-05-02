@@ -55,7 +55,7 @@ description: |-
 
       - **symops**: REQUIRED; List of dictionaries.
         Listed affine normalizer coset representatives.
-        Each item follows `/defs/v0.1/properties/symmetry/affine_transformation`.
+        Each item follows `/defs/v0.1/properties/symmetry/basis_transform`.
 properties:
   normalizer_kind:
     x-optimade-type: string
@@ -133,7 +133,7 @@ properties:
     - 'null'
     description: Listed affine normalizer coset representatives.
     items:
-      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
+      $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
 - normalizer_kind: affine
   representation: bounded_coset_representatives
@@ -147,13 +147,14 @@ examples:
     det_abs: 1
     max_abs_linear_entry: 1
   symops:
-  - xyz: -x,-y,-z
-    matrix:
-    - ['-1', '0', '0']
-    - ['0', '-1', '0']
-    - ['0', '0', '-1']
-    vector: ['0', '0', '0']
-    det: -1
-    is_orthogonal: true
+  - affine_transformation:
+      xyz: -x,-y,-z
+      matrix:
+      - ['-1', '0', '0']
+      - ['0', '-1', '0']
+      - ['0', '0', '-1']
+      vector: ['0', '0', '0']
+      det: -1
+      is_orthogonal: true
     compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
     operation_kind: affine

@@ -15,16 +15,16 @@ type:
 - 'null'
 description: |-
   Runtime list of orthogonal signed-permutation affine normalizer coset representatives modulo the space group.
-  Each item is one finite listed representative and follows `/properties/symmetry/normalizer_representative`.
+  Each item is one finite listed representative and follows `/properties/symmetry/affine_transformation`.
   The list is a bounded representative table, not a complete infinite affine normalizer.
 items:
-  $$inherit: "/defs/v0.1/properties/symmetry/normalizer_representative"
+  $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
-- - rmat:
+- - matrix:
     - ['-1', '0', '0']
     - ['0', '-1', '0']
     - ['0', '0', '1']
-    tvec: ['0', '0', '0']
+    vector: ['0', '0', '0']
     xyz: -x,-y,z
-    rmat_det: 1
-    rmat_is_orthogonal: true
+    det: 1
+    is_orthogonal: true

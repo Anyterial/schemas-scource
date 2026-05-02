@@ -21,16 +21,16 @@ description: |-
   **Requirements/Conventions**:
 
   - Dynamic keys MUST be subgroup IT numbers represented as strings.
-  - Transform records SHOULD include `index`, `pmat`, `pvec`, and `criteria`.
+  - Transform records SHOULD include `index`, `matrix`, `vector`, and `criteria`.
 properties: {}
 examples:
 - '2':
   - index: 2
-    pmat:
+    matrix:
     - ['1', '0', '0']
     - ['0', '1', '0']
     - ['0', '0', '2']
-    pvec: ['0', '0', '0']
+    vector: ['0', '0', '0']
     criteria:
       a:
       - roles:

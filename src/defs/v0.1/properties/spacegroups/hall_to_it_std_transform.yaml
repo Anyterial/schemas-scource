@@ -16,10 +16,10 @@ type:
 description: |-
   Exact basis and origin transform from one stored Hall setting to the International Tables standard Hall setting of the same space-group type.
   This transform is useful when data generated or detected in an arbitrary Hall setting needs to be compared with a conventional IT-standard reference setting.
-  The transform is represented by `pmat` and `pvec` using the same basis-transform convention as the other generated transformation tables.
+  The transform is represented by `matrix` and `vector`, following the same affine-transformation convention as the other generated transformation tables.
 
   If `x_to_ref_hall` is a fractional coordinate column vector in the target IT-standard Hall setting, and `x_from_hall` is the corresponding fractional coordinate column vector in the source Hall setting keyed by the containing map, then the stored transform satisfies:
-  `x_from_hall = pmat * x_to_ref_hall + pvec`.
+  `x_from_hall = matrix * x_to_ref_hall + vector`.
 
   **Requirements/Conventions**:
 
@@ -44,13 +44,13 @@ description: |-
         Transform index.
         For this table the value is `1` because the transform maps between settings of the same space group.
 
-      - **pmat**: REQUIRED; Exact 3x3 matrix.
+      - **matrix**: REQUIRED; Exact 3x3 matrix.
         Matrix part of the basis transform.
-        The transform convention is `x_from_hall = pmat * x_to_ref_hall + pvec`.
+        The transform convention is `x_from_hall = matrix * x_to_ref_hall + vector`.
 
-      - **pvec**: REQUIRED; List of 3 Fractions (String).
+      - **vector**: REQUIRED; List of 3 Fractions (String).
         Origin-shift vector of the basis transform.
-        The transform convention is `x_from_hall = pmat * x_to_ref_hall + pvec`.
+        The transform convention is `x_from_hall = matrix * x_to_ref_hall + vector`.
 properties:
   hall_entry:
     $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
@@ -62,18 +62,47 @@ properties:
     $$inherit: "/defs/v0.1/properties/spacegroups/to_hall_symbol"
   index:
     $$inherit: "/defs/v0.1/properties/spacegroups/index"
-  pmat:
-    $$inherit: "/defs/v0.1/properties/spacegroups/pmat"
-  pvec:
-    $$inherit: "/defs/v0.1/properties/spacegroups/pvec"
+  matrix:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice", "dim_lattice"]
+      sizes: [3, 3]
+    type:
+    - array
+    - 'null'
+    description: Exact 3 by 3 matrix part of the affine transformation.
+    items:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
+      type:
+      - array
+      description: One row of the exact 3 by 3 matrix.
+      items:
+        $$inherit: "/defs/v0.1/properties/core/fraction"
+  vector:
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
+    type:
+    - array
+    - 'null'
+    description: Exact fractional-coordinate vector part of the affine transformation.
+    items:
+      $$inherit: "/defs/v0.1/properties/core/fraction"
 examples:
 - hall_entry: p_1
   it_number: 1
   to_hall: p_1
   to_hall_symbol: p 1
   index: 1
-  pmat:
+  matrix:
   - ['1', '0', '0']
   - ['0', '1', '0']
   - ['0', '0', '1']
-  pvec: ['0', '0', '0']
+  vector: ['0', '0', '0']

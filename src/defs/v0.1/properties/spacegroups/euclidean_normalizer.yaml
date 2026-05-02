@@ -41,11 +41,11 @@ description: |-
         This value MUST equal the length of `symops`.
 
       - **n\_linear\_parts**: REQUIRED; Integer.
-        Number of distinct `rmat` linear matrix parts represented in `symops`.
+        Number of distinct linear matrix parts represented in `symops`.
 
       - **symops**: REQUIRED; List of dictionaries.
         Finite Euclidean normalizer operations for the setting.
-        Each item follows `/defs/v0.1/properties/symmetry/symop`.
+        Each item follows `/defs/v0.1/properties/symmetry/affine_transformation`.
 properties:
   normalizer_kind:
     x-optimade-type: string
@@ -63,7 +63,14 @@ properties:
   n_linear_parts:
     $$inherit: "/defs/v0.1/properties/spacegroups/n_linear_parts"
   symops:
-    $$inherit: "/defs/v0.1/properties/spacegroups/symops"
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Finite Euclidean normalizer operations for the setting.
+    items:
+      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
 - normalizer_kind: euclidean
   n_centering_translations: 1
@@ -72,13 +79,13 @@ examples:
   n_linear_parts: 2
   symops:
   - xyz: -x,-y,-z
-    rmat:
+    matrix:
     - ['-1', '0', '0']
     - ['0', '-1', '0']
     - ['0', '0', '-1']
-    tvec: ['0', '0', '0']
-    rmat_det: -1
-    rmat_is_orthogonal: true
+    vector: ['0', '0', '0']
+    det: -1
+    is_orthogonal: true
     rot_type: '-1'
     sense: 0
     axis: [0, 0, 0]

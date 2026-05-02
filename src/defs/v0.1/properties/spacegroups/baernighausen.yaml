@@ -1,7 +1,7 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/baernighausen
 title: Bärnighausen subgroup transforms
-$comment: Anyterial transform collection property using the common basis-transform definition for transform items.
+$comment: Anyterial transform collection property using the common affine-transformation definition for transform items.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -16,19 +16,19 @@ type:
 description: |-
   Bärnighausen subgroup transform table for one parent setting or space-group type.
   Entries describe generated embeddings of subgroup settings into the containing parent setting.
-  Transform records use `pmat` and `pvec` as defined by `/properties/symmetry/basis_transform`.
+  Transform records use `matrix` and `vector` according to `/properties/symmetry/affine_transformation`.
 
   **Requirements/Conventions**:
 
   - Dynamic keys identify target subgroup settings or target subgroup space-group types according to the containing dataset.
   - Values are lists of transform records.
-  - Each transform record SHOULD follow `/properties/symmetry/basis_transform` for its matrix and vector fields.
+  - Each transform record SHOULD follow `/properties/symmetry/affine_transformation` for its matrix and vector fields.
 properties: {}
 examples:
 - p_1:
   - index: 2
-    pmat:
+    matrix:
     - ['1', '0', '0']
     - ['0', '1', '0']
     - ['0', '0', '2']
-    pvec: ['0', '0', '0']
+    vector: ['0', '0', '0']

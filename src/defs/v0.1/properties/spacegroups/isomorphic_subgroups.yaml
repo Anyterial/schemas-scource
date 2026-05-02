@@ -18,7 +18,7 @@ description: |-
   An isomorphic subgroup has the same space-group type as the parent but is embedded with a finite index, usually corresponding to an enlarged unit cell or a sublattice choice.
   These transforms are useful for algorithms that need to enumerate same-type subgroup embeddings, compare structures under supercell changes, or construct bounded same-space-group refinement paths.
 
-  The transform records use the basis-transform convention represented by `pmat` and `pvec`.
+  The transform records use the basis-transform convention represented by `matrix` and `vector`.
   The `index` field is the subgroup index and equals the determinant factor of the basis transformation.
   The generator currently searches indices up to its configured maximum index and deduplicates equivalent transforms under normalizer equivalence.
 
@@ -36,38 +36,7 @@ properties:
     - 'null'
     description: Isomorphic subgroup transform records for one parent key.
     items:
-      x-optimade-type: dictionary
-      x-optimade-unit: inapplicable
-      type:
-      - object
-      - 'null'
-      description: |-
-        One exact isomorphic subgroup transform.
-
-        **Requirements/Conventions**:
-
-        - It MUST be a dictionary with the following keys:
-
-            - **index**: REQUIRED; Integer.
-              Subgroup index of the isomorphic embedding.
-
-            - **pmat**: REQUIRED; Exact 3x3 matrix.
-              Matrix part of the basis transform.
-
-            - **pvec**: REQUIRED; List of 3 Fractions (String).
-              Origin-shift vector of the basis transform.
-
-            - **wyckoff\_splitting**: REQUIRED; Dictionary.
-              Wyckoff-position splitting data induced by this transform.
-      properties:
-        index:
-          $$inherit: "/defs/v0.1/properties/spacegroups/index"
-        pmat:
-          $$inherit: "/defs/v0.1/properties/spacegroups/pmat"
-        pvec:
-          $$inherit: "/defs/v0.1/properties/spacegroups/pvec"
-        wyckoff_splitting:
-          $$inherit: "/defs/v0.1/properties/spacegroups/wyckoff_splitting"
+      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
 - items:
   - index: 2
@@ -83,8 +52,8 @@ examples:
         - - ['1', '0', '0', '0']
           - ['0', '1', '0', '0']
           - ['0', '0', '1/2', '0']
-    pmat:
+    matrix:
     - ['1', '0', '0']
     - ['0', '1', '0']
     - ['0', '0', '2']
-    pvec: ['0', '0', '0']
+    vector: ['0', '0', '0']

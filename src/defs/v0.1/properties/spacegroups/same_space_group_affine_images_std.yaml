@@ -27,7 +27,7 @@ description: |-
         Hall-entry key of the reference setting used for the standard setting.
 
       - **affine\_images**: REQUIRED; List of dictionaries.
-        Same-space-group affine images represented by exact `pmat` and `pvec` transforms.
+        Same-space-group affine images represented by exact `matrix` and `vector` transforms.
 properties:
   it_number:
     $$inherit: "/defs/v0.1/properties/spacegroups/it_number"
@@ -41,13 +41,13 @@ properties:
     - 'null'
     description: Same-space-group affine image transforms.
     items:
-      $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
+      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
 - it_number: 1
   hall: p_1
   affine_images:
-  - pmat:
+  - matrix:
     - ['1', '0', '0']
     - ['0', '1', '0']
     - ['0', '0', '1']
-    pvec: ['0', '0', '0']
+    vector: ['0', '0', '0']

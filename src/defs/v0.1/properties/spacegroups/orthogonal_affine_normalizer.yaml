@@ -55,7 +55,7 @@ description: |-
 
       - **symops**: REQUIRED; List of dictionaries.
         Listed orthogonal affine normalizer coset representatives.
-        Each item follows `/defs/v0.1/properties/symmetry/normalizer_representative`.
+        Each item follows `/defs/v0.1/properties/symmetry/affine_transformation`.
 properties:
   normalizer_kind:
     x-optimade-type: string
@@ -126,7 +126,14 @@ properties:
         - 'null'
         description: Maximum absolute entry value in the signed-permutation candidate matrices.
   symops:
-    $$inherit: "/defs/v0.1/properties/spacegroups/symops"
+    x-optimade-type: list
+    x-optimade-unit: inapplicable
+    type:
+    - array
+    - 'null'
+    description: Listed orthogonal affine normalizer coset representatives.
+    items:
+      $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:
 - normalizer_kind: orthogonal_affine
   representation: orthogonal_coset_representatives
@@ -141,12 +148,12 @@ examples:
     max_abs_linear_entry: 1
   symops:
   - xyz: -x,-y,-z
-    rmat:
+    matrix:
     - ['-1', '0', '0']
     - ['0', '-1', '0']
     - ['0', '0', '-1']
-    tvec: ['0', '0', '0']
-    rmat_det: -1
-    rmat_is_orthogonal: true
+    vector: ['0', '0', '0']
+    det: -1
+    is_orthogonal: true
     compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
     operation_kind: orthogonal_affine

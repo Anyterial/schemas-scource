@@ -105,7 +105,63 @@ properties:
     - object
     - 'null'
     description: Left-hand operand for a logical cut expression.
-    properties: {}
+    properties:
+      kind:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Kind of cut expression.
+      ascii:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Plain-text rendering of the cut expression.
+      xyz:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Coordinate expression for the cut in `x,y,z` notation.
+      inclusive:
+        x-optimade-type: boolean
+        x-optimade-unit: inapplicable
+        type:
+        - boolean
+        - 'null'
+        description: Whether the cut boundary is included.
+      base_symbol:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Base symbolic inequality or coordinate label used for the cut.
+      normal:
+        x-optimade-type: list
+        x-optimade-unit: inapplicable
+        x-optimade-dimensions:
+          names: ["dim_lattice"]
+          sizes: [3]
+        type:
+        - array
+        - 'null'
+        description: Normal vector of a half-space cut.
+        items:
+          $$inherit: "/defs/v0.1/properties/core/fraction"
+      const:
+        $$inherit: "/defs/v0.1/properties/core/fraction"
+      op:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Logical operator used when the expression combines two subexpressions.
   rhs:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
@@ -113,7 +169,63 @@ properties:
     - object
     - 'null'
     description: Right-hand operand for a logical cut expression.
-    properties: {}
+    properties:
+      kind:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Kind of cut expression.
+      ascii:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Plain-text rendering of the cut expression.
+      xyz:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Coordinate expression for the cut in `x,y,z` notation.
+      inclusive:
+        x-optimade-type: boolean
+        x-optimade-unit: inapplicable
+        type:
+        - boolean
+        - 'null'
+        description: Whether the cut boundary is included.
+      base_symbol:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Base symbolic inequality or coordinate label used for the cut.
+      normal:
+        x-optimade-type: list
+        x-optimade-unit: inapplicable
+        x-optimade-dimensions:
+          names: ["dim_lattice"]
+          sizes: [3]
+        type:
+        - array
+        - 'null'
+        description: Normal vector of a half-space cut.
+        items:
+          $$inherit: "/defs/v0.1/properties/core/fraction"
+      const:
+        $$inherit: "/defs/v0.1/properties/core/fraction"
+      op:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Logical operator used when the expression combines two subexpressions.
   condition:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
@@ -121,7 +233,63 @@ properties:
     - object
     - 'null'
     description: Optional conditional cut expression that refines when this cut applies.
-    properties: {}
+    properties:
+      kind:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Kind of cut expression.
+      ascii:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Plain-text rendering of the cut expression.
+      xyz:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Coordinate expression for the cut in `x,y,z` notation.
+      inclusive:
+        x-optimade-type: boolean
+        x-optimade-unit: inapplicable
+        type:
+        - boolean
+        - 'null'
+        description: Whether the cut boundary is included.
+      base_symbol:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Base symbolic inequality or coordinate label used for the cut.
+      normal:
+        x-optimade-type: list
+        x-optimade-unit: inapplicable
+        x-optimade-dimensions:
+          names: ["dim_lattice"]
+          sizes: [3]
+        type:
+        - array
+        - 'null'
+        description: Normal vector of a half-space cut.
+        items:
+          $$inherit: "/defs/v0.1/properties/core/fraction"
+      const:
+        $$inherit: "/defs/v0.1/properties/core/fraction"
+      op:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        - 'null'
+        description: Logical operator used when the expression combines two subexpressions.
 examples:
 - kind: cut
   ascii: x0

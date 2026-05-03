@@ -29,7 +29,32 @@ items:
   - object
   - 'null'
   description: One crystallographic point-group record.
-  properties: {}
+  properties:
+    hm_symbol:
+      $$inherit: "/defs/v0.1/properties/pointgroups/hm_symbol"
+    schoenflies:
+      $$inherit: "/defs/v0.1/properties/pointgroups/schoenflies"
+    schoenflies_markup:
+      $$inherit: "/defs/v0.1/properties/pointgroups/schoenflies_markup"
+    crystal_system:
+      $$inherit: "/defs/v0.1/properties/pointgroups/crystal_system"
+    laue_class:
+      $$inherit: "/defs/v0.1/properties/pointgroups/laue_class"
+    order:
+      $$inherit: "/defs/v0.1/properties/pointgroups/order"
+    is_centrosymmetric:
+      $$inherit: "/defs/v0.1/properties/pointgroups/is_centrosymmetric"
+    n_conjugacy_classes:
+      $$inherit: "/defs/v0.1/properties/pointgroups/n_conjugacy_classes"
+    symops:
+      $$inherit: "/defs/v0.1/properties/pointgroups/symops"
+    conjugacy_classes:
+      $$inherit: "/defs/v0.1/properties/pointgroups/conjugacy_classes"
+    character_table_complex:
+      $$inherit: "/defs/v0.1/properties/pointgroups/character_table_complex"
+    character_table_real:
+      $$inherit: "/defs/v0.1/properties/pointgroups/character_table_real"
+
 examples:
 - - hm_symbol: 2/m
     order: 4

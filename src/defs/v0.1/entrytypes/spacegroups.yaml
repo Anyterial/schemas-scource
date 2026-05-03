@@ -359,13 +359,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  items:
-    $$inherit: /defs/v0.1/properties/spacegroups/items
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   k_subtype:
     $$inherit: /defs/v0.1/properties/spacegroups/k_subtype
     x-optimade-requirements:

@@ -29,7 +29,28 @@ items:
   - object
   - 'null'
   description: One space-group symbol row.
-  properties: {}
+  properties:
+    setting_it_nc:
+      $$inherit: "/defs/v0.1/properties/spacegroups/setting_it_nc"
+    hall_entry:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
+    hall:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hall"
+    it_number:
+      $$inherit: "/defs/v0.1/properties/spacegroups/it_number"
+    hm_short:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_short"
+    hm_full:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_full"
+    hm_extended:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_extended"
+    hm_extended_old:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_extended_old"
+    hm_short_old:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_short_old"
+    hm_full_old:
+      $$inherit: "/defs/v0.1/properties/spacegroups/hm_full_old"
+
 examples:
 - - setting_it_nc: '1'
     hall: P 1

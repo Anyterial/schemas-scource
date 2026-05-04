@@ -100,13 +100,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  pointgroups:
-    $$inherit: /defs/v0.1/properties/pointgroups/pointgroups
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   schoenflies:
     $$inherit: /defs/v0.1/properties/pointgroups/schoenflies
     x-optimade-requirements:

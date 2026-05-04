@@ -1,0 +1,34 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/datasets/pointgroups
+title: Point groups
+$comment: Dataset of pointgroup entries.
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: pointgroups
+  label: pointgroups_pointgroups
+x-optimade-unit: inapplicable
+type:
+- array
+- 'null'
+description: |-
+  Ordered table of crystallographic point-group records.
+  Each item contains point-group classification, finite point-group operations, conjugacy classes, and real and complex character tables generated from cctbx and spgrep.
+
+  **Requirements/Conventions**:
+
+  - The table covers the 32 crystallographic point groups.
+  - The point-group records are independent of any particular space-group setting.
+  - Character-table rows use Mulliken labels and include formatted label variants when available.
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  - 'null'
+  $$inherit: "/defs/v0.1/entrytypes/pointgroups"
+examples:
+- - hm_symbol: 2/m
+    order: 4

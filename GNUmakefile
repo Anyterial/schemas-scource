@@ -6,6 +6,10 @@
 # without extensions, which is useful for hosting, e.g., on github that automatically redirects URLs without extensions.
 
 .PHONY: all
+
+default:
+	$(MAKE) schemas_html_pretty=true schemas_html_ext=true all
+
 all: schemas
 
 ###############################

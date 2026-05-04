@@ -7,9 +7,9 @@
   attributes: "@nest"
 
   spacegroup:
-    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroup"
-    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroup.json"
+    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroups"
+    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/spacegroups.json"
 
   pointgroup:
-    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroup"
-    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroup.json"
+    '@id': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroups"
+    '@context': "https://schemas.anyterial.se/json-ld/v0.1/nodetypes/anyterial/pointgroups.json"

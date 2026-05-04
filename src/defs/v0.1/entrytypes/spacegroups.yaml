@@ -506,13 +506,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  spacegroups:
-    $$inherit: /defs/v0.1/properties/spacegroups/spacegroups
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   spglib_hall:
     $$inherit: /defs/v0.1/properties/spacegroups/spglib_hall
     x-optimade-requirements:

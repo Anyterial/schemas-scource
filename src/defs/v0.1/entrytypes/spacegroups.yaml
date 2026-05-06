@@ -100,8 +100,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  transformations_per_hall:
-    $$inherit: /defs/v0.1/properties/spacegroups/transformations_per_hall
+  transformations_per_hm_entry:
+    $$inherit: /defs/v0.1/properties/spacegroups/transformations_per_hm_entry
     x-optimade-requirements:
       support: may
       sortable: false
@@ -193,6 +193,13 @@ properties:
       response-level: may
   hall_entry:
     $$inherit: /defs/v0.1/properties/spacegroups/hall_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hm_entry:
+    $$inherit: /defs/v0.1/properties/spacegroups/hm_entry
     x-optimade-requirements:
       support: may
       sortable: false

@@ -46,6 +46,14 @@ description: |-
       - **symops**: REQUIRED; List of dictionaries.
         Finite Euclidean normalizer operations for the setting.
         Each item follows `/defs/v0.1/properties/symmetry/op`.
+
+      - **symops\_mod\_centering**: REQUIRED; List of dictionaries.
+        Euclidean normalizer operations factorized modulo the centering translations of the setting.
+        This keeps one operation for each linear part and translation class modulo centering, while `symops` keeps the complete operation list.
+        Each item follows `/defs/v0.1/properties/symmetry/op`.
+
+      - **symops\_mod\_centering\_xyz**: REQUIRED; List of strings.
+        The `x,y,z` notation for the operations in `symops_mod_centering`, ordered element-by-element with that list.
 properties:
   normalizer_kind:
     x-optimade-type: string
@@ -71,6 +79,10 @@ properties:
     description: Finite Euclidean normalizer operations for the setting.
     items:
       $$inherit: "/defs/v0.1/properties/symmetry/op"
+  symops_mod_centering:
+    $$inherit: "/defs/v0.1/properties/spacegroups/symops_mod_centering"
+  symops_mod_centering_xyz:
+    $$inherit: "/defs/v0.1/properties/spacegroups/symops_mod_centering_xyz"
 examples:
 - normalizer_kind: euclidean
   n_centering_translations: 1
@@ -93,3 +105,21 @@ examples:
     screw_glide: ['0', '0', '0']
     origin_shift: ['0', '0', '0']
     operation_kind: euclidean
+  symops_mod_centering:
+  - affine_transformation:
+      xyz: -x,-y,-z
+      matrix:
+      - ['-1', '0', '0']
+      - ['0', '-1', '0']
+      - ['0', '0', '-1']
+      vector: ['0', '0', '0']
+      det: -1
+      is_orthogonal: true
+    rot_type: '-1'
+    sense: 0
+    axis: [0, 0, 0]
+    screw_glide: ['0', '0', '0']
+    origin_shift: ['0', '0', '0']
+    operation_kind: euclidean
+  symops_mod_centering_xyz:
+  - -x,-y,-z

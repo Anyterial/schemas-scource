@@ -548,6 +548,20 @@ properties:
       sortable: false
       query-support: none
       response-level: may
+  symops_mod_centering:
+    $$inherit: /defs/v0.1/properties/spacegroups/symops_mod_centering
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  symops_mod_centering_xyz:
+    $$inherit: /defs/v0.1/properties/spacegroups/symops_mod_centering_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
   symops_generators:
     $$inherit: /defs/v0.1/properties/spacegroups/symops_generators
     x-optimade-requirements:

@@ -18,12 +18,14 @@ description: |-
   Each list item contains the H-M entry as ordinary data together with all transformation sections generated for that setting.
   This representation avoids using H-M entries as JSON dictionary keys in the OPTIMADE-described payload.
   The accompanying `hall_entry` field identifies the Hall symbol used to compute the symmetry operations and normalizer data.
+  The `centering_translations` and `centering_translations_xyz` fields give the setting's centering translations directly in each record, so modulo-centering operation lists can be interpreted without joining against another dataset.
 
   **Requirements/Conventions**:
 
   - It MUST be a list of dictionaries.
   - Each dictionary MUST contain `hm_entry`.
   - Each dictionary SHOULD contain `hall_entry` and the generated transformation sections for that setting.
+  - If `euclidean_normalizer.symops_mod_centering` is present, the same dictionary SHOULD contain `centering_translations` and `centering_translations_xyz`.
 items:
   x-optimade-type: dictionary
   x-optimade-unit: inapplicable
@@ -36,6 +38,10 @@ items:
       $$inherit: "/defs/v0.1/properties/spacegroups/hm_entry"
     hall_entry:
       $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
+    centering_translations:
+      $$inherit: "/defs/v0.1/properties/spacegroups/centering_translations"
+    centering_translations_xyz:
+      $$inherit: "/defs/v0.1/properties/spacegroups/centering_translations_xyz"
     euclidean_normalizer:
       $$inherit: "/defs/v0.1/properties/spacegroups/euclidean_normalizer"
     hall_to_it_std_transform:
@@ -53,4 +59,8 @@ items:
 examples:
 - - hm_entry: P 1
     hall_entry: p_1
+    centering_translations:
+    - ['0', '0', '0']
+    centering_translations_xyz:
+    - 0,0,0
     baernighausen: []

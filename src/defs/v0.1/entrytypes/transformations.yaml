@@ -1,0 +1,116 @@
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/entrytype_definition
+$id: https://schemas.anyterial.se/defs/v0.1/entrytypes/transformations
+type: object
+title: Anyterial transformation fields
+x-optimade-definition:
+  kind: entrytype
+  format: '1.3'
+  version: 0.1.0
+  name: transformations
+  label: transformations_entrytype_anyterial
+properties:
+  id:
+    $$inherit: /defs/v1.2/properties/core/id
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  type:
+    $$inherit: /defs/v1.2/properties/core/type
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  immutable_id:
+    $$inherit: /defs/v1.2/properties/core/immutable_id
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: all mandatory
+      response-level: may
+  last_modified:
+    $$inherit: /defs/v1.2/properties/core/last_modified
+    x-optimade-requirements:
+      support: should
+      sortable: false
+      query-support: all mandatory
+      response-level: must
+  hm_entry:
+    $$inherit: /defs/v0.1/properties/spacegroups/hm_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_entry:
+    $$inherit: /defs/v0.1/properties/spacegroups/hall_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  centering_translations:
+    $$inherit: /defs/v0.1/properties/spacegroups/centering_translations
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  centering_translations_xyz:
+    $$inherit: /defs/v0.1/properties/spacegroups/centering_translations_xyz
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  euclidean_normalizer:
+    $$inherit: /defs/v0.1/properties/spacegroups/euclidean_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  hall_to_it_std_transform:
+    $$inherit: /defs/v0.1/properties/spacegroups/hall_to_it_std_transform
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  orthogonal_affine_normalizer:
+    $$inherit: /defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_normalizer:
+    $$inherit: /defs/v0.1/properties/spacegroups/affine_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  continuous_normalizer:
+    $$inherit: /defs/v0.1/properties/spacegroups/continuous_normalizer
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  isomorphic_subgroups:
+    $$inherit: /defs/v0.1/properties/spacegroups/isomorphic_subgroups
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  baernighausen:
+    $$inherit: /defs/v0.1/properties/spacegroups/baernighausen
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may

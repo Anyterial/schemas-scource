@@ -51,6 +51,20 @@ properties:
       sortable: false
       query-support: none
       response-level: may
+  it_number:
+    $$inherit: /defs/v0.1/properties/spacegroups/it_number
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  crystal_system:
+    $$inherit: /defs/v0.1/properties/spacegroups/crystal_system
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
   centering_translations:
     $$inherit: /defs/v0.1/properties/spacegroups/centering_translations
     x-optimade-requirements:
@@ -66,49 +80,203 @@ properties:
       query-support: none
       response-level: may
   euclidean_normalizer:
-    $$inherit: /defs/v0.1/properties/spacegroups/euclidean_normalizer
+    $$inherit: /defs/v0.1/properties/transformations/euclidean_normalizer
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   hall_to_it_std_transform:
-    $$inherit: /defs/v0.1/properties/spacegroups/hall_to_it_std_transform
+    $$inherit: /defs/v0.1/properties/transformations/hall_to_it_std_transform
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   orthogonal_affine_normalizer:
-    $$inherit: /defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer
+    $$inherit: /defs/v0.1/properties/transformations/orthogonal_affine_normalizer
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   affine_normalizer:
-    $$inherit: /defs/v0.1/properties/spacegroups/affine_normalizer
+    $$inherit: /defs/v0.1/properties/transformations/affine_normalizer
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   continuous_normalizer:
-    $$inherit: /defs/v0.1/properties/spacegroups/continuous_normalizer
+    $$inherit: /defs/v0.1/properties/transformations/continuous_normalizer
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   isomorphic_subgroups:
-    $$inherit: /defs/v0.1/properties/spacegroups/isomorphic_subgroups
+    $$inherit: /defs/v0.1/properties/transformations/isomorphic_subgroups
     x-optimade-requirements:
       support: may
       sortable: false
       query-support: none
       response-level: may
   baernighausen:
-    $$inherit: /defs/v0.1/properties/spacegroups/baernighausen
+    $$inherit: /defs/v0.1/properties/transformations/baernighausen
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  backward_lift_criteria:
+    $$inherit: /defs/v0.1/properties/transformations/backward_lift_criteria
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  same_space_group_affine_images_std:
+    $$inherit: /defs/v0.1/properties/transformations/same_space_group_affine_images_std
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_normalizer_coset_data:
+    $$inherit: /defs/v0.1/properties/transformations/affine_normalizer_coset_data
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  orthogonal_affine_normalizer_cosets:
+    $$inherit: /defs/v0.1/properties/transformations/orthogonal_affine_normalizer_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_normalizer_cosets:
+    $$inherit: /defs/v0.1/properties/transformations/affine_normalizer_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  maximal_subgroup_relations:
+    $$inherit: /defs/v0.1/properties/transformations/maximal_subgroup_relations
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  affine_images:
+    $$inherit: /defs/v0.1/properties/transformations/affine_images
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  index:
+    $$inherit: /defs/v0.1/properties/transformations/index
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  subgroup_type:
+    $$inherit: /defs/v0.1/properties/transformations/subgroup_type
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  k_subtype:
+    $$inherit: /defs/v0.1/properties/transformations/k_subtype
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  target:
+    $$inherit: /defs/v0.1/properties/transformations/target
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  to_hall:
+    $$inherit: /defs/v0.1/properties/transformations/to_hall
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  to_hall_symbol:
+    $$inherit: /defs/v0.1/properties/transformations/to_hall_symbol
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  wyckoff_splitting:
+    $$inherit: /defs/v0.1/properties/transformations/wyckoff_splitting
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  transformations_per_hm_entry:
+    $$inherit: /defs/v0.1/properties/transformations/transformations_per_hm_entry
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  transformations_per_it_number:
+    $$inherit: /defs/v0.1/properties/transformations/transformations_per_it_number
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_coset_representatives:
+    $$inherit: /defs/v0.1/properties/transformations/n_coset_representatives
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_cosets:
+    $$inherit: /defs/v0.1/properties/transformations/n_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_linear_parts:
+    $$inherit: /defs/v0.1/properties/transformations/n_linear_parts
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_orthogonal_cosets:
+    $$inherit: /defs/v0.1/properties/transformations/n_orthogonal_cosets
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_raw_candidates:
+    $$inherit: /defs/v0.1/properties/transformations/n_raw_candidates
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: none
+      response-level: may
+  n_unique_candidates:
+    $$inherit: /defs/v0.1/properties/transformations/n_unique_candidates
     x-optimade-requirements:
       support: may
       sortable: false

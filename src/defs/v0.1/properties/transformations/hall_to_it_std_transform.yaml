@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hall_to_it_std_transform
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/hall_to_it_std_transform
 title: Hall to IT standard transform
 $comment: Hall-keyed exact change-of-basis transforms to the IT standard Hall setting.
 x-optimade-type: dictionary
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: hall_to_it_std_transform
-  label: hall_to_it_std_transform_spacegroups
+  label: hall_to_it_std_transform_transformations
 x-optimade-unit: inapplicable
 type:
 - object
@@ -54,11 +54,11 @@ properties:
   it_number:
     $$inherit: "/defs/v0.1/properties/spacegroups/it_number"
   to_hall:
-    $$inherit: "/defs/v0.1/properties/spacegroups/to_hall"
+    $$inherit: "/defs/v0.1/properties/transformations/to_hall"
   to_hall_symbol:
-    $$inherit: "/defs/v0.1/properties/spacegroups/to_hall_symbol"
+    $$inherit: "/defs/v0.1/properties/transformations/to_hall_symbol"
   index:
-    $$inherit: "/defs/v0.1/properties/spacegroups/index"
+    $$inherit: "/defs/v0.1/properties/transformations/index"
   affine_transformation:
     $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
 examples:

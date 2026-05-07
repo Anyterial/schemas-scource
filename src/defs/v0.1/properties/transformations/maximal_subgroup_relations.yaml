@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/maximal_subgroup_relations
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/maximal_subgroup_relations
 title: Maximal subgroup relations
 $comment: Anyterial property definition for maximal non-isomorphic subgroup relation metadata.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: maximal_subgroup_relations
-  label: maximal_subgroup_relations_spacegroups
+  label: maximal_subgroup_relations_transformations
 x-optimade-unit: inapplicable
 type:
 - array

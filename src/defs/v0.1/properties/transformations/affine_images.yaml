@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/affine_images
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/affine_images
 title: Affine images
 $comment: Anyterial property definition for same-space-group affine images.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: affine_images
-  label: affine_images_spacegroups
+  label: affine_images_transformations
 x-optimade-unit: inapplicable
 type:
 - array

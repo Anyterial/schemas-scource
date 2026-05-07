@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/target
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/target
 title: Target
 $comment: Anyterial local target vector property used in generated linear criteria.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: target
-  label: target_spacegroups
+  label: target_transformations
 x-optimade-unit: inapplicable
 type:
 - array

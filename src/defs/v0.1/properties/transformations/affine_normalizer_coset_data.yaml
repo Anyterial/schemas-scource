@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/affine_normalizer_coset_data
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/affine_normalizer_coset_data
 title: Affine normalizer coset data
 $comment: Ordered Anyterial table of bounded affine normalizer coset-representative data by Hall setting.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: affine_normalizer_coset_data
-  label: affine_normalizer_coset_data_spacegroups
+  label: affine_normalizer_coset_data_transformations
 x-optimade-unit: inapplicable
 type:
 - array
@@ -79,13 +79,13 @@ items:
     crystal_system:
       $$inherit: "/defs/v0.1/properties/spacegroups/crystal_system"
     orthogonal_affine_normalizer_cosets:
-      $$inherit: "/defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer_cosets"
+      $$inherit: "/defs/v0.1/properties/transformations/orthogonal_affine_normalizer_cosets"
     affine_normalizer_cosets:
-      $$inherit: "/defs/v0.1/properties/spacegroups/affine_normalizer_cosets"
+      $$inherit: "/defs/v0.1/properties/transformations/affine_normalizer_cosets"
     n_orthogonal_cosets:
-      $$inherit: "/defs/v0.1/properties/spacegroups/n_orthogonal_cosets"
+      $$inherit: "/defs/v0.1/properties/transformations/n_orthogonal_cosets"
     n_cosets:
-      $$inherit: "/defs/v0.1/properties/spacegroups/n_cosets"
+      $$inherit: "/defs/v0.1/properties/transformations/n_cosets"
     candidate_sets:
       x-optimade-type: dictionary
       x-optimade-unit: inapplicable

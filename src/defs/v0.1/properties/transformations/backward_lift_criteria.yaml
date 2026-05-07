@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/backward_lift_criteria
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/backward_lift_criteria
 title: Backward lift criteria
 $comment: Anyterial property definition for backward-lift criteria grouped by target subgroup IT number.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: backward_lift_criteria
-  label: backward_lift_criteria_spacegroups
+  label: backward_lift_criteria_transformations
 x-optimade-unit: inapplicable
 type:
 - array

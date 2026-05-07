@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/euclidean_normalizer
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/euclidean_normalizer
 title: Euclidean normalizer
 $comment: Anyterial finite Euclidean normalizer operation data for one space-group setting.
 x-optimade-type: dictionary
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: euclidean_normalizer
-  label: euclidean_normalizer_spacegroups
+  label: euclidean_normalizer_transformations
 x-optimade-unit: inapplicable
 type:
 - object
@@ -69,7 +69,7 @@ properties:
   n_symops:
     $$inherit: "/defs/v0.1/properties/spacegroups/n_symops"
   n_linear_parts:
-    $$inherit: "/defs/v0.1/properties/spacegroups/n_linear_parts"
+    $$inherit: "/defs/v0.1/properties/transformations/n_linear_parts"
   symops:
     x-optimade-type: list
     x-optimade-unit: inapplicable

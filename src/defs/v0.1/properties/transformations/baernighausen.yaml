@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/baernighausen
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/baernighausen
 title: Bärnighausen subgroup transforms
 $comment: Anyterial transform collection property using the common basis-transform definition for transform items.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: baernighausen
-  label: baernighausen_spacegroups
+  label: baernighausen_transformations
 x-optimade-unit: inapplicable
 type:
 - array

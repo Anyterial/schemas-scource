@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/k_subtype
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/k_subtype
 title: Klassengleiche subgroup subtype
 $comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: string
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: k_subtype
-  label: k_subtype_spacegroups
+  label: k_subtype_transformations
 type:
 - string
 - 'null'

@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/wyckoff_splitting
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/wyckoff_splitting
 title: Wyckoff splitting
 $comment: Anyterial property definition for Wyckoff-position splitting data attached to transforms.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: wyckoff_splitting
-  label: wyckoff_splitting_spacegroups
+  label: wyckoff_splitting_transformations
 x-optimade-unit: inapplicable
 type:
 - array

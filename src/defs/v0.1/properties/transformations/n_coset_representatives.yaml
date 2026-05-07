@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/n_coset_representatives
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_coset_representatives
 title: N Coset Representatives
 $comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: integer
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: n_coset_representatives
-  label: n_coset_representatives_spacegroups
+  label: n_coset_representatives_transformations
 type:
 - integer
 - 'null'

@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/transformations_per_hm_entry
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/transformations_per_hm_entry
 title: Transformations per H-M entry
 $comment: Anyterial property definition for H-M-entry grouped transformation records.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: transformations_per_hm_entry
-  label: transformations_per_hm_entry_spacegroups
+  label: transformations_per_hm_entry_transformations
 x-optimade-unit: inapplicable
 type:
 - array
@@ -43,19 +43,19 @@ items:
     centering_translations_xyz:
       $$inherit: "/defs/v0.1/properties/spacegroups/centering_translations_xyz"
     euclidean_normalizer:
-      $$inherit: "/defs/v0.1/properties/spacegroups/euclidean_normalizer"
+      $$inherit: "/defs/v0.1/properties/transformations/euclidean_normalizer"
     hall_to_it_std_transform:
-      $$inherit: "/defs/v0.1/properties/spacegroups/hall_to_it_std_transform"
+      $$inherit: "/defs/v0.1/properties/transformations/hall_to_it_std_transform"
     orthogonal_affine_normalizer:
-      $$inherit: "/defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer"
+      $$inherit: "/defs/v0.1/properties/transformations/orthogonal_affine_normalizer"
     affine_normalizer:
-      $$inherit: "/defs/v0.1/properties/spacegroups/affine_normalizer"
+      $$inherit: "/defs/v0.1/properties/transformations/affine_normalizer"
     continuous_normalizer:
-      $$inherit: "/defs/v0.1/properties/spacegroups/continuous_normalizer"
+      $$inherit: "/defs/v0.1/properties/transformations/continuous_normalizer"
     isomorphic_subgroups:
-      $$inherit: "/defs/v0.1/properties/spacegroups/isomorphic_subgroups"
+      $$inherit: "/defs/v0.1/properties/transformations/isomorphic_subgroups"
     baernighausen:
-      $$inherit: "/defs/v0.1/properties/spacegroups/baernighausen"
+      $$inherit: "/defs/v0.1/properties/transformations/baernighausen"
 examples:
 - - hm_entry: P 1
     hall_entry: p_1

@@ -1,25 +1,25 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/affine_normalizer
-title: Affine normalizer
-$comment: Anyterial bounded affine normalizer coset representatives for one space-group setting.
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/orthogonal_affine_normalizer
+title: Orthogonal affine normalizer
+$comment: Anyterial signed-permutation affine normalizer coset representatives for one space-group setting.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
   version: 0.1.0
   format: '1.3'
-  name: affine_normalizer
-  label: affine_normalizer_spacegroups
+  name: orthogonal_affine_normalizer
+  label: orthogonal_affine_normalizer_transformations
 x-optimade-unit: inapplicable
 type:
 - object
 - 'null'
 description: |-
-  Affine normalizer coset representatives for one crystallographic space-group setting.
+  Orthogonal affine normalizer coset representatives for one crystallographic space-group setting.
   The representatives are listed modulo the space group itself, so each listed operation represents an equivalence class of affine normalizer operations rather than every operation in that class.
-  This property contains representatives generated from bounded unimodular integer linear parts. It is a finite bounded representative table, not a complete infinite affine normalizer.
+  This property contains the signed-permutation subset of affine normalizer representatives.
 
   The `candidate_set` field belongs in this property because the listed representatives are produced from a deliberately restricted finite candidate set.
-  For this property `candidate_set` is `bounded_unimodular_integer_matrices`, meaning unimodular 3 by 3 integer matrices satisfying the recorded `bounds`.
+  For this property `candidate_set` is `signed_permutation_matrices`, meaning 3 by 3 integer matrices with exactly one nonzero entry in each row and column and each nonzero entry equal to `-1` or `1`.
   The plural field `candidate_sets` is not part of the emitted data and MUST NOT be used here.
 
   **Requirements/Conventions**:
@@ -51,10 +51,10 @@ description: |-
         Number of non-trivial coset representatives before metric-compatibility filtering.
 
       - **bounds**: REQUIRED; Dictionary.
-        Simple numerical bounds defining the bounded unimodular integer candidate matrices.
+        Simple numerical bounds satisfied by the signed-permutation candidate matrices.
 
       - **symops**: REQUIRED; List of dictionaries.
-        Listed affine normalizer coset representatives.
+        Listed orthogonal affine normalizer coset representatives.
         Each item follows `/defs/v0.1/properties/symmetry/basis_transform`.
 properties:
   normalizer_kind:
@@ -81,7 +81,7 @@ properties:
   n_symops:
     $$inherit: "/defs/v0.1/properties/spacegroups/n_symops"
   n_linear_parts:
-    $$inherit: "/defs/v0.1/properties/spacegroups/n_linear_parts"
+    $$inherit: "/defs/v0.1/properties/transformations/n_linear_parts"
   n_raw_candidates:
     x-optimade-type: integer
     x-optimade-unit: inapplicable
@@ -109,7 +109,7 @@ properties:
     type:
     - object
     - 'null'
-    description: Simple numerical bounds defining the bounded unimodular integer candidate matrices.
+    description: Simple numerical bounds satisfied by the signed-permutation candidate matrices.
     properties:
       det_abs:
         x-optimade-type: integer
@@ -117,32 +117,32 @@ properties:
         type:
         - integer
         - 'null'
-        description: Required absolute determinant of every candidate matrix.
+        description: Absolute determinant of every signed-permutation candidate matrix.
       max_abs_linear_entry:
         x-optimade-type: integer
         x-optimade-unit: inapplicable
         type:
         - integer
         - 'null'
-        description: Maximum absolute entry value allowed in candidate matrices.
+        description: Maximum absolute entry value in the signed-permutation candidate matrices.
   symops:
     x-optimade-type: list
     x-optimade-unit: inapplicable
     type:
     - array
     - 'null'
-    description: Listed affine normalizer coset representatives.
+    description: Listed orthogonal affine normalizer coset representatives.
     items:
       $$inherit: "/defs/v0.1/properties/symmetry/basis_transform"
 examples:
-- normalizer_kind: affine
-  representation: bounded_coset_representatives
-  candidate_set: bounded_unimodular_integer_matrices
-  n_symops: 63
-  n_linear_parts: 63
-  n_raw_candidates: 6960
-  n_unique_candidates: 6960
-  n_coset_representatives: 6959
+- normalizer_kind: orthogonal_affine
+  representation: orthogonal_coset_representatives
+  candidate_set: signed_permutation_matrices
+  n_symops: 47
+  n_linear_parts: 47
+  n_raw_candidates: 48
+  n_unique_candidates: 48
+  n_coset_representatives: 47
   bounds:
     det_abs: 1
     max_abs_linear_entry: 1
@@ -157,4 +157,4 @@ examples:
       det: -1
       is_orthogonal: true
     compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
-    operation_kind: affine
+    operation_kind: orthogonal_affine

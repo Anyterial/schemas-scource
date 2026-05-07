@@ -1,5 +1,5 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
-$id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/orthogonal_affine_normalizer_cosets
+$id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/orthogonal_affine_normalizer_cosets
 title: Orthogonal affine normalizer cosets
 $comment: Anyterial normalizer-coset list property using the common normalizer-representative definition.
 x-optimade-type: list
@@ -8,7 +8,7 @@ x-optimade-definition:
   version: 0.1.0
   format: '1.3'
   name: orthogonal_affine_normalizer_cosets
-  label: orthogonal_affine_normalizer_cosets_spacegroups
+  label: orthogonal_affine_normalizer_cosets_transformations
 x-optimade-unit: inapplicable
 type:
 - array

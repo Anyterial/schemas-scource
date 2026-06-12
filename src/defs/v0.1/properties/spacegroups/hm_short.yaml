@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_short
-title: Short Hermann-Mauguin Symbol
+title: Short Hermann-Mauguin symbol
 x-optimade-type: string
 x-compatibility:
 - https://schemas.optimade.org/defs/v1.2/properties/optimade/structures/space_group_symbol_hermann_mauguin

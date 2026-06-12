@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hall
-title: Hall Symbol
+title: Hall symbol
 x-optimade-type: string
 x-compatibility:
 - https://schemas.optimade.org/defs/v1.2/properties/optimade/structures/space_group_symbol_hall
@@ -17,6 +17,7 @@ description: |-
   The Hall symbol for a crystallographic space-group setting.
 
   Hall symbols encode the generators and origin choice of a space-group setting in a form intended to identify the setting unambiguously.
+  The normalized lookup-key form of this symbol, using lowercase letters and underscores in place of spaces, is provided by `hall_entry`.
 x-optimade-unit: inapplicable
 examples:
 - P 1

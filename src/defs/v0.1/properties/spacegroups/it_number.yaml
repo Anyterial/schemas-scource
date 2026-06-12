@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/it_number
-title: International Tables Space-Group Number
+title: International Tables space-group number
 x-optimade-type: integer
 x-compatibility:
 - https://schemas.optimade.org/defs/v1.2/properties/optimade/structures/space_group_it_number

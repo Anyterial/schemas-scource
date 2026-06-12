@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/order
-title: Order
+title: Order of the point group
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -11,7 +11,10 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Order of the point group, i.e. the number of operations in the finite point group.
+description: |-
+  Order of the point group, i.e. the number of operations in the finite point group.
+
+  This value MUST equal the length of the `symops` list of the point-group entry.
 x-optimade-unit: inapplicable
 examples:
 - 1

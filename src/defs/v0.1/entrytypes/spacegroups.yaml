@@ -79,13 +79,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  centering_translations_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/centering_translations_xyz
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   centring_type:
     $$inherit: /defs/v0.1/properties/spacegroups/centring_type
     x-optimade-requirements:
@@ -380,13 +373,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  symops_mod_centering_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/symops_mod_centering_xyz
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   symops_generators:
     $$inherit: /defs/v0.1/properties/spacegroups/symops_generators
     x-optimade-requirements:
@@ -394,29 +380,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  symops_generators_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/symops_generators_xyz
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   symops_representative:
     $$inherit: /defs/v0.1/properties/spacegroups/symops_representative
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  symops_representative_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/symops_representative_xyz
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  symops_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/symops_xyz
     x-optimade-requirements:
       support: may
       sortable: false

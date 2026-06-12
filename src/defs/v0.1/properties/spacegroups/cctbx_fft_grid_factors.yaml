@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/cctbx_fft_grid_factors
-title: Cctbx Fft Grid Factors
+title: Cctbx FFT grid factors
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -12,11 +12,29 @@ type:
 - object
 - 'null'
 description: |-
-  FFT grid-factor recommendations derived from cctbx for the space group, its structure seminvariants, and its Euclidean normalizer.
+  FFT grid-factor requirements derived from cctbx for the space group, its structure seminvariants, and its Euclidean normalizer.
+
+  Each value is a list of three positive integers, one per crystallographic axis, giving the factors that the corresponding FFT grid dimension must be divisible by for symmetry-adapted sampling.
+
+  **Requirements/Conventions**:
+
+  - It MUST be a dictionary with the following keys:
+
+      - **space\_group**: REQUIRED; List of 3 Integers.
+        Per-axis grid factors required by the space-group translations.
+
+      - **seminvariant**: REQUIRED; List of 3 Integers.
+        Per-axis grid factors required by the structure-seminvariant vectors and moduli.
+
+      - **euclidean**: REQUIRED; List of 3 Integers.
+        Per-axis grid factors obtained by refining the seminvariant factors against the Euclidean normalizer.
 x-optimade-unit: inapplicable
 properties:
   space_group:
     x-optimade-type: list
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
     - array
     - 'null'
@@ -31,6 +49,9 @@ properties:
     x-optimade-unit: inapplicable
   seminvariant:
     x-optimade-type: list
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
     - array
     - 'null'
@@ -45,6 +66,9 @@ properties:
     x-optimade-unit: inapplicable
   euclidean:
     x-optimade-type: list
+    x-optimade-dimensions:
+      names: ["dim_lattice"]
+      sizes: [3]
     type:
     - array
     - 'null'

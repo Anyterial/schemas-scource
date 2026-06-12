@@ -72,13 +72,6 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  centering_translations_xyz:
-    $$inherit: /defs/v0.1/properties/spacegroups/centering_translations_xyz
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
   euclidean_normalizer:
     $$inherit: /defs/v0.1/properties/transformations/euclidean_normalizer
     x-optimade-requirements:
@@ -205,15 +198,8 @@ properties:
       sortable: false
       query-support: none
       response-level: may
-  to_hall:
-    $$inherit: /defs/v0.1/properties/transformations/to_hall
-    x-optimade-requirements:
-      support: may
-      sortable: false
-      query-support: none
-      response-level: may
-  to_hall_symbol:
-    $$inherit: /defs/v0.1/properties/transformations/to_hall_symbol
+  to_hall_entry:
+    $$inherit: /defs/v0.1/properties/transformations/to_hall_entry
     x-optimade-requirements:
       support: may
       sortable: false

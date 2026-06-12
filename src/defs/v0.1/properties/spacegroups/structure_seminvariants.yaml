@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/structure_seminvariants
-title: Structure Seminvariants
+title: Structure seminvariants
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -30,6 +30,9 @@ items:
   properties:
     vector:
       x-optimade-type: list
+      x-optimade-dimensions:
+        names: ["dim_lattice"]
+        sizes: [3]
       type:
       - array
       - 'null'

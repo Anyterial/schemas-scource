@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/setting
-title: Setting
+title: Setting annotation
 x-optimade-type: string
 x-optimade-definition:
   kind: property
@@ -12,10 +12,13 @@ type:
 - string
 - 'null'
 description: |-
-  Setting suffix or setting annotation extracted from the cctbx universal Hermann-Mauguin symbol.
+  Setting suffix or setting annotation extracted from the cctbx universal Hermann-Mauguin symbol in `hm_cctbx_universal`.
 
-  This value is a compact textual description of the coordinate setting portion of the cctbx symbol, for example an origin choice or axis-setting annotation.
+  The value is the part of the universal symbol after the colon when one is present, for example the origin-choice code `1` or `2`, the rhombohedral- or hexagonal-axes code `r` or `h`, or an axis code such as `b1`.
+  When the universal symbol has no colon, the value is any trailing parenthesized basis-change qualifier, for example `(c,a,b)`.
+  The value is an empty string when the universal symbol carries no setting annotation.
+  See also `setting_it_nc` and `it_coordinate_system_code` for the corresponding International Tables identifiers.
 x-optimade-unit: inapplicable
 examples:
+- '2'
 - (c,a,b)
-- (b,c,a)

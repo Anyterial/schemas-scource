@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_full
-title: Full Hermann-Mauguin Symbol
+title: Full Hermann-Mauguin symbol
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.name_H-M_full.html

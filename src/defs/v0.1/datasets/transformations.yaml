@@ -35,6 +35,4 @@ examples:
     hall_entry: p_1
     centering_translations:
     - ['0', '0', '0']
-    centering_translations_xyz:
-    - 0,0,0
     baernighausen: []

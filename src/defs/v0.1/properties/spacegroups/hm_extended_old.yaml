@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_extended_old
-title: Hermann-Mauguin Extended Old
+title: Extended Hermann-Mauguin symbol in old notation
 x-optimade-type: string
 x-optimade-definition:
   kind: property

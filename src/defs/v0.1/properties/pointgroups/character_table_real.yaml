@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/character_table_real
-title: Character Table Real
+title: Real character table
 $comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
@@ -12,7 +12,11 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Real irreducible character table of the crystallographic point group. Rows correspond to real irreducible representations and columns follow the order of `conjugacy_classes`.
+description: |-
+  Real irreducible character table of the crystallographic point group.
+
+  Rows correspond to real irreducible representations and columns follow the order of `conjugacy_classes`.
+  Characters of the real table are exact integers and are therefore stored as plain integers, unlike the `re`/`im` fraction-string pairs of `character_table_complex`.
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: dictionary

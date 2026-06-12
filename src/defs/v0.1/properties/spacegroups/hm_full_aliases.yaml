@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_full_aliases
-title: Hermann-Mauguin Full Aliases
+title: Full Hermann-Mauguin symbol aliases
 x-optimade-type: list
 x-optimade-definition:
   kind: property

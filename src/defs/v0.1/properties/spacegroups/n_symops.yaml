@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/n_symops
-title: number of symops
+title: Number of symops
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of symmetry operations in the finite operation list of the generated entry.
+
+  When the entry contains a `symops` list, this value MUST equal its length.
 x-optimade-unit: inapplicable
 examples:
 - 1

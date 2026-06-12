@@ -13,16 +13,18 @@ type:
 - object
 - 'null'
 description: |-
-  One serialized asymmetric-unit half-space cut or logical cut expression.
-  
-  Cut objects may recursively refer to other cut objects through `condition`, `lhs`, and `rhs`.
+  One serialized asymmetric-unit half-space cut or logical cut expression in the recursive cctbx source representation.
+
+  This is the recursive source form that the bounded, non-recursive `asu` property flattens into a plane registry and boundary rules.
+  It is not stored in the generated datasets; it is provided to define the reconstruction semantics documented in the `asu` property.
+  Cut objects may recursively refer to other cut objects through `condition`, `lhs`, and `rhs`; each nested object follows this same `asu_cut` structure.
 
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
 
       - **kind**: REQUIRED; String.
-        Kind of cut expression, for example a half-space cut or a logical expression.
+        Kind of cut expression: `cut` for a half-space cut, `expr` for a logical expression combining `lhs` and `rhs` with `op`.
 
       - **ascii**: OPTIONAL; String.
         Compact plain-text rendering of the cut expression.
@@ -32,15 +34,23 @@ description: |-
 
       - **inclusive**: OPTIONAL; Boolean.
         Whether the cut boundary is included.
+        Used when `kind` is `cut`.
 
       - **normal**: OPTIONAL; List of 3 Fractions (String).
         Normal vector of a half-space cut.
+        Used when `kind` is `cut`.
 
       - **const**: OPTIONAL; Fraction (String).
         Right-hand-side constant of a half-space cut.
+        Used when `kind` is `cut`.
+
+      - **op**: OPTIONAL; String.
+        Logical operator, `&` or `|`, combining `lhs` and `rhs`.
+        Used when `kind` is `expr`.
 
       - **condition**, **lhs**, **rhs**: OPTIONAL; Dictionary.
-        Recursive cut-expression objects.
+        Nested cut-expression dictionaries following this same `asu_cut` structure.
+        `condition` refines when a half-space cut applies; `lhs` and `rhs` are the operands of a logical expression.
 properties:
   kind:
     x-optimade-type: string
@@ -49,6 +59,9 @@ properties:
     - string
     - 'null'
     description: Kind of cut expression.
+    enum:
+    - cut
+    - expr
   ascii:
     x-optimade-type: string
     x-optimade-unit: inapplicable
@@ -98,13 +111,16 @@ properties:
     - string
     - 'null'
     description: Logical operator used when the expression combines two subexpressions.
+    enum:
+    - '&'
+    - '|'
   lhs:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
     type:
     - object
     - 'null'
-    description: Left-hand operand for a logical cut expression.
+    description: Left-hand operand for a logical cut expression, following this same `asu_cut` structure.
     properties:
       kind:
         x-optimade-type: string
@@ -112,63 +128,14 @@ properties:
         type:
         - string
         - 'null'
-        description: Kind of cut expression.
-      ascii:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Plain-text rendering of the cut expression.
-      xyz:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Coordinate expression for the cut in `x,y,z` notation.
-      inclusive:
-        x-optimade-type: boolean
-        x-optimade-unit: inapplicable
-        type:
-        - boolean
-        - 'null'
-        description: Whether the cut boundary is included.
-      base_symbol:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Base symbolic inequality or coordinate label used for the cut.
-      normal:
-        x-optimade-type: list
-        x-optimade-unit: inapplicable
-        x-optimade-dimensions:
-          names: ["dim_lattice"]
-          sizes: [3]
-        type:
-        - array
-        - 'null'
-        description: Normal vector of a half-space cut.
-        items:
-          $$inherit: "/defs/v0.1/properties/core/fraction"
-      const:
-        $$inherit: "/defs/v0.1/properties/core/fraction"
-      op:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Logical operator used when the expression combines two subexpressions.
+        description: Kind of the nested cut expression; the remaining keys follow the same `asu_cut` structure.
   rhs:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
     type:
     - object
     - 'null'
-    description: Right-hand operand for a logical cut expression.
+    description: Right-hand operand for a logical cut expression, following this same `asu_cut` structure.
     properties:
       kind:
         x-optimade-type: string
@@ -176,63 +143,14 @@ properties:
         type:
         - string
         - 'null'
-        description: Kind of cut expression.
-      ascii:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Plain-text rendering of the cut expression.
-      xyz:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Coordinate expression for the cut in `x,y,z` notation.
-      inclusive:
-        x-optimade-type: boolean
-        x-optimade-unit: inapplicable
-        type:
-        - boolean
-        - 'null'
-        description: Whether the cut boundary is included.
-      base_symbol:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Base symbolic inequality or coordinate label used for the cut.
-      normal:
-        x-optimade-type: list
-        x-optimade-unit: inapplicable
-        x-optimade-dimensions:
-          names: ["dim_lattice"]
-          sizes: [3]
-        type:
-        - array
-        - 'null'
-        description: Normal vector of a half-space cut.
-        items:
-          $$inherit: "/defs/v0.1/properties/core/fraction"
-      const:
-        $$inherit: "/defs/v0.1/properties/core/fraction"
-      op:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Logical operator used when the expression combines two subexpressions.
+        description: Kind of the nested cut expression; the remaining keys follow the same `asu_cut` structure.
   condition:
     x-optimade-type: dictionary
     x-optimade-unit: inapplicable
     type:
     - object
     - 'null'
-    description: Optional conditional cut expression that refines when this cut applies.
+    description: Optional conditional cut expression that refines when this cut applies, following this same `asu_cut` structure.
     properties:
       kind:
         x-optimade-type: string
@@ -240,56 +158,7 @@ properties:
         type:
         - string
         - 'null'
-        description: Kind of cut expression.
-      ascii:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Plain-text rendering of the cut expression.
-      xyz:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Coordinate expression for the cut in `x,y,z` notation.
-      inclusive:
-        x-optimade-type: boolean
-        x-optimade-unit: inapplicable
-        type:
-        - boolean
-        - 'null'
-        description: Whether the cut boundary is included.
-      base_symbol:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Base symbolic inequality or coordinate label used for the cut.
-      normal:
-        x-optimade-type: list
-        x-optimade-unit: inapplicable
-        x-optimade-dimensions:
-          names: ["dim_lattice"]
-          sizes: [3]
-        type:
-        - array
-        - 'null'
-        description: Normal vector of a half-space cut.
-        items:
-          $$inherit: "/defs/v0.1/properties/core/fraction"
-      const:
-        $$inherit: "/defs/v0.1/properties/core/fraction"
-      op:
-        x-optimade-type: string
-        x-optimade-unit: inapplicable
-        type:
-        - string
-        - 'null'
-        description: Logical operator used when the expression combines two subexpressions.
+        description: Kind of the nested cut expression; the remaining keys follow the same `asu_cut` structure.
 examples:
 - kind: cut
   ascii: x0

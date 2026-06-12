@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_cosets
-title: N Cosets
+title: Number of cosets
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of affine normalizer coset representatives stored for the setting.
+
+  This value MUST equal the length of the `affine_normalizer_cosets` list of the containing record.
 x-optimade-unit: inapplicable
 examples:
 - 63

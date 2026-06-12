@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_coset_representatives
-title: N Coset Representatives
+title: Number of coset representatives
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of nontrivial coset representatives retained after deduplication modulo the space group.
+
+  This count is taken before metric-compatibility filtering, so it MAY exceed the length of the stored `symops` list of the containing record.
 x-optimade-unit: inapplicable
 examples:
 - 47

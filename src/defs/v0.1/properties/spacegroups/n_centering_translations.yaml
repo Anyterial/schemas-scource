@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of centering translations in the conventional cell of the space-group setting.
+
+  When the entry contains a `centering_translations` list, this value MUST equal its length.
 x-optimade-unit: inapplicable
 examples:
 - 1

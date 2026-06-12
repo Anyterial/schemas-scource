@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_raw_candidates
-title: N Raw Candidates
+title: Number of raw candidates
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of candidate affine operations considered before filtering and deduplication.
+
+  The counted candidate set itself is not stored; this value documents the size of the bounded search.
 x-optimade-unit: inapplicable
 examples:
 - 48

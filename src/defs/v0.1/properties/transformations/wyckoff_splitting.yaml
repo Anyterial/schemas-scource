@@ -66,19 +66,31 @@ items:
           affine:
             x-optimade-type: list
             x-optimade-unit: inapplicable
+            x-optimade-dimensions:
+              names: ["dim_lattice", "dim_affine"]
+              sizes: [3, 4]
             type:
             - array
-            description: Exact affine representation for the split branch.
+            description: |-
+              Exact affine representation for the split branch as a 3 by 4 augmented matrix.
+              Each row holds the three linear coefficients followed by the translation component, all as exact fraction strings.
             items:
               x-optimade-type: list
               x-optimade-unit: inapplicable
+              x-optimade-dimensions:
+                names: ["dim_affine"]
+                sizes: [4]
               type:
               - array
-              description: One affine row.
+              description: One row of the augmented affine matrix.
               items:
                 $$inherit: "/defs/v0.1/properties/core/fraction"
 examples:
 - - parent: c
     splits:
-    - [e, x,y,z]
-    - [e, -x,y,-z]
+    - letter: e
+      xyz: x,y,z
+      affine:
+      - ['1', '0', '0', '0']
+      - ['0', '1', '0', '0']
+      - ['0', '0', '1', '0']

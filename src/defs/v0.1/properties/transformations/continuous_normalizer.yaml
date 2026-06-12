@@ -23,6 +23,7 @@ description: |-
 
       - **dimension**: OPTIONAL; Integer.
         Dimension of the continuous parameter subspace.
+        When present, it MUST equal the length of `basis_vectors`.
 
       - **basis\_vectors**: REQUIRED; List of vectors.
         Basis vectors spanning the continuous normalizer parameter space.
@@ -40,7 +41,7 @@ properties:
     type:
     - integer
     - 'null'
-    description: Dimension of the continuous parameter subspace.
+    description: Dimension of the continuous parameter subspace. When present, it MUST equal the length of `basis_vectors`.
   basis_vectors:
     x-optimade-type: list
     x-optimade-unit: inapplicable

@@ -34,11 +34,8 @@ description: |-
       - **it\_number**: REQUIRED; Integer.
         International Tables space-group number shared by the source and target Hall settings.
 
-      - **to\_hall**: REQUIRED; String.
+      - **to\_hall\_entry**: REQUIRED; String.
         Target Hall-entry key for the IT-standard Hall setting of the same space-group type.
-
-      - **to\_hall\_symbol**: REQUIRED; String.
-        Display Hall symbol corresponding to `to_hall`, using spaces rather than the normalized Hall-entry key syntax.
 
       - **index**: REQUIRED; Integer.
         Transform index.
@@ -53,10 +50,8 @@ properties:
     $$inherit: "/defs/v0.1/properties/spacegroups/hall_entry"
   it_number:
     $$inherit: "/defs/v0.1/properties/spacegroups/it_number"
-  to_hall:
-    $$inherit: "/defs/v0.1/properties/transformations/to_hall"
-  to_hall_symbol:
-    $$inherit: "/defs/v0.1/properties/transformations/to_hall_symbol"
+  to_hall_entry:
+    $$inherit: "/defs/v0.1/properties/transformations/to_hall_entry"
   index:
     $$inherit: "/defs/v0.1/properties/transformations/index"
   affine_transformation:
@@ -64,8 +59,7 @@ properties:
 examples:
 - hall_entry: p_1
   it_number: 1
-  to_hall: p_1
-  to_hall_symbol: p 1
+  to_hall_entry: p_1
   index: 1
   affine_transformation:
     matrix:

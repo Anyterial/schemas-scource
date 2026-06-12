@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/target
-title: Target
+title: Criterion target
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -13,10 +13,10 @@ type:
 - array
 - 'null'
 description: |-
-  Target vector or target value in a generated linear criterion.
-  
-  In current generated criteria it is usually represented as exact rational components serialized as strings.
-  The semantic meaning of `target` is parent-specific and should not be reused as a broad standalone concept.
+  Exact target vector or scalar of a generated linear criterion.
+
+  This field appears in `criteria` items of basis-transform records, for example in backward-lift criteria, where it gives the value that the linear form evaluated on the constrained coordinates must equal.
+  The components are exact rational values serialized as fraction strings.
 items:
   $$inherit: "/defs/v0.1/properties/core/fraction"
 examples:

@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_entry
-title: Hermann-Mauguin Entry
+title: Hermann-Mauguin entry
 x-optimade-type: string
 x-optimade-definition:
   kind: property

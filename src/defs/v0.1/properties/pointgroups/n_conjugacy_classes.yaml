@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/n_conjugacy_classes
-title: N Conjugacy Classes
+title: Number of conjugacy classes
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -11,7 +11,10 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Number of conjugacy classes in the crystallographic point group.
+description: |-
+  Number of conjugacy classes in the crystallographic point group.
+
+  This value MUST equal the length of the `conjugacy_classes` list of the point-group entry.
 x-optimade-unit: inapplicable
 examples:
 - 1

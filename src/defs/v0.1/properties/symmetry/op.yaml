@@ -28,7 +28,7 @@ description: |-
         It MUST follow `/defs/v0.1/properties/symmetry/affine_transformation`.
 
       - **rot\_type**: OPTIONAL; String.
-        Crystallographic operation-type label for the linear part, such as `1`, `-1`, `2`, `m`, `-3`, `4`, `-4`, `6`, or `-6`.
+        Crystallographic operation-type label for the linear part.
 
       - **axis**: OPTIONAL; List of 3 Integers.
         Operation axis or invariant direction using the integer-vector convention returned by the generator.
@@ -42,8 +42,7 @@ description: |-
       - **origin\_shift**: OPTIONAL; List of 3 Fractions (String).
         Origin shift associated with the screw/glide decomposition of a space-group affine operation.
 
-      - **is\_proper**: OPTIONAL; Boolean.
-        States whether the linear operation is proper, i.e., whether its determinant is +1.
+  - Whether the operation is proper follows from the sign of the `det` field of `affine_transformation`; no separate properness flag is stored.
 properties:
   affine_transformation:
     $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
@@ -54,6 +53,17 @@ properties:
     - string
     - 'null'
     description: Symbolic crystallographic operation-type label for the linear part.
+    enum:
+    - '1'
+    - '-1'
+    - '2'
+    - m
+    - '3'
+    - '-3'
+    - '4'
+    - '-4'
+    - '6'
+    - '-6'
   axis:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -101,13 +111,6 @@ properties:
     description: Origin-shift descriptor represented exactly as a list of fraction strings.
     items:
       $$inherit: "/defs/v0.1/properties/core/fraction"
-  is_proper:
-    x-optimade-type: boolean
-    x-optimade-unit: inapplicable
-    type:
-    - boolean
-    - 'null'
-    description: Whether the linear operation is proper.
 examples:
 - affine_transformation:
     matrix:

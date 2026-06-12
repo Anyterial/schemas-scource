@@ -14,13 +14,13 @@ type:
 - 'null'
 description: |-
   Full list of symmetry-operation descriptors for a point group.
-  Each list member is a `op` object as defined by `/properties/symmetry/op`.
-  For point-group operations, generated data currently uses `matrix` and `type`.
+  Each list member is an `op` object as defined by `/defs/v0.1/properties/symmetry/op`.
+  Point-group operations have a zero translation part, so the `screw_glide` and `origin_shift` classification fields are omitted.
 
   **Requirements/Conventions**:
 
   - It MUST be a list of dictionaries.
-  - Each dictionary MUST follow the schema inherited from `/properties/symmetry/op`.
+  - Each dictionary MUST follow the schema inherited from `/defs/v0.1/properties/symmetry/op`.
 items:
   $$inherit: "/defs/v0.1/properties/symmetry/op"
 examples:
@@ -31,8 +31,8 @@ examples:
       - ['0', '0', '1']
       vector: ['0', '0', '0']
       xyz: x,y,z
+      det: 1
+      is_orthogonal: true
     rot_type: '1'
     sense: 0
     axis: [0, 0, 0]
-    screw_glide: ['0', '0', '0']
-    origin_shift: ['0', '0', '0']

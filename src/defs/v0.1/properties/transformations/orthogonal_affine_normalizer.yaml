@@ -22,6 +22,11 @@ description: |-
   For this property `candidate_set` is `signed_permutation_matrices`, meaning 3 by 3 integer matrices with exactly one nonzero entry in each row and column and each nonzero entry equal to `-1` or `1`.
   The plural field `candidate_sets` is not part of the emitted data and MUST NOT be used here.
 
+  This property is one of three related normalizer tables for a setting:
+  `euclidean_normalizer` holds the finite Euclidean normalizer operations obtained from cctbx,
+  this property holds the older bounded table restricted to signed-permutation linear parts,
+  and `affine_normalizer` holds the bounded table generated from unimodular integer linear parts, which is a superset of this one.
+
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
@@ -56,6 +61,7 @@ description: |-
       - **symops**: REQUIRED; List of dictionaries.
         Listed orthogonal affine normalizer coset representatives.
         Each item follows `/defs/v0.1/properties/symmetry/basis_transform`.
+        Each item MUST carry `compatible_systems`, the list of crystal systems for which the representative's linear part is compatible with a crystallographic metric.
 properties:
   normalizer_kind:
     x-optimade-type: string

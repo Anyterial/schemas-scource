@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/character_table_complex
-title: Character Table Complex
+title: Complex character table
 $comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
@@ -12,7 +12,11 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Complex irreducible character table of the crystallographic point group. Rows correspond to complex irreducible representations and columns follow the order of `conjugacy_classes`.
+description: |-
+  Complex irreducible character table of the crystallographic point group.
+
+  Rows correspond to complex irreducible representations and columns follow the order of `conjugacy_classes`.
+  Characters are exact complex rational values stored as dictionaries with `re` and `im` fraction strings, so that they round-trip without floating-point loss.
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: dictionary

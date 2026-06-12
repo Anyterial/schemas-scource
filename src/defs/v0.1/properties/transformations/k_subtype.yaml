@@ -17,6 +17,9 @@ description: |-
   The value distinguishes loss of centering translations from enlarged-unit-cell subgroups.
   The value is null for non-`k` relations and for records that are not subgroup relations.
 x-optimade-unit: inapplicable
+enum:
+- loss_of_centering_translation
+- enlarged_unit_cell
 examples:
 - enlarged_unit_cell
 - loss_of_centering_translation

@@ -103,66 +103,7 @@ properties:
     description: Categorical label for normalizer-type representatives.
     enum: [euclidean, orthogonal_affine, affine]
   wyckoff_splitting:
-    x-optimade-type: list
-    x-optimade-unit: inapplicable
-    type:
-    - array
-    - 'null'
-    description: Wyckoff-position splitting metadata induced by the transform, grouped by explicit parent Wyckoff letter.
-    items:
-      x-optimade-type: dictionary
-      x-optimade-unit: inapplicable
-      type:
-      - object
-      description: Splitting data for one parent Wyckoff position.
-      required: [parent, splits]
-      properties:
-        parent:
-          x-optimade-type: string
-          x-optimade-unit: inapplicable
-          type:
-          - string
-          description: Parent Wyckoff letter.
-        splits:
-          x-optimade-type: list
-          x-optimade-unit: inapplicable
-          type:
-          - array
-          description: Ordered split records for this parent Wyckoff letter.
-          items:
-            x-optimade-type: dictionary
-            x-optimade-unit: inapplicable
-            type:
-            - object
-            description: One Wyckoff split record.
-            required: [letter, xyz, affine]
-            properties:
-              letter:
-                x-optimade-type: string
-                x-optimade-unit: inapplicable
-                type:
-                - string
-                description: Subgroup Wyckoff letter assigned by this split branch.
-              xyz:
-                x-optimade-type: string
-                x-optimade-unit: inapplicable
-                type:
-                - string
-                description: Coordinate expression for the split branch.
-              affine:
-                x-optimade-type: list
-                x-optimade-unit: inapplicable
-                type:
-                - array
-                description: Exact affine representation for the split branch.
-                items:
-                  x-optimade-type: list
-                  x-optimade-unit: inapplicable
-                  type:
-                  - array
-                  description: One affine row.
-                  items:
-                    $$inherit: "/defs/v0.1/properties/core/fraction"
+    $$inherit: "/defs/v0.1/properties/transformations/wyckoff_splitting"
   criteria:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -238,6 +179,9 @@ properties:
                   items:
                     x-optimade-type: list
                     x-optimade-unit: inapplicable
+                    x-optimade-dimensions:
+                      names: ["dim_lattice"]
+                      sizes: [3]
                     type:
                     - array
                     description: One exact coefficient vector.

@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/n_pointgroup_symops
-title: number of pointgroup symops
+title: Number of pointgroup symops
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -13,6 +13,8 @@ type:
 - 'null'
 description: |-
   Number of point-group symmetry operations.
+
+  For a space-group entry this is the number of operations of the point group of the space group, and it MUST equal the length of the `symops_representative` list when present.
 x-optimade-unit: inapplicable
 examples:
 - 1

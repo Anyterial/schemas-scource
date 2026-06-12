@@ -22,6 +22,12 @@ description: |-
   It is not a bounded candidate search table.
   Therefore fields such as `candidate_set`, `candidate_sets`, and bounded-search `bounds` do not belong to this property.
 
+  This property is one of three related normalizer tables for a setting:
+  this property holds the finite Euclidean normalizer operations obtained from cctbx,
+  `orthogonal_affine_normalizer` holds the older bounded coset table restricted to signed-permutation linear parts,
+  and `affine_normalizer` holds the bounded coset table generated from unimodular integer linear parts.
+  Continuous origin-shift freedoms are described separately by `continuous_normalizer`.
+
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
@@ -51,9 +57,6 @@ description: |-
         Euclidean normalizer operations factorized modulo the centering translations of the setting.
         This keeps one operation for each linear part and translation class modulo centering, while `symops` keeps the complete operation list.
         Each item follows `/defs/v0.1/properties/symmetry/op`.
-
-      - **symops\_mod\_centering\_xyz**: REQUIRED; List of strings.
-        The `x,y,z` notation for the operations in `symops_mod_centering`, ordered element-by-element with that list.
 properties:
   normalizer_kind:
     x-optimade-type: string
@@ -81,8 +84,6 @@ properties:
       $$inherit: "/defs/v0.1/properties/symmetry/op"
   symops_mod_centering:
     $$inherit: "/defs/v0.1/properties/spacegroups/symops_mod_centering"
-  symops_mod_centering_xyz:
-    $$inherit: "/defs/v0.1/properties/spacegroups/symops_mod_centering_xyz"
 examples:
 - normalizer_kind: euclidean
   n_centering_translations: 1
@@ -121,5 +122,3 @@ examples:
     screw_glide: ['0', '0', '0']
     origin_shift: ['0', '0', '0']
     operation_kind: euclidean
-  symops_mod_centering_xyz:
-  - -x,-y,-z

@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/is_chiral
-title: Is Chiral
+title: is chiral
 x-optimade-type: boolean
 x-optimade-definition:
   kind: property

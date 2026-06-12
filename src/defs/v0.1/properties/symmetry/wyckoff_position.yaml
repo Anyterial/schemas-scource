@@ -15,7 +15,7 @@ type:
 description: |-
   Information related to a Wyckoff position in a space-group setting.
 
-  Wyckoff positions represent symmetry-equivalent sites paritioned by multiplicity and site symmetry in a given space group.
+  Wyckoff positions represent symmetry-equivalent sites partitioned by multiplicity and site symmetry in a given space group.
   The property is a dictionary containing information about the multiplicity, oriented site-symmetry symbol, representative coordinate, full orbit, and orbit factorized modulo centering translations.
 
   **Requirements/Conventions**:
@@ -27,6 +27,7 @@ description: |-
 
       - **multiplicity**: REQUIRED; Integer.
         Multiplicity of the Wyckoff position in the conventional cell.
+        It MUST equal the length of `orbit`.
 
       - **sitesym**: REQUIRED; String.
         Oriented site-symmetry symbol.
@@ -36,9 +37,11 @@ description: |-
 
       - **first\_orbit**: REQUIRED; String.
         First representative coordinate expression used by the generator.
+        It MUST equal the `xyz` field of `orbit[0]`.
 
       - **orbit**: REQUIRED; List.
         Full orbit as a list of affine transformations from Wyckoff-position parameters to fractional coordinates.
+        The first item is the canonical representative whose degrees of freedom can be chosen to place it inside the asymmetric unit.
 
       - **orbit\_mod\_centering**: REQUIRED; List.
         Orbit representatives modulo centering translations, represented in the same form as `orbit`.
@@ -96,6 +99,7 @@ properties:
     - 'null'
     description: |-
       Representative coordinate expression for the Wyckoff position chosen such that the degrees of freedom can be chosen to place it inside the asymmetric unit obtained from cctbx.
+      This value MUST equal the `xyz` field of `orbit[0]`; it is repeated here as a directly queryable convenience field.
   orbit:
     x-optimade-type: list
     x-optimade-unit: inapplicable

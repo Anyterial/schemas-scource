@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/crystal_system
-title: Crystal System
+title: Crystal system
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.crystal_system.html
@@ -16,8 +16,16 @@ type:
 description: |-
   The crystal system of the space group or point group.
 
-  Values use the conventional crystallographic system names such as triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, and cubic.
+  Values use the conventional crystallographic system names.
 x-optimade-unit: inapplicable
+enum:
+- triclinic
+- monoclinic
+- orthorhombic
+- tetragonal
+- trigonal
+- hexagonal
+- cubic
 examples:
 - triclinic
 - monoclinic

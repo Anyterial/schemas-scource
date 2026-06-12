@@ -1,6 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/centring_type
-title: Centring Type
+title: Centring type
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.centring_type.html
@@ -17,7 +17,18 @@ description: |-
   The lattice centring symbol for the crystallographic setting.
 
   This setting-dependent symbol identifies primitive, face-centred, body-centred, rhombohedral, or hexagonal centring as represented in the setting record.
+  The value `Rrev` denotes the reverse rhombohedral setting.
 x-optimade-unit: inapplicable
+enum:
+- P
+- A
+- B
+- C
+- F
+- I
+- R
+- H
+- Rrev
 examples:
 - P
 - C

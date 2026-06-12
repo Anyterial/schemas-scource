@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/k_subtype
 title: Klassengleiche subgroup subtype
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: string
 x-optimade-definition:
   kind: property
@@ -12,7 +11,11 @@ x-optimade-definition:
 type:
 - string
 - 'null'
-description: Subtype of a klassengleiche (`k`) subgroup relation. Values distinguish loss of centering translations from enlarged-unit-cell subgroups; the value is null for non-`k` relations.
+description: |-
+  Subtype of a klassengleiche (`k`) subgroup relation.
+  
+  The value distinguishes loss of centering translations from enlarged-unit-cell subgroups.
+  The value is null for non-`k` relations and for records that are not subgroup relations.
 x-optimade-unit: inapplicable
 examples:
 - enlarged_unit_cell

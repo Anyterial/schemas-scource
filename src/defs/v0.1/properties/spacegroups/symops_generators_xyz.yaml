@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/symops_generators_xyz
-title: Symops Generators Xyz
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+title: Symops Generators xyz
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -12,13 +11,13 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Minimal generator subset of the full symmetry-operation group in fractional `x,y,z` notation, ordered consistently with `symops_generators`.
+description: |-
+  Minimal generator subset of the full symmetry-operation group in fractional `x,y,z` notation, ordered consistently with `symops_generators`.
+
+  Each list member is an operation on the format defined by the property definition: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/op_xyz
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
-  x-optimade-unit: inapplicable
-  type:
-  - string
+  $$inherit: "/defs/v0.1/properties/symmetry/op_xyz"
 examples:
 - - -x,-y,-z
 - - -x,y,-z

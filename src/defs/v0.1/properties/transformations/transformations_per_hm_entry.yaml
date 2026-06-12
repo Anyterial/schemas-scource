@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/transformations_per_hm_entry
 title: Transformations per H-M entry
-$comment: Anyterial property definition for H-M-entry grouped transformation records.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Transformation data grouped by H-M entry.
+  
   Each list item contains the H-M entry as ordinary data together with all transformation sections generated for that setting.
   This representation avoids using H-M entries as JSON dictionary keys in the OPTIMADE-described payload.
   The accompanying `hall_entry` field identifies the Hall symbol used to compute the symmetry operations and normalizer data.

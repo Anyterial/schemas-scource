@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/wyckoff
 title: Wyckoff positions
-$comment: Anyterial Wyckoff-position list property using the common wyckoff-position record definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Wyckoff-position table for a specific space-group setting.
+  
   Each list item describes one Wyckoff position and includes the Wyckoff letter as ordinary data.
   This list representation avoids using JSON dictionary keys as crystallographic data.
   Items follow `/properties/symmetry/wyckoff_position`.
@@ -23,8 +23,8 @@ description: |-
 
   - It MUST be a list of dictionaries.
   - Each item MUST include `letter`, identifying the Wyckoff letter for that position in the setting.
-  - `orbit_affine` and `orbit_xyz` contain the full orbit.
-  - `orbit_mod_centering_affine` and `orbit_mod_centering_xyz` contain one representative modulo centering translations.
+  - `orbit` contains the full orbit as affine transformations from Wyckoff-position parameters to fractional coordinates.
+  - `orbit_mod_centering` contains one representative modulo centering translations in the same representation.
 items:
   $$inherit: "/defs/v0.1/properties/symmetry/wyckoff_position"
 examples:
@@ -33,5 +33,17 @@ examples:
     sitesym: '1'
     hasfreedom: [true, true, true]
     first_orbit: x,y,z
-    orbit_xyz: [x,y,z, -x,y,-z]
-    orbit_mod_centering_xyz: [x,y,z, -x,y,-z]
+    orbit:
+    - matrix:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '1']
+      vector: ['0', '0', '0']
+      xyz: x,y,z
+    orbit_mod_centering:
+    - matrix:
+      - ['1', '0', '0']
+      - ['0', '1', '0']
+      - ['0', '0', '1']
+      vector: ['0', '0', '0']
+      xyz: x,y,z

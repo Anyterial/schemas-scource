@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_short_aliases_markup
 title: Short Hermann-Mauguin alias markups
-$comment: Anyterial symmetry property definition using the common string markup object for each list item.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Display-oriented renderings corresponding element-by-element to the alternate short Hermann-Mauguin symbols in `hm_short_aliases`.
+  
   The plain string values are stored in the corresponding unsuffixed alias list; this list only provides alternate markup forms for display.
 items:
   $$inherit: "/defs/v0.1/properties/core/string_markups"

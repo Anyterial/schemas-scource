@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/affine_normalizer
 title: Affine normalizer
-$comment: Anyterial bounded affine normalizer coset representatives for one space-group setting.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Affine normalizer coset representatives for one crystallographic space-group setting.
+  
   The representatives are listed modulo the space group itself, so each listed operation represents an equivalence class of affine normalizer operations rather than every operation in that class.
   This property contains representatives generated from bounded unimodular integer linear parts. It is a finite bounded representative table, not a complete infinite affine normalizer.
 

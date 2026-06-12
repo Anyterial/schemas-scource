@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/maximal_subgroup_relations
 title: Maximal subgroup relations
-$comment: Anyterial property definition for maximal non-isomorphic subgroup relation metadata.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Maximal non-isomorphic subgroup relations for International Tables space-group types.
+  
   Each list item describes all known maximal non-isomorphic subgroup relations for one supergroup IT number.
   The supergroup IT number is stored in `supergroup_it_number` rather than as a JSON dictionary key.
 

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/affine_transformation
 title: Affine transformation
-$comment: Reusable Anyterial definition for the pure affine-map part of crystallographic transformation records.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,9 +13,12 @@ type:
 - object
 - 'null'
 description: |-
-  One exact affine transformation acting on fractional crystallographic coordinates.
+  An affine transformation acting on fractional crystallographic coordinates.
+
+  An affine transformation is a geometric transformation preserving points, straight lines, and parallelism (collinearity), but may not preserve Euclidean distances and angles.
   The transformation is represented by a 3 by 3 matrix and a 3-vector, both serialized with exact string entries.
-  Parent properties define the coordinate convention and semantic role of the transformation, for example whether it is an operation within one setting, a setting transform, a subgroup embedding, or a normalizer representative.
+  The transformation may, for example, represent an operation within one setting, a setting transform, a subgroup embedding, a normalizer representative, or a parametric coordinate map for a Wyckoff-position orbit representative.
+  When used as a parametric coordinate map, the matrix may be singular because special Wyckoff positions can constrain or identify parameters.
 
   **Requirements/Conventions**:
 
@@ -72,12 +74,7 @@ properties:
     items:
       $$inherit: "/defs/v0.1/properties/core/fraction"
   xyz:
-    x-optimade-type: string
-    x-optimade-unit: inapplicable
-    type:
-    - string
-    - 'null'
-    description: Coordinate expression for the affine transformation in `x,y,z` notation.
+      $$inherit: "/defs/v0.1/properties/symmetry/op_xyz"
   det:
     x-optimade-type: integer
     x-optimade-unit: inapplicable

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/setting_it_nc_aliases
 title: International Tables setting-code aliases
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -12,7 +11,10 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Alternative International Tables `n:c` setting identifiers that refer to the same Hall setting or are otherwise treated as aliases of `setting_it_nc` by the generator. This field is used only when the source tables expose more than one conventional label for the same generated setting.
+description: |-
+  A list of International Tables `n:c` setting identifiers that are alternatives to the one designated as the main one.
+
+  This field is used only when the source tables expose more than one conventional label for the same setting.
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: string

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/hall_to_it_std_transform
 title: Hall to IT standard transform
-$comment: Hall-keyed exact change-of-basis transforms to the IT standard Hall setting.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Exact basis and origin transform from one stored Hall setting to the International Tables standard Hall setting of the same space-group type.
+  
   This transform is useful when data generated or detected in an arbitrary Hall setting needs to be compared with a conventional IT-standard reference setting.
   The transform is represented by `matrix` and `vector`, following the same affine-transformation convention as the other generated transformation tables.
 

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/target
 title: Target
-$comment: Anyterial local target vector property used in generated linear criteria.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Target vector or target value in a generated linear criterion.
+  
   In current generated criteria it is usually represented as exact rational components serialized as strings.
   The semantic meaning of `target` is parent-specific and should not be reused as a broad standalone concept.
 items:

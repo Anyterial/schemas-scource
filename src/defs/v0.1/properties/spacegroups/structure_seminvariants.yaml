@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/structure_seminvariants
 title: Structure Seminvariants
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -12,7 +11,15 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Structure seminvariant vectors and moduli for the space-group setting. These characterize phase restrictions and FFT grid constraints associated with the symmetry.
+description: |-
+  Structure seminvariant vectors and moduli for the space-group setting.
+
+  These characterize phase restrictions and FFT grid constraints associated with the symmetry.
+  They are on format of a list of dictionaries.
+  The dictionaries MUST contain the fields:
+  
+  - vector: List of Integer. One structure-seminvariant condition vector.
+  - modulus: Integer. Modulus for the seminvariant congruence. 
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: dictionary

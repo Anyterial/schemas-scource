@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/it_number
 title: International Tables Space-Group Number
-$comment: Anyterial symmetry property definition with compatible external crystallographic definition IRIs.
 x-optimade-type: integer
 x-compatibility:
 - https://schemas.optimade.org/defs/v1.2/properties/optimade/structures/space_group_it_number
@@ -14,7 +13,10 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: "The International Tables space-group number.\n\nThis integer identifies the space-group type numbered 1 through 230 in International Tables for Crystallography. Multiple Hall settings can share the same `it_number`."
+description: |-
+  The International Tables space-group number.
+
+  This integer identifies the space-group type numbered 1 through 230 in International Tables for Crystallography. Multiple Hall settings can share the same `it_number`.
 x-optimade-unit: inapplicable
 examples:
 - 1

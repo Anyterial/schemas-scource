@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/setting_it_nc
 title: International Tables setting code n:c
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: string
 x-optimade-definition:
   kind: property
@@ -15,7 +14,8 @@ type:
 description: |-
   International Tables setting identifier in `n:c` notation.
 
-  The part before the colon is the International Tables space-group number. The part after the colon is the coordinate-system or origin-choice qualifier used to distinguish settings that share the same IT number.
+  The part before the colon is the International Tables space-group number.
+  The part after the colon is the coordinate-system or origin-choice qualifier used to distinguish settings that share the same IT number.
 
   **Requirements/Conventions**:
 

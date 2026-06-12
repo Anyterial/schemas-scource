@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/core/string_markups
 title: String markups
-$comment: Reusable Anyterial definition for alternate display renderings of an ASCII/text string.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,8 +13,9 @@ type:
 - object
 - 'null'
 description: |-
-  Alternate markup renderings of a string whose plain-text or ASCII value is provided by a sibling property.
-  The object is intended for display-oriented variants only; the corresponding unsuffixed sibling property remains the canonical plain string value.
+  Strings with alternate markup and/or encoding for display rendering.
+  
+  The object is intended for display-oriented variants only, a sibling property should be used for canonical plain string value.
 
   **Requirements/Conventions**:
 

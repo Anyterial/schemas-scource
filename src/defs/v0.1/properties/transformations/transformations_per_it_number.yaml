@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/transformations_per_it_number
 title: Transformations per IT number
-$comment: Anyterial property definition for IT-number grouped transformation records.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Standard-setting transformation data grouped by International Tables space-group number.
+  
   Each list item contains the IT number as ordinary data together with all standard-setting transformation sections generated for that space-group type.
   This representation avoids using IT numbers as JSON dictionary keys in the OPTIMADE-described payload.
 

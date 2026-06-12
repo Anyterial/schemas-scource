@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/centering_translation
 title: Centering translation
-$comment: Reusable Anyterial definition for one conventional-cell centering translation.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   One centering translation of a conventional crystallographic cell.
+  
   The translation is represented in fractional coordinates using exact fraction strings.
 
   **Requirements/Conventions**:

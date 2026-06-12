@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/baernighausen
 title: Bärnighausen subgroup transforms
-$comment: Anyterial transform collection property using the common basis-transform definition for transform items.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Bärnighausen subgroup transform table for one parent setting or space-group type.
+  
   Entries describe generated embeddings of subgroup settings into the containing parent setting.
   Each list item groups transform records for one target subgroup, with the target stored as ordinary data rather than as a JSON dictionary key.
   Transform records follow `/properties/symmetry/basis_transform`.

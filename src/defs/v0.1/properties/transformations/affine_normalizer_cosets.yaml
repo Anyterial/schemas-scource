@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/affine_normalizer_cosets
 title: Affine normalizer cosets
-$comment: Anyterial normalizer-coset list property using the common normalizer-representative definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Runtime list of bounded affine normalizer coset representatives modulo the space group.
+  
   Each item is one finite listed representative and follows `/properties/symmetry/basis_transform`.
   The list is a bounded representative table, not a complete infinite affine normalizer.
 items:

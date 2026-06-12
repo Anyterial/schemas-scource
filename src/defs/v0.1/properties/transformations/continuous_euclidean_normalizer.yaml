@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/continuous_euclidean_normalizer
 title: Continuous Euclidean normalizer
-$comment: Anyterial continuous-normalizer property definition.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,7 +13,9 @@ type:
 - object
 - 'null'
 description: |-
-  Continuous Euclidean normalizer subspace before aggregation into the public transformation tables. It records the dimension and basis vectors of allowed continuous origin shifts.
+  Continuous Euclidean normalizer subspace before aggregation into the public transformation tables.
+
+  It records the dimension and basis vectors of allowed continuous origin shifts.
 
   **Requirements/Conventions**:
 

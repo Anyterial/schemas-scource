@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/continuous_normalizer
 title: Continuous normalizer
-$comment: Anyterial continuous-normalizer property definition.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,7 +13,9 @@ type:
 - object
 - 'null'
 description: |-
-  Parameterized continuous normalizer subspace for a setting. It describes continuous origin-shift freedoms by dimension and fractional-coordinate basis vectors rather than by enumerating infinitely many operations.
+  Parameterized continuous normalizer subspace for a setting.
+
+  It describes continuous origin-shift freedoms by dimension and fractional-coordinate basis vectors rather than by enumerating infinitely many operations.
 
   **Requirements/Conventions**:
 

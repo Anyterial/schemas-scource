@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/affine_normalizer_coset_data
 title: Affine normalizer coset data
-$comment: Ordered Anyterial table of bounded affine normalizer coset-representative data by Hall setting.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Ordered table of bounded affine normalizer coset-representative data for crystallographic space groups, with one item for each Hall setting.
+  
   The affine normalizer of a space group describes affine mappings that send the space group to itself.
   In practical algorithms this information is useful after a candidate space-group setting has been identified, because additional normalizer representatives can be applied to explore equivalent descriptions, equivalent origin choices, or equivalent embeddings without changing the underlying space group.
   The representatives are listed modulo the space group itself, so each listed operation represents an equivalence class of normalizer operations rather than every operation in that class.

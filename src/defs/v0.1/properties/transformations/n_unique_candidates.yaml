@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_unique_candidates
 title: N Unique Candidates
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -12,7 +11,8 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Number of candidate affine operations remaining after exact duplicate removal.
+description: |-
+  Number of candidate affine operations remaining after exact duplicate removal.
 x-optimade-unit: inapplicable
 examples:
 - 48

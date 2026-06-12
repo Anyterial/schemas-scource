@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_full
 title: Full Hermann-Mauguin Symbol
-$comment: Anyterial symmetry property definition with compatible external crystallographic definition IRIs.
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.name_H-M_full.html
@@ -14,7 +13,10 @@ x-optimade-definition:
 type:
 - string
 - 'null'
-description: "The setting-specific full Hermann-Mauguin symbol for the space-group setting.\n\nThe full symbol expands the short Hermann-Mauguin notation to include the symmetry entries for all relevant crystallographic directions in the setting represented by the containing Hall record."
+description: |-
+  The setting-specific full Hermann-Mauguin symbol for the space-group setting.
+
+  The full symbol expands the short Hermann-Mauguin notation to include the symmetry entries for all relevant crystallographic directions in the setting represented by the containing Hall record.
 x-optimade-unit: inapplicable
 examples:
 - P 1

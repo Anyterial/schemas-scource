@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/centering_translations
 title: Centering translations
-$comment: Anyterial property definition using the common reusable centering-translation definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Centering translations of the conventional cell.
+  
   Each list member is one exact fractional-coordinate centering translation as defined by `/properties/symmetry/centering_translation`.
   The zero translation `(0,0,0)` is listed first.
 items:

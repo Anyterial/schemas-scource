@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/asu_cut
 title: Asymmetric-unit cut
-$comment: Reusable Anyterial source definition for one serialized asymmetric-unit cut expression.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   One serialized asymmetric-unit half-space cut or logical cut expression.
+  
   Cut objects may recursively refer to other cut objects through `condition`, `lhs`, and `rhs`.
 
   **Requirements/Conventions**:

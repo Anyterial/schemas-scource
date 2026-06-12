@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/euclidean_normalizer
 title: Euclidean normalizer
-$comment: Anyterial finite Euclidean normalizer operation data for one space-group setting.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Finite Euclidean normalizer operations for one crystallographic space-group setting.
+  
   The Euclidean normalizer consists of metric-preserving affine operations that normalize the space group in the chosen setting.
   These operations are useful for algorithms that need to compare or enumerate equivalent descriptions of the same setting under rigid crystallographic changes of coordinates.
 

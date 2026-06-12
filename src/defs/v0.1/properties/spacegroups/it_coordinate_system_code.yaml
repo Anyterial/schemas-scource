@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/it_coordinate_system_code
 title: International Tables Coordinate-System Code
-$comment: Anyterial symmetry property definition with compatible external crystallographic definition IRIs.
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.IT_coordinate_system_code.html
@@ -14,7 +13,10 @@ x-optimade-definition:
 type:
 - string
 - 'null'
-description: "The International Tables coordinate-system code for the setting.\n\nThe code distinguishes setting choices such as monoclinic unique-axis and cell choices, orthorhombic axis settings, tetragonal/cubic origin choices, and trigonal hexagonal or rhombohedral axes."
+description: |-
+  The International Tables coordinate-system code for the setting.
+
+  The code distinguishes setting choices such as monoclinic unique-axis and cell choices, orthorhombic axis settings, tetragonal/cubic origin choices, and trigonal hexagonal or rhombohedral axes.
 x-optimade-unit: inapplicable
 examples:
 - b1

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/hm_full_old
 title: Hermann-Mauguin Full Old
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: string
 x-optimade-definition:
   kind: property
@@ -20,7 +19,6 @@ description: |-
   **Requirements/Conventions**:
 
   - The plain string form uses spaces between symbol parts where this is needed for unambiguous parsing.
-  - The extended symbol MAY contain multiple lines; line breaks and spacing encode the alignment used in International Tables extended symbols.
   - Older-symbol fields are present only where an older International Tables form is retained for comparison or aliasing.
 x-optimade-unit: inapplicable
 examples:

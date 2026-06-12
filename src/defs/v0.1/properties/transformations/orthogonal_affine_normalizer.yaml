@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/orthogonal_affine_normalizer
 title: Orthogonal affine normalizer
-$comment: Anyterial signed-permutation affine normalizer coset representatives for one space-group setting.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Orthogonal affine normalizer coset representatives for one crystallographic space-group setting.
+  
   The representatives are listed modulo the space group itself, so each listed operation represents an equivalence class of affine normalizer operations rather than every operation in that class.
   This property contains the signed-permutation subset of affine normalizer representatives.
 

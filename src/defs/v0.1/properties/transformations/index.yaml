@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/index
 title: Index
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -12,7 +11,10 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Subgroup or transform index. For subgroup transforms it is the crystallographic subgroup index `[G:H]`, equal to the determinant factor of the basis transformation when applicable.
+description: |-
+  Subgroup or transform index.
+
+  For subgroup transforms it is the crystallographic subgroup index `[G:H]`, equal to the determinant factor of the basis transformation when applicable.
 x-optimade-unit: inapplicable
 examples:
 - 2

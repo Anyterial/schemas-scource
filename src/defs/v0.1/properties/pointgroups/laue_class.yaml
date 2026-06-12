@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/pointgroups/laue_class
 title: Laue Class
-$comment: Anyterial symmetry property definition with compatible external crystallographic definition IRIs.
 x-optimade-type: string
 x-compatibility:
 - https://www.iucr.org/__data/iucr/cifdic_html/2/cif_sym.dic/Ispace_group.Laue_class.html
@@ -14,8 +13,23 @@ x-optimade-definition:
 type:
 - string
 - 'null'
-description: "The Laue class associated with the space group or point group.\n\nThe Laue class groups point groups that become equivalent when inversion symmetry is included."
+description: |-
+  The Laue class associated with the space group or point group.
+
+  The Laue class groups point groups that become equivalent when inversion symmetry is included.
 x-optimade-unit: inapplicable
+enum:
+- "-1"
+- "2/m"
+- "mmm"
+- "4/m"
+- "4/mmm"
+- "-3"
+- "-3m"
+- "6/m"
+- "6/mmm"
+- "m-3"
+- "m-3m"
 examples:
 - '-1'
 - 2/m

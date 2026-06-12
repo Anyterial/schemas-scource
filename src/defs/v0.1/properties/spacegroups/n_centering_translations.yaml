@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/n_centering_translations
-title: N Centering Translations
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
+title: Number of centering translations
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -12,7 +11,8 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Number of centering translations in the conventional cell of the space-group setting.
+description: |-
+  Number of centering translations in the conventional cell of the space-group setting.
 x-optimade-unit: inapplicable
 examples:
 - 1

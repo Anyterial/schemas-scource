@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/spglib_hall_numbers
 title: Spglib Hall Numbers
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -12,7 +11,8 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: spglib Hall numbers corresponding to the generated setting.
+description: |-
+  A "Hall number" as assigned by spglib.
 x-optimade-unit: inapplicable
 items:
   x-optimade-type: integer

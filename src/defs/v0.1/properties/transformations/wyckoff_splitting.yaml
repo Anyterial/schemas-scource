@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/wyckoff_splitting
 title: Wyckoff splitting
-$comment: Anyterial property definition for Wyckoff-position splitting data attached to transforms.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Wyckoff-position splitting data associated with a subgroup or same-space-group transform.
+  
   Each list item gives the split of one parent Wyckoff position.
   The parent Wyckoff letter is stored in the `parent` field rather than as a JSON dictionary key.
 

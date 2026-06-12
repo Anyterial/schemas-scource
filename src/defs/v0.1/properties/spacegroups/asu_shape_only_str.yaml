@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/asu_shape_only_str
 title: Shape-only asymmetric unit string
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: string
 x-optimade-definition:
   kind: property
@@ -12,7 +11,8 @@ x-optimade-definition:
 type:
 - string
 - 'null'
-description: Plain string rendering of the geometric shape part of the asymmetric-unit restrictions, without conditional refinements.
+description: |-
+  Plain string rendering of the geometric shape part of the asymmetric-unit restrictions, without conditional refinements.
 x-optimade-unit: inapplicable
 examples:
 - x>=0; x<=1; y>=0; y<=1; z>=0; z<=1

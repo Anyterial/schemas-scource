@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/symops_representative_xyz
 title: Symops Representative Xyz
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -12,13 +11,11 @@ x-optimade-definition:
 type:
 - array
 - 'null'
-description: Representative symmetry operations modulo centering translations in fractional `x,y,z` notation, ordered consistently with `symops_representative`.
+description: |-
+  Representative symmetry operations modulo centering translations in fractional `x,y,z` notation, ordered consistently with `symops_representative`.
 x-optimade-unit: inapplicable
 items:
-  x-optimade-type: string
-  x-optimade-unit: inapplicable
-  type:
-  - string
+  $$inherit: "/defs/v0.1/properties/symmetry/op_xyz"
 examples:
 - - x,y,z
 - - -x,y,-z

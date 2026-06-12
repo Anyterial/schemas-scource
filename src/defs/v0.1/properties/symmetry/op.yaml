@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/op
 title: Operation
-$comment: Reusable Anyterial definition for one classified crystallographic operation descriptor.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -14,7 +13,9 @@ type:
 - object
 - 'null'
 description: |-
-  A classified crystallographic operation acting within one coordinate setting.
+  Information related to a crystallographic operation acting within one coordinate setting.
+
+  Represents an affine_transformation that is a crystallographic operation within one setting.
   The affine map itself is stored in the embedded `affine_transformation` field.
   The remaining fields classify the operation crystallographically, for example by rotation type, axis, sense, and screw or glide component.
 
@@ -28,9 +29,6 @@ description: |-
 
       - **rot\_type**: OPTIONAL; String.
         Crystallographic operation-type label for the linear part, such as `1`, `-1`, `2`, `m`, `-3`, `4`, `-4`, `6`, or `-6`.
-
-      - **type**: OPTIONAL; Integer.
-        Legacy numeric operation-type code used by point-group operation descriptors.
 
       - **axis**: OPTIONAL; List of 3 Integers.
         Operation axis or invariant direction using the integer-vector convention returned by the generator.
@@ -56,13 +54,6 @@ properties:
     - string
     - 'null'
     description: Symbolic crystallographic operation-type label for the linear part.
-  type:
-    x-optimade-type: integer
-    x-optimade-unit: inapplicable
-    type:
-    - integer
-    - 'null'
-    description: Legacy numeric point-group operation-type code.
   axis:
     x-optimade-type: list
     x-optimade-unit: inapplicable

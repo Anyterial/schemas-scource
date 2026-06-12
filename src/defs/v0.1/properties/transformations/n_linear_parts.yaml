@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/n_linear_parts
 title: N Linear Parts
-$comment: Generated from data-generators JSON-LD fields without external definition URLs.
 x-optimade-type: integer
 x-optimade-definition:
   kind: property
@@ -12,7 +11,8 @@ x-optimade-definition:
 type:
 - integer
 - 'null'
-description: Number of distinct linear matrix parts represented in a normalizer or transform table.
+description: |-
+  Number of distinct linear matrix parts represented in a normalizer or transform table.
 x-optimade-unit: inapplicable
 examples:
 - 2

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/backward_lift_criteria
 title: Backward lift criteria
-$comment: Anyterial property definition for backward-lift criteria grouped by target subgroup IT number.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,6 +14,7 @@ type:
 - 'null'
 description: |-
   Criteria table for one supergroup IT number used to lift occupied Wyckoff data from a subgroup back to that supergroup along a chosen Bärnighausen transform.
+  
   Each list item groups transform records for one target subgroup IT number.
   The target subgroup IT number is stored in `target_it_number` rather than as a JSON dictionary key.
 

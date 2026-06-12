@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/spacegroups/symops_generators
 title: Symmetry operation generators
-$comment: Anyterial property definition using the common reusable op object definition.
 x-optimade-type: list
 x-optimade-definition:
   kind: property
@@ -15,13 +14,8 @@ type:
 - 'null'
 description: |-
   Minimal generator subset of the full symmetry-operation group for a space-group setting.
-  Each list member is a `op` object as defined by `/properties/symmetry/op`.
-  For space-group operations, generated data currently uses `rot_type`, `axis`, `sense`, `screw_glide`, and `origin_shift`.
 
-  **Requirements/Conventions**:
-
-  - It MUST be a list of dictionaries.
-  - Each dictionary MUST follow the schema inherited from `/properties/symmetry/op`.
+  Each list member is an operation on the format defined by the property definition: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/op
 items:
   $$inherit: "/defs/v0.1/properties/symmetry/op"
 examples:

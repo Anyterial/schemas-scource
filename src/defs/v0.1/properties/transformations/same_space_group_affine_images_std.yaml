@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/transformations/same_space_group_affine_images_std
 title: Same space group affine images std
-$comment: IT-number keyed same-space-group affine-image records for standard settings.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property

@@ -1,7 +1,6 @@
 $$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
 $id: https://schemas.anyterial.se/defs/v0.1/properties/symmetry/basis_transform
 title: Basis transformation
-$comment: Reusable Anyterial definition for one crystallographic basis, setting, cell, or embedding transform.
 x-optimade-type: dictionary
 x-optimade-definition:
   kind: property
@@ -15,38 +14,49 @@ type:
 - 'null'
 description: |-
   One crystallographic transform between coordinate descriptions, settings, cells, or related group embeddings.
+
   The affine map itself is stored in the embedded `affine_transformation` field.
-  Parent tables use this object for Hall-to-standard transforms, Bärnighausen subgroup transforms, isomorphic subgroup transforms, normalizer representatives, and same-space-group affine images.
+  The parent property defines the source and target coordinate systems and the precise role of the transform.
+  Useful, for example, for representing setting changes, subgroup embeddings, isomorphic subgroup transforms, normalizer representatives, and same-space-group affine images.
+  This property is not limited to symmetry operations within one fixed setting; the matrix may be non-orthogonal or have determinant different from one when the transform changes cell or basis.
 
   **Requirements/Conventions**:
 
   - It MUST be a dictionary with the following keys:
 
       - **affine\_transformation**: REQUIRED; Dictionary.
-        Exact affine map for the transform.
-        It MUST follow `/defs/v0.1/properties/symmetry/affine_transformation`.
+        Exact affine map for the transform, using exact rational matrix and vector entries.
+        The coordinate convention and source/target interpretation are supplied by the parent property.
 
-      - **index**: OPTIONAL; Integer.
-        Subgroup index, same-setting transform index, or cell-index metadata whose interpretation is defined by the parent table.
+      - **index**: OPTIONAL; Integer or null.
+        Index metadata whose interpretation is defined by the parent property.
+        Common uses include the subgroup index for subgroup embeddings, the cell index for isomorphic subgroup transforms, or an ordinal representative index in a finite transform table.
 
       - **subgroup\_type**: OPTIONAL; String.
-        International Tables subgroup-type label when the transform describes a subgroup embedding.
+        International Tables subgroup-type label when the transform describes a maximal subgroup embedding.
+        The value MUST be `t` for a translationengleiche subgroup or `k` for a klassengleiche subgroup.
+        It MUST be omitted when the transform is not a maximal subgroup embedding.
 
       - **k\_subtype**: OPTIONAL; String or null.
         Klassengleiche subtype when the transform describes a klassengleiche subgroup relation.
+        The value MUST be `loss_of_centering_translation` or `enlarged_unit_cell` for klassengleiche relations and null or omitted otherwise.
 
       - **compatible\_systems**: OPTIONAL; List of strings.
         Crystal metric systems for which the transform is compatible.
         This is used for bounded affine normalizer representatives.
 
       - **operation\_kind**: OPTIONAL; String.
-        Generator classification of the transform or representative.
+        Categorical label for normalizer-type representatives.
+        The value MUST be `euclidean` for Euclidean normalizer operations, `orthogonal_affine` for the signed-permutation affine normalizer subset, or `affine` for the bounded unimodular affine normalizer table.
+        It MUST be omitted when the transform is a setting transform, subgroup embedding, or other transform for which no normalizer operation class applies.
 
       - **wyckoff\_splitting**: OPTIONAL; List.
         Wyckoff-position splitting metadata induced by the transform when available.
+        The list is grouped by explicit parent Wyckoff letter.
 
       - **criteria**: OPTIONAL; List.
         Backward-lift constraint metadata induced by the transform when available.
+        The list is grouped by explicit parent Wyckoff letter.
 properties:
   affine_transformation:
     $$inherit: "/defs/v0.1/properties/symmetry/affine_transformation"
@@ -62,8 +72,8 @@ properties:
     x-optimade-unit: inapplicable
     type:
     - string
-    - 'null'
     description: International Tables subgroup-type label when applicable.
+    enum: [t, k]
   k_subtype:
     x-optimade-type: string
     x-optimade-unit: inapplicable
@@ -84,13 +94,14 @@ properties:
       type:
       - string
       description: One compatible crystal-system label.
+      enum: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
   operation_kind:
     x-optimade-type: string
     x-optimade-unit: inapplicable
     type:
     - string
-    - 'null'
-    description: Generator classification of the transform or representative.
+    description: Categorical label for normalizer-type representatives.
+    enum: [euclidean, orthogonal_affine, affine]
   wyckoff_splitting:
     x-optimade-type: list
     x-optimade-unit: inapplicable
@@ -247,4 +258,38 @@ examples:
     - ['0', '1', '0']
     - ['0', '0', '2']
     vector: ['0', '0', '0']
+    xyz: x,y,2z
+    det: 2
+    is_orthogonal: false
   index: 2
+  subgroup_type: k
+  k_subtype: enlarged_unit_cell
+  wyckoff_splitting:
+  - parent: a
+    splits:
+    - letter: a
+      xyz: x,y,z
+      affine:
+      - ['1', '0', '0', '0']
+      - ['0', '1', '0', '0']
+      - ['0', '0', '1', '0']
+  criteria:
+  - parent: a
+    constraints:
+    - roles:
+      - letter: a
+        index: 0
+      coeffs:
+      - - ['1', '0', '0']
+      target: ['0']
+- affine_transformation:
+    matrix:
+    - ['-1', '0', '0']
+    - ['0', '-1', '0']
+    - ['0', '0', '-1']
+    vector: ['0', '0', '0']
+    xyz: -x,-y,-z
+    det: -1
+    is_orthogonal: true
+  compatible_systems: [triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic]
+  operation_kind: affine

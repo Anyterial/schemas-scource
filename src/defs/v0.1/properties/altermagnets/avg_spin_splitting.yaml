@@ -1,0 +1,21 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/avg_spin_splitting
+title: Average spin splitting
+x-optimade-type: float
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: avg_spin_splitting
+  label: avg_spin_splitting_altermagnets
+x-optimade-unit: eV
+x-optimade-unit-definitions:
+  - $$inherit: "/defs/v1.2/units/si/general/electronvolt"
+type:
+- number
+- 'null'
+description: |-
+  The Brillouin-zone average of the per-k-point largest spin splitting, evaluated within an energy window of plus or minus 3 eV around the Fermi level.
+
+  This quantity is determined using altermagnetic high-throughput screening methodology and is given in electronvolts.
+  A null value means the quantity is not available for this material.

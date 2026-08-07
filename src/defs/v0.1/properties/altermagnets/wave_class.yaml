@@ -1,0 +1,27 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/wave_class
+title: Wave class
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: wave_class
+  label: wave_class_altermagnets
+x-optimade-unit: inapplicable
+type:
+- string
+- 'null'
+description: |-
+  The simplified spin-momentum wave class of the altermagnetic order.
+
+  The vocabulary contains `s`, `d`, and `g`, denoting the corresponding anisotropy of the spin-split Fermi surface, and `d/g`, denoting a class that is ambiguous between `d` and `g`.
+  A null value means no wave class is available or recorded for this material.
+enum:
+- s
+- d
+- g
+- d/g
+examples:
+- d
+- g

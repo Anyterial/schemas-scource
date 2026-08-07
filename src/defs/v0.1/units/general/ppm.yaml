@@ -1,0 +1,17 @@
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/physical_unit_definition
+$id: https://schemas.anyterial.se/defs/v0.1/units/general/ppm
+title: parts per million
+symbol: ppm
+display-symbol: ppm
+description: |-
+  A dimensionless ratio of one part in one million.
+x-optimade-definition:
+  label: ppm_general
+  kind: unit
+  format: '1.2'
+  version: 0.1.0
+  name: ppm
+standard:
+  name: gnu units
+  version: '3.15'
+  symbol: ppm

@@ -1,0 +1,25 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/magnetic_phase
+title: Magnetic phase
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: magnetic_phase
+  label: magnetic_phase_altermagnets
+x-optimade-unit: inapplicable
+type:
+- string
+- 'null'
+description: |-
+  The magnetic phase assigned to the material by collinear/noncollinear symmetry analysis.
+
+  The vocabulary distinguishes `altermagnet`, denoting an altermagnetic phase, and `compensated ferrimagnet`, denoting a fully compensated ferrimagnetic phase.
+  A null value means no magnetic phase is available or recorded for this material.
+enum:
+- altermagnet
+- compensated ferrimagnet
+examples:
+- altermagnet
+- compensated ferrimagnet

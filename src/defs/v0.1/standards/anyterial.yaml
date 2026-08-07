@@ -1,23 +1,11 @@
 $$schema: "https://schemas.optimade.org/meta/v1.3/optimade/standard_definition"
 $id: "https://schemas.anyterial.se/defs/v0.1/standards/anyterial"
 title: "Anyterial definition provider standard"
-description: "The Anyterial definition provider standard, comprising the spacegroups, pointgroups, and transformations entry types for crystallographic symmetry data."
+description: "The Anyterial definition provider standard. The crystallographic symmetry entry types formerly defined here (spacegroups, pointgroups, and transformations) have been upstreamed to the httk definition provider standard at https://schemas.httk.org/."
 x-optimade-definition:
   label: "anyterial_standard"
   kind: "standard"
   format: "1.3"
   version: "0.1.0"
   name: "anyterial"
-entrytypes:
-  spacegroups:
-    $$inherit: "/defs/v0.1/entrytypes/spacegroups"
-    x-optimade-requirements:
-      support: "may"
-  pointgroups:
-    $$inherit: "/defs/v0.1/entrytypes/pointgroups"
-    x-optimade-requirements:
-      support: "may"
-  transformations:
-    $$inherit: "/defs/v0.1/entrytypes/transformations"
-    x-optimade-requirements:
-      support: "may"
+entrytypes: {}

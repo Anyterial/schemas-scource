@@ -1,0 +1,25 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/space_group
+title: Screening space group
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: space_group
+  label: space_group_altermagnets
+x-optimade-unit: inapplicable
+x-optimade-requirements:
+  support: may
+  query-support: equality only
+  response-level: may
+type:
+- string
+- 'null'
+description: |-
+  The space-group display string recorded by the altermagnet screening workflow, served verbatim.
+
+  A null value means no space group is recorded for this material.
+examples:
+- P6_3/mmc
+- P4_2/mnm

@@ -1,0 +1,376 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/magndata_variants
+title: MAGNDATA symmetry variants
+x-optimade-type: list
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: magndata_variants
+  label: magndata_variants_altermagnets
+x-optimade-unit: inapplicable
+x-optimade-requirements:
+  support: may
+  query-support: none
+  response-level: should not
+type:
+- array
+- 'null'
+items:
+  x-optimade-type: dictionary
+  x-optimade-unit: inapplicable
+  type:
+  - object
+  required:
+  - magndata_id
+  - source
+  properties:
+    magndata_id:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      description: The MAGNDATA identifier of the linked magnetic-structure record the variant was derived from.
+    source:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      enum:
+      - collinear
+      - noncollinear-derived
+      description: Which symmetry source table the variant comes from.
+    formula:
+      x-optimade-type: string
+      x-optimade-unit: inapplicable
+      type:
+      - string
+      - 'null'
+      description: The chemical formula recorded for the variant, or null when not recorded.
+    symprec:
+      x-optimade-type: float
+      x-optimade-unit: dimensionless
+      type:
+      - number
+      - 'null'
+      description: The symmetry-detection tolerance the variant was resolved at, or null when not recorded.
+    phases:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One short magnetic-phase label.
+      description: The deduplicated short magnetic-phase labels of the variant, or null when empty.
+    wave_classes:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One spin-momentum wave-class label.
+      description: The deduplicated spin-momentum wave-class labels of the variant, or null when empty.
+    bns:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One BNS magnetic-space-group display label.
+      description: The deduplicated plain-text BNS magnetic-space-group labels of the variant, or null when empty.
+    bns_latex:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One BNS magnetic-space-group LaTeX label.
+      description: The LaTeX source forms of the labels in `bns`, deduplicated independently, or null when empty.
+    bns_mcif:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One mcif-derived BNS display label.
+      description: The deduplicated plain-text BNS labels as stated in the source mcif files, or null when empty.
+    bns_mcif_latex:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One mcif-derived BNS LaTeX label.
+      description: The LaTeX source forms of the labels in `bns_mcif`, deduplicated independently, or null when empty.
+    effective_bns:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One effective BNS display label.
+      description: The deduplicated plain-text effective BNS magnetic-space-group labels of the variant, or null when empty.
+    effective_bns_latex:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One effective BNS LaTeX label.
+      description: The LaTeX source forms of the labels in `effective_bns`, deduplicated independently, or null when empty.
+    parent_spacegroups:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One parent-space-group display string.
+      description: The deduplicated plain-text parent-space-group strings of the variant, or null when empty.
+    parent_spacegroups_latex:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One parent-space-group LaTeX string.
+      description: The LaTeX source forms of the strings in `parent_spacegroups`, deduplicated independently, or null when empty.
+    connecting_elements:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One connecting-symmetry-element display string.
+      description: The deduplicated plain-text symmetry elements connecting the opposite-spin sublattices, or null when empty.
+    connecting_elements_latex:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One connecting-symmetry-element LaTeX string.
+      description: The LaTeX source forms of the strings in `connecting_elements`, deduplicated independently, or null when empty.
+    g_laue_classes:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One Laue-class label.
+      description: The deduplicated Laue classes of the magnetic-system group G of the variant, or null when empty.
+    h_laue_classes:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One Laue-class label.
+      description: The deduplicated Laue classes of the halving subgroup H of the variant, or null when empty.
+    spin_angle_mismatch:
+      x-optimade-type: float
+      x-optimade-unit: dimensionless
+      type:
+      - number
+      - 'null'
+      description: The largest spin-angle mismatch recorded across the variant's source rows, or null when not recorded.
+    spin_length_mismatch:
+      x-optimade-type: float
+      x-optimade-unit: dimensionless
+      type:
+      - number
+      - 'null'
+      description: The largest spin-length mismatch recorded across the variant's source rows, or null when not recorded.
+    reference_dois:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One reference DOI.
+      description: The deduplicated reference DOIs recorded for the variant, or null when empty.
+    warnings:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One warning message.
+      description: The deduplicated warning messages recorded for the variant, or null when empty.
+    notes:
+      x-optimade-type: list
+      x-optimade-unit: inapplicable
+      type:
+      - array
+      - 'null'
+      items:
+        x-optimade-type: string
+        x-optimade-unit: inapplicable
+        type:
+        - string
+        description: One note.
+      description: The deduplicated notes recorded for the variant, or null when empty.
+description: |-
+  The ordered list of symmetry variants resolved for the material from its linked MAGNDATA records, one item per record and symmetry-detection tolerance.
+
+  Label-valued members are served in two channels: the unsuffixed member holds plain-text display strings and the corresponding `_latex` member holds the LaTeX source forms of the same labels.
+  The two channels are deduplicated independently, so they are not index-aligned.
+  List-valued members are null when no value is recorded; an empty list of variants means the material's linked MAGNDATA identifiers resolved to no symmetry records.
+
+  **Requirements/Conventions**:
+
+  - Each item MUST be a dictionary with the following keys:
+
+      - **magndata\_id**: REQUIRED; String.
+        The MAGNDATA identifier of the linked magnetic-structure record the variant was derived from.
+
+      - **source**: REQUIRED; String.
+        Which symmetry source table the variant comes from: `collinear` for the collinear table and `noncollinear-derived` for the table derived from noncollinear sources.
+
+      - **formula**: OPTIONAL; String.
+        The chemical formula recorded for the variant.
+
+      - **symprec**: OPTIONAL; Float.
+        The symmetry-detection tolerance the variant was resolved at.
+
+      - **phases**: OPTIONAL; List of Strings.
+        The deduplicated short magnetic-phase labels, using the same vocabulary as the `magnetic_phases` property.
+
+      - **wave\_classes**: OPTIONAL; List of Strings.
+        The deduplicated spin-momentum wave-class labels, using the same vocabulary as the `wave_classes` property.
+
+      - **bns**, **bns\_latex**: OPTIONAL; List of Strings.
+        The BNS magnetic-space-group labels in the display and LaTeX channels.
+
+      - **bns\_mcif**, **bns\_mcif\_latex**: OPTIONAL; List of Strings.
+        The BNS labels as stated in the source mcif files, in the display and LaTeX channels.
+
+      - **effective\_bns**, **effective\_bns\_latex**: OPTIONAL; List of Strings.
+        The effective BNS magnetic-space-group labels in the display and LaTeX channels.
+
+      - **parent\_spacegroups**, **parent\_spacegroups\_latex**: OPTIONAL; List of Strings.
+        The parent-space-group strings in the display and LaTeX channels.
+
+      - **connecting\_elements**, **connecting\_elements\_latex**: OPTIONAL; List of Strings.
+        The symmetry elements connecting the opposite-spin sublattices, in the display and LaTeX channels.
+
+      - **g\_laue\_classes**: OPTIONAL; List of Strings.
+        The Laue classes of the magnetic-system group G.
+
+      - **h\_laue\_classes**: OPTIONAL; List of Strings.
+        The Laue classes of the halving subgroup H.
+
+      - **spin\_angle\_mismatch**: OPTIONAL; Float.
+        The largest spin-angle mismatch recorded across the variant's source rows.
+
+      - **spin\_length\_mismatch**: OPTIONAL; Float.
+        The largest spin-length mismatch recorded across the variant's source rows.
+
+      - **reference\_dois**: OPTIONAL; List of Strings.
+        The deduplicated reference DOIs recorded for the variant.
+
+      - **warnings**: OPTIONAL; List of Strings.
+        The deduplicated warning messages recorded for the variant.
+
+      - **notes**: OPTIONAL; List of Strings.
+        The deduplicated notes recorded for the variant.
+
+  A null value means no variant data is recorded for this material.
+examples:
+- - magndata_id: '0.1'
+    source: collinear
+    formula: LaMnO3
+    symprec: 1.0e-05
+    phases:
+    - AM
+    wave_classes:
+    - d
+    bns:
+    - Pn′ma′ (62.448)
+    bns_latex:
+    - ${\mathrm{Pn}^{\prime}\mathrm{ma}^{\prime}}$ (62.448)
+    parent_spacegroups:
+    - Pnma (62)
+    parent_spacegroups_latex:
+    - ${\mathrm{Pnma}}$ (62)
+    reference_dois:
+    - 10.1103/PhysRevB.57.R3189

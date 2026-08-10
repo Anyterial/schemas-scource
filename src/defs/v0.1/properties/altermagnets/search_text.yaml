@@ -1,0 +1,27 @@
+$$schema: https://schemas.optimade.org/meta/v1.3/optimade/property_definition
+$id: https://schemas.anyterial.se/defs/v0.1/properties/altermagnets/search_text
+title: Normalized search text
+x-optimade-type: string
+x-optimade-definition:
+  kind: property
+  version: 0.1.0
+  format: '1.3'
+  name: search_text
+  label: search_text_altermagnets
+x-optimade-unit: inapplicable
+x-optimade-requirements:
+  support: may
+  query-support: partial
+  query-support-operators:
+  - CONTAINS
+  response-level: should not
+type:
+- string
+- 'null'
+description: |-
+  The normalized lowercase free-text aggregate maintained by the altermagnet material store, concatenating the formula, MAGNDATA identifiers, space groups, elements, magnetic phases, wave classes, and the source classification.
+
+  It is served verbatim so a client can reproduce the legacy free-text search with `CONTAINS`.
+  A null value means no search text is recorded for this material.
+examples:
+- crsb 0.528 p6_3/mmc cr sb pnma (62) am d collinear

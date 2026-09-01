@@ -94,12 +94,12 @@ description: |-
   A null value means no figure metadata is recorded for this material.
 examples:
 - - key: band
-    url: https://optimade.example.org/extensions/figures/anyt:am-1-0001/band.svg
-    dark_url: https://optimade.example.org/extensions/figures/anyt:am-1-0001/dark--band.svg
+    url: https://optimade.example.org/extensions/figures/anyt.am-1-1/band.svg
+    dark_url: https://optimade.example.org/extensions/figures/anyt.am-1-1/dark--band.svg
     media_type: image/svg+xml
     available: true
   - key: structure
-    url: https://optimade.example.org/extensions/figures/anyt:am-1-0001/structure.png
+    url: https://optimade.example.org/extensions/figures/anyt.am-1-1/structure.png
     dark_url: null
     media_type: image/png
     available: true

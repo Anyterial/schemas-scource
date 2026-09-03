@@ -1,0 +1,43 @@
+$$schema: https://schemas.optimade.org/meta/v1.2/optimade/entrytype_definition
+$id: https://schemas.anyterial.se/defs/v0.1/entrytypes/altermagnet_screening_result
+type: object
+title: Anyterial altermagnet screening result entry type
+x-optimade-definition:
+  kind: entrytype
+  format: '1.3'
+  version: 0.1.0
+  name: altermagnet_screening_result
+  label: altermagnet_screening_result_entrytype_altermagnets
+description: |-
+  An altermagnet screening result is the Anyterial altermagnets database's provider-specific main entity: one screened candidate material together with the high-throughput screening science determined for it (classification, spin-splitting metrics, electronic type, crustal abundance, magnetic phase and wave-class assignments, and the linked MAGNDATA symmetry variants), its generated band-structure/crystal-structure/Brillouin-zone figures, and the total energy of the workflow run that produced it.
+  The screened crystal structure itself is a separate standard OPTIMADE structures entry, linked from this entry through a structures relationship; the reference DOIs are linked through a references relationship.
+  The science, figure, and energy properties served on this entry type are declared through property definitions and are not enumerated here.
+properties:
+  id:
+    $$inherit: /defs/v1.2/properties/core/id
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  type:
+    $$inherit: /defs/v1.2/properties/core/type
+    x-optimade-requirements:
+      support: must
+      sortable: true
+      query-support: all mandatory
+      response-level: always
+  immutable_id:
+    $$inherit: /defs/v1.2/properties/core/immutable_id
+    x-optimade-requirements:
+      support: may
+      sortable: false
+      query-support: all mandatory
+      response-level: may
+  last_modified:
+    $$inherit: /defs/v1.2/properties/core/last_modified
+    x-optimade-requirements:
+      support: should
+      sortable: false
+      query-support: all mandatory
+      response-level: must
